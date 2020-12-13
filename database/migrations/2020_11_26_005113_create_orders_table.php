@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,23 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->Increments('id');
-            $table->integer('prefecture_id')->unsigned();
+        Schema::create('orders', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user_id')->unique()->unsigned();
+            $table->integer('prefecture_id')->unique()->unsigned();
+            $table->integer('total_price');
+            $table->date('order_date');
             $table->string('name', 30);
-            $table->string('password');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('phone', 20);
             $table->string('postcode', 8);
             $table->string('city', 24);
             $table->string('block', 64);
             $table->string('building');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->integer('tax');
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
 
             $table->foreign('prefecture_id')
                 ->references('id')
@@ -42,6 +45,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('orders');
     }
 }
