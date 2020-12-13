@@ -22,7 +22,8 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     /**
-     * ログインした際のリダイレクト先を変更
+     * Where to redirect users after login.
+     *
      * @var string
      */
     protected $redirectTo = '/login_main';
