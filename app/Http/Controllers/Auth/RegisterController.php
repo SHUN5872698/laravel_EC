@@ -42,23 +42,27 @@ class RegisterController extends Controller
     }
 
     /**
-     * Get a validator for an incoming registration request.
-     *
+     *　バリデーションの条件の変更
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'min:4|max:30', ''],
+            'password' => ['required', 'string', 'min:8|max:30', 'confirmed'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+            'phone' => ['required', 'min:11|max:20'],
+            'postcode' => ['required', 'string', 'max:8'],
+            'prefecture_id' => ['required', 'integer'],
+            'city' => ['required', 'string', 'max:24'],
+            'block' => ['required', 'string', 'max:64'],
+            'building' => ['max:255'],
+        ], RegistersUsers::$registerErrorMessage);
     }
 
     /**
-     * Create a new user instance after a valid registration.
-     *
+     * 登録成功時に新しいユーザーインスタンスを作成
      * @param  array  $data
      * @return \App\User
      */
@@ -66,8 +70,14 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
-            'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'email' => $data['email'],
+            'phone' => $data['phone'],
+            'postcode' => $data['postcode'],
+            'prefecture_id' => $data['prefecture_id'],
+            'city' => $data['city'],
+            'block' => $data['block'],
+            'building' => $data['building'],
         ]);
     }
 }
