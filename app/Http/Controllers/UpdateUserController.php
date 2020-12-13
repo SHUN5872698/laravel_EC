@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Providers\RouteServiceProvider;
-use App\User;
 
-class UpdateController extends Controller
+class UpdateUserController extends Controller
 {
     /**
      * ユーザー情報変更ページ
