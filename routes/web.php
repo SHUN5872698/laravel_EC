@@ -34,5 +34,5 @@ Route::get('/login_main', 'PrefectureController@login_main')->middleware('auth')
 Route::get('/user_inf', 'UserController@user_inf')->middleware('auth');
 
 /** ユーザー情報変更ページ */
-Route::get('/user_edit', 'UpdateController@user_edit')->middleware('auth');
-Route::post('/user_up', 'UpdateController@user_up')->middleware('auth');
+Route::get('/user_edit', 'UpdateUserController@user_edit')->middleware('auth');
+Route::post('/user_up', 'UpdateUserController@user_up')->middleware('auth');
