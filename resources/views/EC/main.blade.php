@@ -6,5 +6,5 @@
 @section('content')
 <h1>メインページ</h1>
 @endsection
-@@yield('footer')
+@yield('footer')
 @endsection
