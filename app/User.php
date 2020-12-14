@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -52,6 +54,19 @@ class User extends Authenticatable
         'block.max' => '正しい住所を入力して下さい。',
         'building.max' => '正しい住所を入力して下さい。'
     ];
+
+    /**
+     * prefecturesテーブルとのリレーション
+     * @return void
+     */
+    public function prefecture()
+    {
+        return $this->hasMany('App\Models\Prefecture', 'id', 'name');
+    }
+
+    /**
+     * 都道県情報の取得
+     */
 
     /**
      * 配列に対して非表示にする必要がある属性。
