@@ -100,8 +100,8 @@
 
                             <div class="col-md-6">
                                 <select name="prefecture_id" id="inputAddress02">
-                                    <option value="">-- 選択してください --</option>
-                                    @foreach ($data as $prefecture)
+                                    <option value="">--- 選択してください ---</option>
+                                    @foreach ($prefectures as $prefecture)
                                     <option value={{$prefecture->id}} @if(old('prefecture_id')=='01' ) selected @endif>
                                         {{$prefecture->name}}</option>
                                     @endforeach
