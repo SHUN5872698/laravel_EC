@@ -11,6 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(ProductsTableSeeder::class);
+        /**商品情報のseeder*/
+        //$this->call(ProductsTableSeeder::class);
+
+        /**商品画像のseeder */
+        $this->call(ProductimagesTableSeeder::class);
     }
 }
