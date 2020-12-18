@@ -21,14 +21,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 /** メインページ */
-Route::get('/main', 'PrefectureController@main');
+Route::get('/main', 'ProductController@main');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 /** ログイン済みのメインページ */
-Route::get('/login_main', 'PrefectureController@login_main')->middleware('auth');
+Route::get('/login_main', 'ProductController@login_main')->middleware('auth');
 
 /** ユーザー情報ページ */
 Route::get('/user_inf', 'UserController@user_inf')->middleware('auth');
