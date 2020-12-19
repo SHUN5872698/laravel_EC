@@ -174,44 +174,45 @@ class ProductimagesTableSeeder extends Seeder
                 'image' => 'pro パシフィックブルーsub4.jpg',
                 'kubun' => 'sub',
             ],
+
             /**iPhone 12 Pro
              * シルバー
              */
             /**main */
             [
-                'product_id' => 1,
+                'product_id' => 2,
                 'image' => 'pro シルバ- main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 5,
+                'product_id' => 6,
                 'image' => 'pro シルバ- main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 9,
+                'product_id' => 10,
                 'image' => 'pro シルバ- main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 13,
+                'product_id' => 14,
                 'image' => 'pro シルバ- main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 17,
+                'product_id' => 18,
                 'image' => 'pro シルバ- main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 21,
+                'product_id' => 22,
                 'image' => 'pro シルバ- main.jpg',
                 'kubun' => 'main',
             ],
 
             /**sub1 */
             [
-                'product_id' => 1,
+                'product_id' => 2,
                 'image' => 'pro シルバー sub1.jpg',
                 'kubun' => 'sub',
             ],
@@ -221,29 +222,29 @@ class ProductimagesTableSeeder extends Seeder
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 9,
+                'product_id' => 10,
                 'image' => 'pro シルバー sub1.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 13,
+                'product_id' => 14,
                 'image' => 'pro シルバー sub1.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 17,
+                'product_id' => 18,
                 'image' => 'pro シルバー sub1.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 21,
+                'product_id' => 22,
                 'image' => 'pro シルバー sub1.jpg',
                 'kubun' => 'sub',
             ],
 
             /**sub2 */
             [
-                'product_id' => 1,
+                'product_id' => 2,
                 'image' => 'pro シルバー sub2.jpg',
                 'kubun' => 'sub',
             ],
@@ -253,29 +254,29 @@ class ProductimagesTableSeeder extends Seeder
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 9,
+                'product_id' => 10,
                 'image' => 'pro シルバー sub2.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 13,
+                'product_id' => 14,
                 'image' => 'pro シルバー sub2.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 17,
+                'product_id' => 18,
                 'image' => 'pro シルバー sub2.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 21,
+                'product_id' => 22,
                 'image' => 'pro シルバー sub2.jpg',
                 'kubun' => 'sub',
             ],
 
             /**sub3 */
             [
-                'product_id' => 1,
+                'product_id' => 2,
                 'image' => 'pro シルバー sub3.jpg',
                 'kubun' => 'sub',
             ],
@@ -285,29 +286,29 @@ class ProductimagesTableSeeder extends Seeder
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 9,
+                'product_id' => 10,
                 'image' => 'pro シルバー sub3.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 13,
+                'product_id' => 14,
                 'image' => 'pro シルバー sub3.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 17,
+                'product_id' => 18,
                 'image' => 'pro シルバー sub3.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 21,
+                'product_id' => 22,
                 'image' => 'pro シルバー sub3.jpg',
                 'kubun' => 'sub',
             ],
 
             /**sub4 */
             [
-                'product_id' => 1,
+                'product_id' => 2,
                 'image' => 'pro シルバー sub4.jpg',
                 'kubun' => 'sub',
             ],
@@ -317,357 +318,359 @@ class ProductimagesTableSeeder extends Seeder
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 9,
+                'product_id' => 10,
                 'image' => 'pro シルバー sub4.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 13,
+                'product_id' => 14,
                 'image' => 'pro シルバー sub4.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 17,
+                'product_id' => 18,
                 'image' => 'pro シルバー sub4.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 21,
+                'product_id' => 22,
                 'image' => 'pro シルバー sub4.jpg',
                 'kubun' => 'sub',
             ],
+
             /**iPhone 12 Pro
              * ゴールド
              */
 
             /**main */
             [
-                'product_id' => 1,
+                'product_id' => 3,
                 'image' => 'pro ゴールド main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 5,
+                'product_id' => 7,
                 'image' => 'pro ゴールド main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 9,
+                'product_id' => 11,
                 'image' => 'pro ゴールド main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 13,
+                'product_id' => 15,
                 'image' => 'pro ゴールド main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 17,
+                'product_id' => 19,
                 'image' => 'pro ゴールド main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 21,
+                'product_id' => 23,
                 'image' => 'pro ゴールド main.jpg',
                 'kubun' => 'main',
             ],
 
             /**sub1 */
             [
-                'product_id' => 1,
+                'product_id' => 3,
                 'image' => 'pro ゴールド sub1.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 5,
+                'product_id' => 7,
                 'image' => 'pro ゴールド sub1.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 9,
+                'product_id' => 11,
                 'image' => 'pro ゴールド sub1.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 13,
+                'product_id' => 15,
                 'image' => 'pro ゴールド sub1.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 17,
+                'product_id' => 19,
                 'image' => 'pro ゴールド sub1.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 21,
+                'product_id' => 23,
                 'image' => 'pro ゴールド sub1.jpg',
                 'kubun' => 'sub',
             ],
 
             [
-                'product_id' => 1,
+                'product_id' => 3,
                 'image' => 'pro ゴールド sub2.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 5,
+                'product_id' => 7,
                 'image' => 'pro ゴールド sub2.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 9,
+                'product_id' => 11,
                 'image' => 'pro ゴールド sub2.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 13,
+                'product_id' => 15,
                 'image' => 'pro ゴールド sub2.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 17,
+                'product_id' => 19,
                 'image' => 'pro ゴールド sub2.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 21,
+                'product_id' => 23,
                 'image' => 'pro ゴールド sub2.jpg',
                 'kubun' => 'sub',
             ],
 
             /**sub3 */
             [
-                'product_id' => 1,
+                'product_id' => 3,
                 'image' => 'pro ゴールド sub3.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 5,
+                'product_id' => 7,
                 'image' => 'pro ゴールド sub3.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 9,
+                'product_id' => 11,
                 'image' => 'pro ゴールド sub3.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 13,
+                'product_id' => 15,
                 'image' => 'pro ゴールド sub3.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 17,
+                'product_id' => 19,
                 'image' => 'pro ゴールド sub3.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 21,
+                'product_id' => 23,
                 'image' => 'pro ゴールド sub3.jpg',
                 'kubun' => 'sub',
             ],
 
             /**sub4 */
             [
-                'product_id' => 1,
+                'product_id' => 3,
                 'image' => 'pro ゴールド sub4.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 5,
+                'product_id' => 7,
                 'image' => 'pro ゴールド sub4.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 9,
+                'product_id' => 11,
                 'image' => 'pro ゴールド sub4.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 13,
+                'product_id' => 15,
                 'image' => 'pro ゴールド sub4.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 17,
+                'product_id' => 19,
                 'image' => 'pro ゴールド sub4.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 21,
+                'product_id' => 23,
                 'image' => 'pro ゴールド sub4.jpg',
                 'kubun' => 'sub',
             ],
+
             /**iPhone 12
              *グラファイト
              */
 
             /**main */
             [
-                'product_id' => 1,
+                'product_id' => 4,
                 'image' => 'pro グラファイト main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 5,
+                'product_id' => 8,
                 'image' => 'pro グラファイト main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 9,
+                'product_id' => 12,
                 'image' => 'pro グラファイト main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 13,
+                'product_id' => 16,
                 'image' => 'pro グラファイト main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 17,
+                'product_id' => 20,
                 'image' => 'pro グラファイト main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 21,
+                'product_id' => 24,
                 'image' => 'pro グラファイト main.jpg',
                 'kubun' => 'main',
             ],
 
             /**sub1 */
             [
-                'product_id' => 1,
+                'product_id' => 4,
                 'image' => 'pro グラファイト sub1.jpg',
                 'kubun' => 'sub',
             ],
 
             [
-                'product_id' => 5,
+                'product_id' => 8,
                 'image' => 'pro グラファイト sub1.jpg',
                 'kubun' => 'sub',
             ],
 
             [
-                'product_id' => 9,
+                'product_id' => 12,
                 'image' => 'pro グラファイト sub1.jpg',
                 'kubun' => 'sub',
             ],
 
             [
-                'product_id' => 13,
+                'product_id' => 16,
                 'image' => 'pro グラファイト sub1.jpg',
                 'kubun' => 'sub',
             ],
 
             [
-                'product_id' => 17,
+                'product_id' => 20,
                 'image' => 'pro グラファイト sub1.jpg',
                 'kubun' => 'sub',
             ],
 
             [
-                'product_id' => 21,
+                'product_id' => 24,
                 'image' => 'pro グラファイト sub1.jpg',
                 'kubun' => 'sub',
             ],
 
             /**sub2 */
             [
-                'product_id' => 1,
+                'product_id' => 4,
                 'image' => 'pro グラファイト sub2.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 5,
+                'product_id' => 8,
                 'image' => 'pro グラファイト sub2.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 9,
+                'product_id' => 12,
                 'image' => 'pro グラファイト sub2.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 13,
+                'product_id' => 16,
                 'image' => 'pro グラファイト sub2.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 17,
+                'product_id' => 20,
                 'image' => 'pro グラファイト sub2.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 21,
+                'product_id' => 24,
                 'image' => 'pro グラファイト sub2.jpg',
                 'kubun' => 'sub',
             ],
 
             /**sub3 */
             [
-                'product_id' => 1,
+                'product_id' => 4,
                 'image' => 'pro グラファイト sub3.jpg',
                 'kubun' => 'sub',
             ],
 
             [
-                'product_id' => 5,
+                'product_id' => 8,
                 'image' => 'pro グラファイト sub3.jpg',
                 'kubun' => 'sub',
             ],
 
             [
-                'product_id' => 9,
+                'product_id' => 12,
                 'image' => 'pro グラファイト sub3.jpg',
                 'kubun' => 'sub',
             ],
 
             [
-                'product_id' => 13,
+                'product_id' => 16,
                 'image' => 'pro グラファイト sub3.jpg',
                 'kubun' => 'sub',
             ],
 
             [
-                'product_id' => 17,
+                'product_id' => 20,
                 'image' => 'pro グラファイト sub3.jpg',
                 'kubun' => 'sub',
             ],
 
             [
-                'product_id' => 21,
+                'product_id' => 24,
                 'image' => 'pro グラファイト sub3.jpg',
                 'kubun' => 'sub',
             ],
 
             /**sub4 */
             [
-                'product_id' => 1,
+                'product_id' => 4,
                 'image' => 'pro グラファイトsub4.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 5,
+                'product_id' => 8,
                 'image' => 'pro グラファイトsub4.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 9,
+                'product_id' => 12,
                 'image' => 'pro グラファイトsub4.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 13,
+                'product_id' => 16,
                 'image' => 'pro グラファイトsub4.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 17,
+                'product_id' => 20,
                 'image' => 'pro グラファイトsub4.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 21,
+                'product_id' => 24,
                 'image' => 'pro グラファイトsub4.jpg',
                 'kubun' => 'sub',
             ],
