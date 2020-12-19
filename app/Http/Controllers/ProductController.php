@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 
 class ProductController extends Controller
@@ -10,7 +11,28 @@ class ProductController extends Controller
     /**メインページに移動 */
     public function main(Request $request)
     {
-        return view('EC.main');
+        $products = Product::with('productimage')
+            ->join('productimages', 'product_id',  '=', 'products.id')
+            ->where('products.id', 1)
+            ->select(
+                'products.id',
+                'products.name',
+                'products.description',
+                'products.price',
+                'products.category_master',
+                'products.category',
+                'products.capacity',
+                'productimages.product_id',
+                'productimages.image',
+                'productimages.kubun',
+            )
+            ->paginate(10);
+        $data = [
+            'products' => $products,
+        ];
+
+        dd($data);
+        return view('EC.main', $data);
     }
 
     /**ログイン済みのメインページに移動 */
