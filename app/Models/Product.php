@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use app\Models\Productimage;
+
 
 class Product extends Model
 {
@@ -20,13 +20,13 @@ class Product extends Model
     }
 
     /**
-     * 商品情報と画像データの取得処理
+     * 指定された商品情報と画像データの取得処理
      */
     public function getData()
     {
-        $data = Product::with('productimages')
-            ->join('productimages', 'product_id',  '=', 'products.id')
-            ->where('products.id', 1)
+        $data = Product::with('productimage')
+            ->join('productimages', 'productimages.product_id',  '=', 'products.id')
+            ->where('product_id', 1)
             ->select(
                 'products.id',
                 'products.name',
