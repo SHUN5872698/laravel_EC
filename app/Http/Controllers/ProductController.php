@@ -14,6 +14,7 @@ class ProductController extends Controller
         $products = Product::with('productimage')
             ->join('productimages', 'product_id',  '=', 'products.id')
             ->where('products.id', 1)
+            ->where('productimages.kubun', 'main')
             ->select(
                 'products.id',
                 'products.name',
@@ -24,14 +25,13 @@ class ProductController extends Controller
                 'products.capacity',
                 'productimages.product_id',
                 'productimages.image',
-                'productimages.kubun',
             )
             ->paginate(10);
         $data = [
             'products' => $products,
         ];
 
-        dd($data);
+        // dd($data);
         return view('EC.main', $data);
     }
 
