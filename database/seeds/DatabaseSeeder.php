@@ -18,6 +18,6 @@ class DatabaseSeeder extends Seeder
         // $this->call(ProductimagesTableSeeder::class);
 
         /**税率のseeder */
-        $this->call(TaxTableSeeder::class);
+        $this->call(TaxesTableSeeder::class);
     }
 }
