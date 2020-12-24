@@ -843,6 +843,7 @@ class ProductimagesTableSeeder extends Seeder
                 'image' => 'iPhone 12 レッドsub4.jpg',
                 'kubun' => 'sub',
             ],
+
             /**iPhone
              *ブルー
              */
@@ -1016,6 +1017,7 @@ class ProductimagesTableSeeder extends Seeder
                 'image' => 'iPhone 12 ブルーsub4.jpg',
                 'kubun' => 'sub',
             ],
+
             /**iPhone 12
              *ブラック
              */
@@ -1199,6 +1201,7 @@ class ProductimagesTableSeeder extends Seeder
                 'image' => 'iPhone 12 ブラックsub4.jpg',
                 'kubun' => 'sub',
             ],
+
             /**iPhone 12
              *グリーン
              */
@@ -1417,77 +1420,7 @@ class ProductimagesTableSeeder extends Seeder
                 'image' => '11Pro sub1.jpg',
                 'kubun' => 'sub',
             ],
-            /**iPhone 11
-             *レッド
-             */
 
-            /**main */
-            [
-                'product_id' => 54,
-                'image' => '11 レッド main.jpg',
-                'kubun' => 'main',
-            ],
-            [
-                'product_id' => 59,
-                'image' => '11 レッド main.jpg',
-                'kubun' => 'main',
-            ],
-            [
-                'product_id' => 65,
-                'image' => '11 レッド main.jpg',
-                'kubun' => 'main',
-            ],
-
-            /**sub1 */
-            [
-                'product_id' => 54,
-                'image' => '11 レッド sub1.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 59,
-                'image' => '11 レッド sub1.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 65,
-                'image' => '11 レッド sub1.jpg',
-                'kubun' => 'sub',
-            ],
-
-            /**sub2 */
-            [
-                'product_id' => 54,
-                'image' => '11 レッド sub2.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 59,
-                'image' => '11 レッド sub2.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 65,
-                'image' => '11 レッド sub2.jpg',
-                'kubun' => 'sub',
-            ],
-
-            /**sub3 */
-            [
-                'product_id' => 54,
-                'image' => '11 レッド sub3.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 59,
-                'image' => '11 レッド sub3.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 65,
-                'image' => '11 レッド sub3.jpg',
-                'kubun' => 'sub',
-            ],
             /**iPhone 11
              *ホワイト
              */
@@ -1560,6 +1493,151 @@ class ProductimagesTableSeeder extends Seeder
                 'image' => '11 ホワイト sub3.jpg',
                 'kubun' => 'sub',
             ],
+
+            /**iPhone 11
+             *レッド
+             */
+
+            /**main */
+            [
+                'product_id' => 54,
+                'image' => '11 レッド main.jpg',
+                'kubun' => 'main',
+            ],
+            [
+                'product_id' => 59,
+                'image' => '11 レッド main.jpg',
+                'kubun' => 'main',
+            ],
+            [
+                'product_id' => 65,
+                'image' => '11 レッド main.jpg',
+                'kubun' => 'main',
+            ],
+
+            /**sub1 */
+            [
+                'product_id' => 54,
+                'image' => '11 レッド sub1.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 59,
+                'image' => '11 レッド sub1.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 65,
+                'image' => '11 レッド sub1.jpg',
+                'kubun' => 'sub',
+            ],
+
+            /**sub2 */
+            [
+                'product_id' => 54,
+                'image' => '11 レッド sub2.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 59,
+                'image' => '11 レッド sub2.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 65,
+                'image' => '11 レッド sub2.jpg',
+                'kubun' => 'sub',
+            ],
+
+            /**sub3 */
+            [
+                'product_id' => 54,
+                'image' => '11 レッド sub3.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 59,
+                'image' => '11 レッド sub3.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 65,
+                'image' => '11 レッド sub3.jpg',
+                'kubun' => 'sub',
+            ],
+
+            /**iPhone 11
+             *ブラック
+             */
+
+            /**main */
+            [
+                'product_id' => 55,
+                'image' => '11 ブラック main.jpg',
+                'kubun' => 'main',
+            ],
+            [
+                'product_id' => 61,
+                'image' => '11 ブラック main.jpg',
+                'kubun' => 'main',
+            ],
+            [
+                'product_id' => 67,
+                'image' => '11 ブラック main.jpg',
+                'kubun' => 'main',
+            ],
+
+            /**sub1 */
+            [
+                'product_id' => 55,
+                'image' => '11 ブラック sub1.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 61,
+                'image' => '11 ブラック sub1.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 67,
+                'image' => '11 ブラック sub1.jpg',
+                'kubun' => 'sub',
+            ],
+
+            /**sub2 */
+            [
+                'product_id' => 55,
+                'image' => '11 ブラック sub2.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 61,
+                'image' => '11 ブラック sub2.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 67,
+                'image' => '11 ブラック sub2.jpg',
+                'kubun' => 'sub',
+            ],
+
+            /**sub3 */
+            [
+                'product_id' => 55,
+                'image' => '11 ブラック sub3.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 61,
+                'image' => '11 ブラック sub3.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 67,
+                'image' => '11 ブラック sub3.jpg',
+                'kubun' => 'sub',
+            ],
+
             /**iPhone 11
              *パープル
              */
@@ -1631,6 +1709,7 @@ class ProductimagesTableSeeder extends Seeder
                 'image' => '11 パープル sub3.jpg',
                 'kubun' => 'sub',
             ],
+
             /**iPhone 11
              *グリーン
              */
@@ -1706,6 +1785,7 @@ class ProductimagesTableSeeder extends Seeder
                 'image' => '11 グリーン sub3.jpg',
                 'kubun' => 'sub',
             ],
+
             /**iPhone 11
              *イエロー
              */
@@ -1776,75 +1856,271 @@ class ProductimagesTableSeeder extends Seeder
                 'image' => '11 イエロー sub3.jpg',
                 'kubun' => 'sub',
             ],
-            /**iPhone 11
-             *ブラック
+
+            /**iPhone SE
+             *レッド
              */
 
             /**main */
             [
-                'product_id' => 55,
-                'image' => '11 ブラック main.jpg',
+                'product_id' => 71,
+                'image' => 'SE レッド main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 61,
-                'image' => '11 ブラック main.jpg',
+                'product_id' => 74,
+                'image' => 'SE レッド main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 67,
-                'image' => '11 ブラック main.jpg',
+                'product_id' => 77,
+                'image' => 'SE レッド main.jpg',
                 'kubun' => 'main',
             ],
 
             /**sub1 */
             [
-                'product_id' => 55,
-                'image' => '11 ブラック sub1.jpg',
+                'product_id' => 71,
+                'image' => 'SE レッド sub1.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 61,
-                'image' => '11 ブラック sub1.jpg',
+                'product_id' => 74,
+                'image' => 'SE レッド sub1.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 67,
-                'image' => '11 ブラック sub1.jpg',
+                'product_id' => 77,
+                'image' => 'SE レッド sub1.jpg',
                 'kubun' => 'sub',
             ],
 
             /**sub2 */
             [
-                'product_id' => 55,
-                'image' => '11 ブラック sub2.jpg',
+                'product_id' => 71,
+                'image' => 'SE レッド sub2.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 61,
-                'image' => '11 ブラック sub2.jpg',
+                'product_id' => 74,
+                'image' => 'SE レッド sub2.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 67,
-                'image' => '11 ブラック sub2.jpg',
+                'product_id' => 77,
+                'image' => 'SE レッド sub2.jpg',
                 'kubun' => 'sub',
             ],
 
             /**sub3 */
             [
-                'product_id' => 55,
-                'image' => '11 ブラック sub3.jpg',
+                'product_id' => 71,
+                'image' => 'SE レッド sub3.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 61,
-                'image' => '11 ブラック sub3.jpg',
+                'product_id' => 74,
+                'image' => 'SE レッド sub3.jpg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 67,
-                'image' => '11 ブラック sub3.jpg',
+                'product_id' => 77,
+                'image' => 'SE レッド sub3.jpg',
+                'kubun' => 'sub',
+            ],
+
+            /**sub4 */
+            [
+                'product_id' => 71,
+                'image' => 'SE レッド sub4.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 74,
+                'image' => 'SE レッド sub4.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 77,
+                'image' => 'SE レッド sub4.jpg',
+                'kubun' => 'sub',
+            ],
+
+            /**iPhone SE
+             *ホワイト
+             */
+
+            /**main */
+            [
+                'product_id' => 72,
+                'image' => 'SE ホワイト main.jpg',
+                'kubun' => 'main',
+            ],
+            [
+                'product_id' => 75,
+                'image' => 'SE ホワイト main.jpg',
+                'kubun' => 'main',
+            ],
+            [
+                'product_id' => 78,
+                'image' => 'SE ホワイト main.jpg',
+                'kubun' => 'main',
+            ],
+
+            /**sub1 */
+            [
+                'product_id' => 72,
+                'image' => 'SE ホワイト sub1.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 75,
+                'image' => 'SE ホワイト sub1.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 78,
+                'image' => 'SE ホワイト sub1.jpg',
+                'kubun' => 'sub',
+            ],
+
+            /**sub2 */
+            [
+                'product_id' => 72,
+                'image' => 'SE ホワイト sub2.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 75,
+                'image' => 'SE ホワイト sub2.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 78,
+                'image' => 'SE ホワイト sub2.jpg',
+                'kubun' => 'sub',
+            ],
+
+            /**sub3 */
+            [
+                'product_id' => 72,
+                'image' => 'SE ホワイト sub3.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 75,
+                'image' => 'SE ホワイト sub3.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 78,
+                'image' => 'SE ホワイト sub3.jpg',
+                'kubun' => 'sub',
+            ],
+
+            /**sub4 */
+            [
+                'product_id' => 72,
+                'image' => 'SE ホワイト sub4.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 75,
+                'image' => 'SE ホワイト sub4.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 78,
+                'image' => 'SE ホワイト sub4.jpg',
+                'kubun' => 'sub',
+            ],
+
+            /**iPhone SE
+             *ブラック
+             */
+
+            /**main */
+            [
+                'product_id' => 73,
+                'image' => 'SE ブラック main.jpg',
+                'kubun' => 'main',
+            ],
+            [
+                'product_id' => 76,
+                'image' => 'SE ブラック main.jpg',
+                'kubun' => 'main',
+            ],
+            [
+                'product_id' => 79,
+                'image' => 'SE ブラック main.jpg',
+                'kubun' => 'main',
+            ],
+
+            /**sub1 */
+            [
+                'product_id' => 73,
+                'image' => 'SE ブラック sub1.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 76,
+                'image' => 'SE ブラック sub1.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 79,
+                'image' => 'SE ブラック sub1.jpg',
+                'kubun' => 'sub',
+            ],
+
+            /**sub2 */
+            [
+                'product_id' => 73,
+                'image' => 'SE ブラック sub2.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 76,
+                'image' => 'SE ブラック sub2.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 79,
+                'image' => 'SE ブラック sub2.jpg',
+                'kubun' => 'sub',
+            ],
+
+            /**sub3 */
+            [
+                'product_id' => 73,
+                'image' => 'SE ブラック sub3.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 76,
+                'image' => 'SE ブラック sub3.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 79,
+                'image' => 'SE ブラック sub3.jpg',
+                'kubun' => 'sub',
+            ],
+
+            /**sub4 */
+            [
+                'product_id' => 73,
+                'image' => 'SE ブラック sub4.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 76,
+                'image' => 'SE ブラック sub4.jpg',
+                'kubun' => 'sub',
+            ],
+            [
+                'product_id' => 79,
+                'image' => 'SE ブラック sub4.jpg',
                 'kubun' => 'sub',
             ],
 
@@ -1854,24 +2130,24 @@ class ProductimagesTableSeeder extends Seeder
 
             /**main */
             [
-                'product_id' => 71,
+                'product_id' => 80,
                 'image' => 'XS シルバー main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 74,
+                'product_id' => 83,
                 'image' => 'XS シルバー main.jpg',
                 'kubun' => 'main',
             ],
 
             /**sub1 */
             [
-                'product_id' => 71,
+                'product_id' => 80,
                 'image' => 'XS シルバー sub1.jpeg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 74,
+                'product_id' => 83,
                 'image' => 'XS シルバー sub1.jpeg',
                 'kubun' => 'sub',
             ],
@@ -1882,24 +2158,24 @@ class ProductimagesTableSeeder extends Seeder
 
             /**main */
             [
-                'product_id' => 72,
+                'product_id' => 81,
                 'image' => 'XS スペースグレイ main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 73,
+                'product_id' => 82,
                 'image' => 'XS スペースグレイ main.jpg',
                 'kubun' => 'main',
             ],
 
             /**sub1 */
             [
-                'product_id' => 72,
+                'product_id' => 81,
                 'image' => 'XS スペースグレイ  sub1.jpeg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 73,
+                'product_id' => 82,
                 'image' => 'XS スペースグレイ  sub1.jpeg',
                 'kubun' => 'sub',
             ],
@@ -1910,13 +2186,13 @@ class ProductimagesTableSeeder extends Seeder
 
             /**main */
             [
-                'product_id' => 75,
+                'product_id' => 84,
                 'image' => 'XS ゴールド main.jpg',
                 'kubun' => 'main',
             ],
             /**sub1 */
             [
-                'product_id' => 75,
+                'product_id' => 85,
                 'image' => 'XS ゴールド sub1.jpg',
                 'kubun' => 'sub',
             ],
@@ -1927,23 +2203,23 @@ class ProductimagesTableSeeder extends Seeder
 
             /**main */
             [
-                'product_id' => 76,
+                'product_id' => 85,
                 'image' => 'XR レッド main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 82,
+                'product_id' => 91,
                 'image' => 'XR レッド main.jpg',
                 'kubun' => 'main',
             ],
             /**sub1 */
             [
-                'product_id' => 76,
+                'product_id' => 85,
                 'image' => 'XR sub1.jpeg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 82,
+                'product_id' => 91,
                 'image' => 'XR sub1.jpeg',
                 'kubun' => 'sub',
             ],
@@ -1954,23 +2230,23 @@ class ProductimagesTableSeeder extends Seeder
 
             /**main */
             [
-                'product_id' => 77,
+                'product_id' => 86,
                 'image' => 'XR ホワイト main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 83,
+                'product_id' => 92,
                 'image' => 'XR ホワイト main.jpg',
                 'kubun' => 'main',
             ],
             /**sub1 */
             [
-                'product_id' => 77,
+                'product_id' => 86,
                 'image' => 'XR sub1.jpeg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 83,
+                'product_id' => 92,
                 'image' => 'XR sub1.jpeg',
                 'kubun' => 'sub',
             ],
@@ -1981,24 +2257,24 @@ class ProductimagesTableSeeder extends Seeder
 
             /**main */
             [
-                'product_id' => 78,
+                'product_id' => 87,
                 'image' => 'XR ブルー main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 84,
+                'product_id' => 93,
                 'image' => 'XR ブルー main.jpg',
                 'kubun' => 'main',
             ],
 
             /**sub1 */
             [
-                'product_id' => 78,
+                'product_id' => 87,
                 'image' => 'XR sub1.jpeg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 84,
+                'product_id' => 93,
                 'image' => 'XR sub1.jpeg',
                 'kubun' => 'sub',
             ],
@@ -2009,23 +2285,23 @@ class ProductimagesTableSeeder extends Seeder
 
             /**main */
             [
-                'product_id' => 79,
+                'product_id' => 88,
                 'image' => 'XR ブラック main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 85,
+                'product_id' => 94,
                 'image' => 'XR ブラック main.jpg',
                 'kubun' => 'main',
             ],
             /**sub1 */
             [
-                'product_id' => 79,
+                'product_id' => 88,
                 'image' => 'XR sub1.jpeg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 85,
+                'product_id' => 94,
                 'image' => 'XR sub1.jpeg',
                 'kubun' => 'sub',
             ],
@@ -2036,23 +2312,23 @@ class ProductimagesTableSeeder extends Seeder
 
             /**main */
             [
-                'product_id' => 80,
+                'product_id' => 89,
                 'image' => 'XR コーラル main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 86,
+                'product_id' => 95,
                 'image' => 'XR コーラル main.jpg',
                 'kubun' => 'main',
             ],
             /**sub1 */
             [
-                'product_id' => 80,
+                'product_id' => 89,
                 'image' => 'XR sub1.jpeg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 86,
+                'product_id' => 95,
                 'image' => 'XR sub1.jpeg',
                 'kubun' => 'sub',
             ],
@@ -2063,289 +2339,24 @@ class ProductimagesTableSeeder extends Seeder
 
             /**main */
             [
-                'product_id' => 81,
+                'product_id' => 90,
                 'image' => 'XR イエロー main.jpg',
                 'kubun' => 'main',
             ],
             [
-                'product_id' => 87,
+                'product_id' => 96,
                 'image' => 'XR イエロー main.jpg',
                 'kubun' => 'main',
             ],
             /**sub1 */
             [
-                'product_id' => 81,
+                'product_id' => 90,
                 'image' => 'XR sub1.jpeg',
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 87,
+                'product_id' => 96,
                 'image' => 'XR sub1.jpeg',
-                'kubun' => 'sub',
-            ],
-
-            /**iPhone SE
-             *レッド
-             */
-
-            /**main */
-            [
-                'product_id' => 88,
-                'image' => 'SE レッド main.jpg',
-                'kubun' => 'main',
-            ],
-            [
-                'product_id' => 91,
-                'image' => 'SE レッド main.jpg',
-                'kubun' => 'main',
-            ],
-            [
-                'product_id' => 94,
-                'image' => 'SE レッド main.jpg',
-                'kubun' => 'main',
-            ],
-
-            /**sub1 */
-            [
-                'product_id' => 88,
-                'image' => 'SE レッド sub1.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 91,
-                'image' => 'SE レッド sub1.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 94,
-                'image' => 'SE レッド sub1.jpg',
-                'kubun' => 'sub',
-            ],
-
-            /**sub2 */
-            [
-                'product_id' => 88,
-                'image' => 'SE レッド sub2.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 91,
-                'image' => 'SE レッド sub2.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 94,
-                'image' => 'SE レッド sub2.jpg',
-                'kubun' => 'sub',
-            ],
-
-            /**sub3 */
-            [
-                'product_id' => 88,
-                'image' => 'SE レッド sub3.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 91,
-                'image' => 'SE レッド sub3.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 94,
-                'image' => 'SE レッド sub3.jpg',
-                'kubun' => 'sub',
-            ],
-
-            /**sub4 */
-            [
-                'product_id' => 88,
-                'image' => 'SE レッド sub4.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 91,
-                'image' => 'SE レッド sub4.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 94,
-                'image' => 'SE レッド sub4.jpg',
-                'kubun' => 'sub',
-            ],
-            /**iPhone SE
-             *ホワイト
-             */
-
-            /**main */
-            [
-                'product_id' => 89,
-                'image' => 'SE ホワイト main.jpg',
-                'kubun' => 'main',
-            ],
-            [
-                'product_id' => 92,
-                'image' => 'SE ホワイト main.jpg',
-                'kubun' => 'main',
-            ],
-            [
-                'product_id' => 95,
-                'image' => 'SE ホワイト main.jpg',
-                'kubun' => 'main',
-            ],
-
-            /**sub1 */
-            [
-                'product_id' => 89,
-                'image' => 'SE ホワイト sub1.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 92,
-                'image' => 'SE ホワイト sub1.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 95,
-                'image' => 'SE ホワイト sub1.jpg',
-                'kubun' => 'sub',
-            ],
-
-            /**sub2 */
-            [
-                'product_id' => 89,
-                'image' => 'SE ホワイト sub2.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 92,
-                'image' => 'SE ホワイト sub2.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 95,
-                'image' => 'SE ホワイト sub2.jpg',
-                'kubun' => 'sub',
-            ],
-
-            /**sub3 */
-            [
-                'product_id' => 89,
-                'image' => 'SE ホワイト sub3.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 92,
-                'image' => 'SE ホワイト sub3.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 95,
-                'image' => 'SE ホワイト sub3.jpg',
-                'kubun' => 'sub',
-            ],
-
-            /**sub4 */
-            [
-                'product_id' => 89,
-                'image' => 'SE ホワイト sub4.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 92,
-                'image' => 'SE ホワイト sub4.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 95,
-                'image' => 'SE ホワイト sub4.jpg',
-                'kubun' => 'sub',
-            ],
-            /**iPhone SE
-             *ブラック
-             */
-
-            /**main */
-            [
-                'product_id' => 90,
-                'image' => 'SE ブラック main.jpg',
-                'kubun' => 'main',
-            ],
-            [
-                'product_id' => 93,
-                'image' => 'SE ブラック main.jpg',
-                'kubun' => 'main',
-            ],
-            [
-                'product_id' => 96,
-                'image' => 'SE ブラック main.jpg',
-                'kubun' => 'main',
-            ],
-
-            /**sub1 */
-            [
-                'product_id' => 90,
-                'image' => 'SE ブラック sub1.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 93,
-                'image' => 'SE ブラック sub1.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 96,
-                'image' => 'SE ブラック sub1.jpg',
-                'kubun' => 'sub',
-            ],
-
-            /**sub2 */
-            [
-                'product_id' => 90,
-                'image' => 'SE ブラック sub2.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 93,
-                'image' => 'SE ブラック sub2.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 96,
-                'image' => 'SE ブラック sub2.jpg',
-                'kubun' => 'sub',
-            ],
-
-            /**sub3 */
-            [
-                'product_id' => 90,
-                'image' => 'SE ブラック sub3.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 93,
-                'image' => 'SE ブラック sub3.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 96,
-                'image' => 'SE ブラック sub3.jpg',
-                'kubun' => 'sub',
-            ],
-
-            /**sub4 */
-            [
-                'product_id' => 90,
-                'image' => 'SE ブラック sub4.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 93,
-                'image' => 'SE ブラック sub4.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 96,
-                'image' => 'SE ブラック sub4.jpg',
                 'kubun' => 'sub',
             ],
 
@@ -3002,6 +3013,8 @@ class ProductimagesTableSeeder extends Seeder
                 'image' => 'sense4 シルバーホワイト sub3.jpg',
                 'kubun' => 'sub',
             ],
+
+
         ]);
     }
 }
