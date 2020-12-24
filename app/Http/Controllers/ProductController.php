@@ -4,16 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-
+use Carbon\Carbon;
+use App\Models\Tax;
 
 class ProductController extends Controller
 {
     /**メインページに移動 */
     public function main(Request $request)
     {
+        //現在の税率の取得
+        $Tax = new Tax();
+        $Tax = $Tax->getTax();
+
         $products = Product::with('productimage')
             ->join('productimages', 'product_id',  '=', 'products.id')
-            ->where('products.id', 1)
             ->where('productimages.kubun', 'main')
             ->select(
                 'products.id',
@@ -26,9 +30,13 @@ class ProductController extends Controller
                 'productimages.product_id',
                 'productimages.image',
             )
-            ->paginate(10);
+            ->inRandomOrder()
+            ->take(12)
+            ->get();
+
         $data = [
             'products' => $products,
+            'Tax' => $Tax,
         ];
 
         // dd($data);
