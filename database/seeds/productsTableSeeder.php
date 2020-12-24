@@ -17,7 +17,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro Max パシフィックブルー 512GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 149220,
+                'price' => 150800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '512GB',
@@ -26,7 +26,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro Max シルバー 512GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 149220,
+                'price' => 150800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '512GB',
@@ -35,7 +35,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro Max ゴールド 512GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 149220,
+                'price' => 150800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '512GB',
@@ -44,7 +44,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro Max グラファイト 512GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 149220,
+                'price' => 150800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '512GB',
@@ -55,7 +55,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro Max パシフィックブルー 256GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 127512,
+                'price' => 128800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '256GB',
@@ -64,7 +64,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro Max シルバー 256GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 127512,
+                'price' => 128800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '256GB',
@@ -73,7 +73,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro Max ゴールド 256GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 127512,
+                'price' => 128800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '256GB',
@@ -82,7 +82,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro Max グラファイト 256GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 127512,
+                'price' => 128800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '256GB',
@@ -93,7 +93,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro Max パシフィックブルー 128GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 116622,
+                'price' => 117800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '128GB',
@@ -102,7 +102,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro Max シルバー 128GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 116622,
+                'price' => 117800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '128GB',
@@ -111,7 +111,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro Max ゴールド 128GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 116622,
+                'price' => 117800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '128GB',
@@ -120,7 +120,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro Max グラファイト 128GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 116622,
+                'price' => 117800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '128GB',
@@ -131,7 +131,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro パシフィックブルー 512GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 138402,
+                'price' => 139800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '512GB',
@@ -141,7 +141,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro シルバー 512GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 138402,
+                'price' => 139800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '512GB',
@@ -151,7 +151,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro ゴールド 512GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 138402,
+                'price' => 139800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '512GB',
@@ -161,7 +161,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro グラファイト 512GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 138402,
+                'price' => 139800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '512GB',
@@ -172,7 +172,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro パシフィックブルー 256GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 116622,
+                'price' => 117800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '256GB',
@@ -181,7 +181,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro シルバー 256GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 116622,
+                'price' => 117800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '256GB',
@@ -190,7 +190,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro ゴールド 256GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 116622,
+                'price' => 117800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '256GB',
@@ -199,7 +199,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro グラファイト 256GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 116622,
+                'price' => 117800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '256GB',
@@ -210,7 +210,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro パシフィックブルー 128GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 105732,
+                'price' => 106800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '128GB',
@@ -219,7 +219,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro シルバー 128GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 105732,
+                'price' => 106800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '128GB',
@@ -228,7 +228,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro ゴールド 128GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 105732,
+                'price' => 106800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '128GB',
@@ -237,7 +237,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'iPhone 12 Pro グラファイト 128GB',
                 'description' => '5GをProで。どんなスマートフォンのチップよりも飛び抜けて高性能なA14 Bionic。暗い場所で撮った写真をつぎのレベルへ引き上げる、Proのカメラシステム。iPhone 12 Pro Maxなら、さらにその上の性能を持つ
                 カメラが使えます。耐落下性能を4倍向上させるCeramic Shieldも採用。',
-                'price' => 105732,
+                'price' => 106800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '128GB',
@@ -250,7 +250,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 100782,
+                'price' => 101800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '256GB',
@@ -261,7 +261,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 100782,
+                'price' => 101800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '256GB',
@@ -272,7 +272,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 100782,
+                'price' => 101800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '256GB',
@@ -283,7 +283,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 100782,
+                'price' => 101800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '256GB',
@@ -296,7 +296,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 89892,
+                'price' => 90891,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '128GB',
@@ -307,7 +307,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 89892,
+                'price' => 90891,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '128GB',
@@ -318,7 +318,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 89892,
+                'price' => 90891,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '128GB',
@@ -329,7 +329,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 89892,
+                'price' => 90891,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '128GB',
@@ -342,7 +342,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 84942,
+                'price' => 85800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '64GB',
@@ -353,7 +353,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 84942,
+                'price' => 85800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '64GB',
@@ -364,7 +364,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 84942,
+                'price' => 85800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '64GB',
@@ -375,7 +375,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 84942,
+                'price' => 85800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '64GB',
@@ -388,7 +388,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 89892,
+                'price' => 90800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '256GB',
@@ -399,7 +399,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 89892,
+                'price' => 90800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '256GB',
@@ -410,7 +410,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 89892,
+                'price' => 90800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '256GB',
@@ -421,7 +421,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 89892,
+                'price' => 90800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '256GB',
@@ -434,7 +434,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 79902,
+                'price' => 79800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '128GB',
@@ -445,7 +445,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 79902,
+                'price' => 79800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '128GB',
@@ -456,7 +456,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 79902,
+                'price' => 79800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '128GB',
@@ -467,7 +467,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 79902,
+                'price' => 79800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '128GB',
@@ -480,7 +480,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 74052,
+                'price' => 74800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '64GB',
@@ -491,7 +491,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 74052,
+                'price' => 74800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '64GB',
@@ -502,7 +502,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 74052,
+                'price' => 74800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '64GB',
@@ -513,7 +513,7 @@ class ProductsTableSeeder extends Seeder
                 エッジからエッジまで広がるOLEDディスプレイ。耐落下性能を
                 4倍向上させるCeramic Shield。どのカメラでも使えるナイトモード。
                 そのすべてを2つの完璧なサイズで。iPhone 12、登場。',
-                'price' => 74052,
+                'price' => 74800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 12',
                 'capacity' => '64GB',
@@ -523,7 +523,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 Pro Max ミッドナイトグリーン　512GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 156222,
+                'price' => 157800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '512GB',
@@ -531,7 +531,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 Pro Max シルバー 512GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 156222,
+                'price' => 157800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '512GB',
@@ -541,7 +541,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 Pro ミッドナイトグリーン 64GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 105732,
+                'price' => 106800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '64GB',
@@ -549,7 +549,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 Pro シルバー 64GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 105732,
+                'price' => 106800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '64GB',
@@ -559,7 +559,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 ホワイト 256GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 79920,
+                'price' => 80800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '256GB',
@@ -567,7 +567,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 レッド 256GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 79920,
+                'price' => 80800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '256GB',
@@ -575,7 +575,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 ブラック 256GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 79920,
+                'price' => 80800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '256GB',
@@ -583,7 +583,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 パープル 256GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 79920,
+                'price' => 80800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '256GB',
@@ -591,7 +591,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 グリーン 256GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 79920,
+                'price' => 80800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '256GB',
@@ -599,7 +599,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 イエロー 256GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 79920,
+                'price' => 80800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '256GB',
@@ -609,7 +609,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 レッド 128GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 69102,
+                'price' => 69800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '128GB',
@@ -617,7 +617,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 ホワイト 128GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 69102,
+                'price' => 69800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '128GB',
@@ -625,7 +625,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 ブラック 128GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 69102,
+                'price' => 69800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '128GB',
@@ -633,7 +633,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 パープル 128GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 69102,
+                'price' => 69800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '128GB',
@@ -641,7 +641,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 グリーン 128GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 69102,
+                'price' => 69800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '128GB',
@@ -649,7 +649,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 イエロー 128GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 69102,
+                'price' => 69800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '128GB',
@@ -659,7 +659,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 レッド 64GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 64152,
+                'price' => 64800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '64GB',
@@ -667,7 +667,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 ホワイト 64GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 64152,
+                'price' => 64800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '64GB',
@@ -675,7 +675,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 ブラック 64GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 64152,
+                'price' => 64800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '64GB',
@@ -683,7 +683,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 パープル 64GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 64152,
+                'price' => 64800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '64GB',
@@ -691,7 +691,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 グリーン 64GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 64152,
+                'price' => 64800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '64GB',
@@ -699,7 +699,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone 11 イエロー 64GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
-                'price' => 64152,
+                'price' => 64800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone 11',
                 'capacity' => '64GB',
@@ -712,7 +712,7 @@ class ProductsTableSeeder extends Seeder
                 耐久性の高いガラスとアルミニウムのボディ
                 あざやかな4.7インチ　Retina HDディスプレイ
                 iPhone 11 Proと同じチップ',
-                'price' => 60192,
+                'price' => 60800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone SE',
                 'capacity' => '256GB',
@@ -723,7 +723,7 @@ class ProductsTableSeeder extends Seeder
                 耐久性の高いガラスとアルミニウムのボディ
                 あざやかな4.7インチ　Retina HDディスプレイ
                 iPhone 11 Proと同じチップ',
-                'price' => 60192,
+                'price' => 60800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone SE',
                 'capacity' => '256GB',
@@ -734,7 +734,7 @@ class ProductsTableSeeder extends Seeder
                 耐久性の高いガラスとアルミニウムのボディ
                 あざやかな4.7インチ　Retina HDディスプレイ
                 iPhone 11 Proと同じチップ',
-                'price' => 60192,
+                'price' => 60800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone SE',
                 'capacity' => '256GB',
@@ -746,7 +746,7 @@ class ProductsTableSeeder extends Seeder
                 耐久性の高いガラスとアルミニウムのボディ
                 あざやかな4.7インチ　Retina HDディスプレイ
                 iPhone 11 Proと同じチップ',
-                'price' => 49302,
+                'price' => 49800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone SE',
                 'capacity' => '128GB',
@@ -757,7 +757,7 @@ class ProductsTableSeeder extends Seeder
                 耐久性の高いガラスとアルミニウムのボディ
                 あざやかな4.7インチ　Retina HDディスプレイ
                 iPhone 11 Proと同じチップ',
-                'price' => 49302,
+                'price' => 49800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone SE',
                 'capacity' => '128GB',
@@ -768,7 +768,7 @@ class ProductsTableSeeder extends Seeder
                 耐久性の高いガラスとアルミニウムのボディ
                 あざやかな4.7インチ　Retina HDディスプレイ
                 iPhone 11 Proと同じチップ',
-                'price' => 49302,
+                'price' => 49800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone SE',
                 'capacity' => '128GB',
@@ -780,7 +780,7 @@ class ProductsTableSeeder extends Seeder
                 耐久性の高いガラスとアルミニウムのボディ
                 あざやかな4.7インチ　Retina HDディスプレイ
                 iPhone 11 Proと同じチップ',
-                'price' => 44352,
+                'price' => 44800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone SE',
                 'capacity' => '64GB',
@@ -791,7 +791,7 @@ class ProductsTableSeeder extends Seeder
                 耐久性の高いガラスとアルミニウムのボディ
                 あざやかな4.7インチ　Retina HDディスプレイ
                 iPhone 11 Proと同じチップ',
-                'price' => 44352,
+                'price' => 44800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone SE',
                 'capacity' => '64GB',
@@ -802,7 +802,7 @@ class ProductsTableSeeder extends Seeder
                 耐久性の高いガラスとアルミニウムのボディ
                 あざやかな4.7インチ　Retina HDディスプレイ
                 iPhone 11 Proと同じチップ',
-                'price' => 44352,
+                'price' => 44800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone SE',
                 'capacity' => '64GB',
@@ -812,7 +812,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone XS Max シルバー 256GB',
                 'description' => 'Super Retinaに2つのサイズ。その1つは、これまでの iPhone の中で最大のディスプレイ。さらに速くなった Face ID も。スマートフォンの中で最も賢く、最もパワフルなチップも。画期的なデュアルカメラシステムも。iPhone の魅力のすべてを極限まで高めた姿。それが、iPhone XS です。',
-                'price' => 85320,
+                'price' => 86182,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone XS',
                 'capacity' => '256GB',
@@ -821,7 +821,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone XS Max スペースグレイ 64GB',
                 'description' => 'Super Retinaに2つのサイズ。その1つは、これまでの iPhone の中で最大のディスプレイ。さらに速くなった Face ID も。スマートフォンの中で最も賢く、最もパワフルなチップも。画期的なデュアルカメラシステムも。iPhone の魅力のすべてを極限まで高めた姿。それが、iPhone XS です。',
-                'price' => 75420,
+                'price' => 76182,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone XS',
                 'capacity' => '64GB',
@@ -830,7 +830,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone XS スペースグレイ 256GB',
                 'description' => 'Super Retinaに2つのサイズ。その1つは、これまでの iPhone の中で最大のディスプレイ。さらに速くなった Face ID も。スマートフォンの中で最も賢く、最もパワフルなチップも。画期的なデュアルカメラシステムも。iPhone の魅力のすべてを極限まで高めた姿。それが、iPhone XS です。',
-                'price' => 73620,
+                'price' => 74364,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone XS',
                 'capacity' => '256GB',
@@ -838,7 +838,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone XS シルバー 256GB',
                 'description' => 'Super Retinaに2つのサイズ。その1つは、これまでの iPhone の中で最大のディスプレイ。さらに速くなった Face ID も。スマートフォンの中で最も賢く、最もパワフルなチップも。画期的なデュアルカメラシステムも。iPhone の魅力のすべてを極限まで高めた姿。それが、iPhone XS です。',
-                'price' => 73620,
+                'price' => 74364,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone XS',
                 'capacity' => '256GB',
@@ -846,7 +846,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'iPhone XS ゴールド 256GB',
                 'description' => 'Super Retinaに2つのサイズ。その1つは、これまでの iPhone の中で最大のディスプレイ。さらに速くなった Face ID も。スマートフォンの中で最も賢く、最もパワフルなチップも。画期的なデュアルカメラシステムも。iPhone の魅力のすべてを極限まで高めた姿。それが、iPhone XS です。',
-                'price' => 73620,
+                'price' => 74364,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone XS',
                 'capacity' => '256GB',
@@ -860,7 +860,7 @@ class ProductsTableSeeder extends Seeder
                 最も先進的なLCD。さらに速くなったFace IDも。スマートフォンの中で
                 最も賢く、最もパワフルなチップも。画期的なカメラシステムも。
                 iPhone XR は、どこから見ても美しい。',
-                'price' => 59202,
+                'price' => 59800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone XR',
                 'capacity' => '128GB',
@@ -872,7 +872,7 @@ class ProductsTableSeeder extends Seeder
                 最も先進的なLCD。さらに速くなったFace IDも。スマートフォンの中で
                 最も賢く、最もパワフルなチップも。画期的なカメラシステムも。
                 iPhone XR は、どこから見ても美しい。',
-                'price' => 59202,
+                'price' => 59800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone XR',
                 'capacity' => '128GB',
@@ -884,7 +884,7 @@ class ProductsTableSeeder extends Seeder
                 最も先進的なLCD。さらに速くなったFace IDも。スマートフォンの中で
                 最も賢く、最もパワフルなチップも。画期的なカメラシステムも。
                 iPhone XR は、どこから見ても美しい。',
-                'price' => 59202,
+                'price' => 59800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone XR',
                 'capacity' => '128GB',
@@ -896,7 +896,7 @@ class ProductsTableSeeder extends Seeder
                 最も先進的なLCD。さらに速くなったFace IDも。スマートフォンの中で
                 最も賢く、最もパワフルなチップも。画期的なカメラシステムも。
                 iPhone XR は、どこから見ても美しい。',
-                'price' => 59202,
+                'price' => 59800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone XR',
                 'capacity' => '128GB',
@@ -908,7 +908,7 @@ class ProductsTableSeeder extends Seeder
                 最も先進的なLCD。さらに速くなったFace IDも。スマートフォンの中で
                 最も賢く、最もパワフルなチップも。画期的なカメラシステムも。
                 iPhone XR は、どこから見ても美しい。',
-                'price' => 59202,
+                'price' => 59800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone XR',
                 'capacity' => '128GB',
@@ -920,7 +920,7 @@ class ProductsTableSeeder extends Seeder
                 最も先進的なLCD。さらに速くなったFace IDも。スマートフォンの中で
                 最も賢く、最もパワフルなチップも。画期的なカメラシステムも。
                 iPhone XR は、どこから見ても美しい。',
-                'price' => 59202,
+                'price' => 59800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone XR',
                 'capacity' => '128GB',
@@ -933,7 +933,7 @@ class ProductsTableSeeder extends Seeder
                 最も先進的なLCD。さらに速くなったFace IDも。スマートフォンの中で
                 最も賢く、最もパワフルなチップも。画期的なカメラシステムも。
                 iPhone XR は、どこから見ても美しい。',
-                'price' => 54252,
+                'price' => 54800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone XR',
                 'capacity' => '64GB',
@@ -945,7 +945,7 @@ class ProductsTableSeeder extends Seeder
                 最も先進的なLCD。さらに速くなったFace IDも。スマートフォンの中で
                 最も賢く、最もパワフルなチップも。画期的なカメラシステムも。
                 iPhone XR は、どこから見ても美しい。',
-                'price' => 54252,
+                'price' => 54800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone XR',
                 'capacity' => '64GB',
@@ -957,7 +957,7 @@ class ProductsTableSeeder extends Seeder
                 最も先進的なLCD。さらに速くなったFace IDも。スマートフォンの中で
                 最も賢く、最もパワフルなチップも。画期的なカメラシステムも。
                 iPhone XR は、どこから見ても美しい。',
-                'price' => 54252,
+                'price' => 54800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone XR',
                 'capacity' => '64GB',
@@ -969,7 +969,7 @@ class ProductsTableSeeder extends Seeder
                 最も先進的なLCD。さらに速くなったFace IDも。スマートフォンの中で
                 最も賢く、最もパワフルなチップも。画期的なカメラシステムも。
                 iPhone XR は、どこから見ても美しい。',
-                'price' => 54252,
+                'price' => 54800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone XR',
                 'capacity' => '64GB',
@@ -981,7 +981,7 @@ class ProductsTableSeeder extends Seeder
                 最も先進的なLCD。さらに速くなったFace IDも。スマートフォンの中で
                 最も賢く、最もパワフルなチップも。画期的なカメラシステムも。
                 iPhone XR は、どこから見ても美しい。',
-                'price' => 54252,
+                'price' => 54800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone XR',
                 'capacity' => '64GB',
@@ -993,7 +993,7 @@ class ProductsTableSeeder extends Seeder
                 最も先進的なLCD。さらに速くなったFace IDも。スマートフォンの中で
                 最も賢く、最もパワフルなチップも。画期的なカメラシステムも。
                 iPhone XR は、どこから見ても美しい。',
-                'price' => 54252,
+                'price' => 54800,
                 'category_master' => 'iPhone',
                 'category' => 'iPhone XR',
                 'capacity' => '64GB',
@@ -1075,7 +1075,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'Xperia 1 II ホワイト 256GB',
                 'description' => '体験は進化する、かつてないスピードで。初の5G対応Xperia。
                 カメラやシネマ、テレビ、オーディオ、ゲーム、パフォーマンスすべての領域を極めてきた、ソニーの技術をひとつに。あらゆる体験を革新する次世代高速通信5Gによって、エンタテインメントはこれまでにない感動の世界へ。',
-                'price' => 122760,
+                'price' => 124000,
                 'category_master' => 'Xperia',
                 'category' => 'Xperia 1 II',
                 'capacity' => '256GB',
@@ -1084,7 +1084,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'Xperia 1 II フロストブラック 256GB',
                 'description' => '体験は進化する、かつてないスピードで。初の5G対応Xperia。
                 カメラやシネマ、テレビ、オーディオ、ゲーム、パフォーマンスすべての領域を極めてきた、ソニーの技術をひとつに。あらゆる体験を革新する次世代高速通信5Gによって、エンタテインメントはこれまでにない感動の世界へ。',
-                'price' => 122760,
+                'price' => 124000,
                 'category_master' => 'Xperia',
                 'category' => 'Xperia 1 II',
                 'capacity' => '256GB',
@@ -1093,7 +1093,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'Xperia 1 II パープル 256GB',
                 'description' => '体験は進化する、かつてないスピードで。初の5G対応Xperia。
                 カメラやシネマ、テレビ、オーディオ、ゲーム、パフォーマンスすべての領域を極めてきた、ソニーの技術をひとつに。あらゆる体験を革新する次世代高速通信5Gによって、エンタテインメントはこれまでにない感動の世界へ。',
-                'price' => 122760,
+                'price' => 124000,
                 'category_master' => 'Xperia',
                 'category' => 'Xperia 1 II',
                 'capacity' => '256GB',
@@ -1102,7 +1102,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'Xperia 5 レッド 128GB',
                 'description' => 'ハンドフィットサイズの新Xperiaで、21：9シネマワイドの感動体験を。',
-                'price' => 68310,
+                'price' => 69000,
                 'category_master' => 'Xperia',
                 'category' => 'Xperia 5',
                 'capacity' => '128GB',
@@ -1110,7 +1110,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'Xperia 5 ブルー 128GB',
                 'description' => 'ハンドフィットサイズの新Xperiaで、21：9シネマワイドの感動体験を。',
-                'price' => 68310,
+                'price' => 69000,
                 'category_master' => 'Xperia',
                 'category' => 'Xperia 5',
                 'capacity' => '128GB',
@@ -1118,7 +1118,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'Xperia 5 ブラック 128GB',
                 'description' => 'ハンドフィットサイズの新Xperiaで、21：9シネマワイドの感動体験を。',
-                'price' => 68310,
+                'price' => 69000,
                 'category_master' => 'Xperia',
                 'category' => 'Xperia 5',
                 'capacity' => '128GB',
@@ -1126,7 +1126,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'Xperia 5 グレー 128GB',
                 'description' => 'ハンドフィットサイズの新Xperiaで、21：9シネマワイドの感動体験を。',
-                'price' => 68310,
+                'price' => 69000,
                 'category_master' => 'Xperia',
                 'category' => 'Xperia 5',
                 'capacity' => '128GB',
@@ -1136,7 +1136,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'Xperia 1 ブラック 128GB',
                 'description' => '1から生まれ変わった、ソニー渾身のフラッグシップ。',
-                'price' => 78210,
+                'price' => 79000,
                 'category_master' => 'Xperia',
                 'category' => 'Xperia 1',
                 'capacity' => '128GB',
@@ -1144,7 +1144,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'Xperia 1 パープル 128GB',
                 'description' => '1から生まれ変わった、ソニー渾身のフラッグシップ。',
-                'price' => 78210,
+                'price' => 79000,
                 'category_master' => 'Xperia',
                 'category' => 'Xperia 1',
                 'capacity' => '128GB',
@@ -1154,7 +1154,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'AQUOS zero2 ブラック 256GB',
                 'description' => '世界最軽量4倍速ディスプレイで異次元の操作体験へ',
-                'price' => 79920,
+                'price' => 80728,
                 'category_master' => 'AQUOS',
                 'category' => 'zero2',
                 'capacity' => '256GB',
@@ -1162,7 +1162,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'AQUOS zero2 シルバー 256GB',
                 'description' => '世界最軽量4倍速ディスプレイで異次元の操作体験へ',
-                'price' => 79920,
+                'price' => 80728,
                 'category_master' => 'AQUOS',
                 'category' => 'zero2',
                 'capacity' => '256GB',
@@ -1172,7 +1172,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'AQUOS sense4 ライトカッパー 64GB',
                 'description' => 'AQUOS 史上最大容量のバッテリーを備え、長時間の電池持ちをかなえたモデルです。',
-                'price' => 35541,
+                'price' => 35900,
                 'category_master' => 'AQUOS',
                 'category' => 'sense4',
                 'capacity' => '64GB',
@@ -1180,7 +1180,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'AQUOS sense4 ブラック 64GB',
                 'description' => 'AQUOS 史上最大容量のバッテリーを備え、長時間の電池持ちをかなえたモデルです。',
-                'price' => 35541,
+                'price' => 35900,
                 'category_master' => 'AQUOS',
                 'category' => 'sense4',
                 'capacity' => '64GB',
@@ -1188,7 +1188,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'AQUOS sense4 シルバーホワイト',
                 'description' => 'AQUOS 史上最大容量のバッテリーを備え、長時間の電池持ちをかなえたモデルです。',
-                'price' => 35541,
+                'price' => 35900,
                 'category_master' => 'AQUOS',
                 'category' => 'sense4',
                 'capacity' => '64GB',
@@ -1198,7 +1198,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'AQUOS sense3 ライトカッパー 64GB',
                 'description' => '充電から、あなたを解き放つ。圧倒的な電池持ちを追求したモデルです。4,000mAhの大容量バッテリーを搭載。これまで同様の持ちやすさもキープしつつ、長時間の電池持ちを実現しました。消費電力の低減を追及したシャープ独自のIGZOディスプレイと、大容量バッテリーとの相乗効果で、充電を気にせず使えます。急速充電を繰り返しても電池が劣化しにくいよう、充電を賢くコントロールする「インテリジェントチャージ」に対応。急速充電規格「USB Power Delivery」に対応している同梱のACアダプターを使用すれば、高速充電が可能です。',
-                'price' => 30096,
+                'price' => 30400,
                 'category_master' => 'AQUOS',
                 'category' => 'sense3',
                 'capacity' => '64GB',
@@ -1206,7 +1206,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'AQUOS sense3 ブラック 64GB',
                 'description' => '充電から、あなたを解き放つ。圧倒的な電池持ちを追求したモデルです。4,000mAhの大容量バッテリーを搭載。これまで同様の持ちやすさもキープしつつ、長時間の電池持ちを実現しました。消費電力の低減を追及したシャープ独自のIGZOディスプレイと、大容量バッテリーとの相乗効果で、充電を気にせず使えます。急速充電を繰り返しても電池が劣化しにくいよう、充電を賢くコントロールする「インテリジェントチャージ」に対応。急速充電規格「USB Power Delivery」に対応している同梱のACアダプターを使用すれば、高速充電が可能です。',
-                'price' => 30096,
+                'price' => 30400,
                 'category_master' => 'AQUOS',
                 'category' => 'sense3',
                 'capacity' => '64GB',
@@ -1214,7 +1214,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'AQUOS sense3 シルバーホワイト 64GB',
                 'description' => '充電から、あなたを解き放つ。圧倒的な電池持ちを追求したモデルです。4,000mAhの大容量バッテリーを搭載。これまで同様の持ちやすさもキープしつつ、長時間の電池持ちを実現しました。消費電力の低減を追及したシャープ独自のIGZOディスプレイと、大容量バッテリーとの相乗効果で、充電を気にせず使えます。急速充電を繰り返しても電池が劣化しにくいよう、充電を賢くコントロールする「インテリジェントチャージ」に対応。急速充電規格「USB Power Delivery」に対応している同梱のACアダプターを使用すれば、高速充電が可能です。',
-                'price' => 30096,
+                'price' => 30400,
                 'category_master' => 'AQUOS',
                 'category' => 'sense3',
                 'capacity' => '64GB',
