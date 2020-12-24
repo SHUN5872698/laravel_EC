@@ -6,137 +6,25 @@
 
 @section('content')
 <h1>メインページ</h1>
-<div class="col-12">
+<div class="row">
     @foreach ($products as $product)
+    <div class="col-md-3 my-3">
+        <div class="card">
+            <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
+            <div class="card-body">
+                <p>
+                    <font size="2"><a href="#">{{$product->name}}</a></font>
+                    <br>
+                    価格:
+                    <font size="3" color="red">
+                        ¥{{number_format($product->price * $Tax->percentage)}}</font>(税込)
+                    <br>
+                    <font size="3"><a href="#">カテゴリー: {{$product->category}}</a></font>
+                </p>
+            </div>
+        </div>
+    </div>
     @endforeach
-    <div class="row my-3">
-        <div class="col-md-3">
-            <div class="card">
-                <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
-                <div class="card-body">
-                    <a href="#">{{$product->name}}</a>
-                    <br>
-                    <a href="#">{{$product->category}}</a>
-                    <br>
-                    <p>¥{{$product->price}}</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the cards content.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the cards content.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the cards content.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row my-3">
-        <div class="col-md-3">
-            <div class="card">
-                <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the cards content.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the cards content.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the cards content.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the cards content.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row my-3">
-        <div class="col-md-3">
-            <div class="card">
-                <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the cards content.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the cards content.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the cards content.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the cards content.</p>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 @endsection
 @yield('footer')
