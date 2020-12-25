@@ -9,39 +9,52 @@ use App\Models\Tax;
 
 class ProductController extends Controller
 {
-    /**メインページに移動 */
+
+    /**
+     * メインページ
+     *　現在の税率と商品情報をランダムに取得する
+     * @param Request $request
+     * @return void
+     */
     public function main(Request $request)
     {
         //現在の税率の取得
-        $Tax = new Tax();
-        $Tax = $Tax->getTax();
+        $tax = new Tax();
+        $tax = $tax->getTax();
 
-        $products = Product::with('productimage')
-            ->join('productimages', 'product_id',  '=', 'products.id')
-            ->where('productimages.kubun', 'main')
-            ->select(
-                'products.id',
-                'products.name',
-                'products.description',
-                'products.price',
-                'products.category_master',
-                'products.category',
-                'products.capacity',
-                'productimages.product_id',
-                'productimages.image',
-            )
-            ->inRandomOrder()
-            ->take(12)
-            ->get();
+        //商品情報と画像データをランダムに取得
+        $products = new Product();
+        $products = $products->getProducts();
 
         $data = [
             'products' => $products,
-            'Tax' => $Tax,
+            'Tax' => $tax,
         ];
-
-        // dd($data);
         return view('EC.main', $data);
     }
+
+    /**
+     * masterカテゴリーから商品の絞り込みをして表示する
+     * @param Request $request
+     * @return void
+     */
+    public function master(Request $request)
+    {
+        //現在の税率の取得
+        $tax = new Tax();
+        $tax = $tax->getTax();
+
+        //masterカテゴリーから商品の絞り込みをして表示する
+        $master = new Product();
+        $master = $master->getMaster($request);
+
+        $data = [
+            'master' => $master,
+            'Tax' => $tax,
+        ];
+        return view('EC.search', $data);
+    }
+
 
     /**ログイン済みのメインページに移動 */
     public function login_main(Request $request)
