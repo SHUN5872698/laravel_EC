@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 
 class Product extends Model
@@ -19,14 +20,35 @@ class Product extends Model
         return $this->hasMany('App\Models\Productimage', 'product_id', 'image', 'kubun');
     }
 
-    /**
-     * 指定された商品情報と画像データの取得処理
-     */
-    public function getData()
+    /** 商品情報と画像データをランダムに取得*/
+    public function getProducts()
     {
-        $data = Product::with('productimage')
-            ->join('productimages', 'productimages.product_id',  '=', 'products.id')
-            ->where('product_id', 1)
+        $products = Product::with('productimage')
+            ->join('productimages', 'product_id',  '=', 'products.id')
+            ->where('productimages.kubun', 'main')
+            ->select(
+                'products.id',
+                'products.name',
+                'products.price',
+                'products.category_master',
+                'products.category',
+                'products.capacity',
+                'productimages.image',
+            )
+            //商品をランダムに12件取得
+            ->inRandomOrder()
+            ->take(12)
+            ->get();
+        return $products;
+    }
+
+    /** masterカテゴリーから商品の絞り込みをして表示する*/
+    public function getMaster(Request $request)
+    {
+        $master = Product::with('productimage')
+            ->join('productimages', 'product_id',  '=', 'products.id')
+            ->where('products.category_master', $request->master)
+            ->where('productimages.kubun', 'main')
             ->select(
                 'products.id',
                 'products.name',
@@ -37,11 +59,8 @@ class Product extends Model
                 'products.capacity',
                 'productimages.product_id',
                 'productimages.image',
-                'productimages.kubun',
             )
-            ->paginate(10);
-        $data = [
-            'data' => $data,
-        ];
+            ->paginate(12);
+        return $master;
     }
 }
