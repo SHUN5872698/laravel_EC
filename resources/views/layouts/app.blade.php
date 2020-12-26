@@ -33,14 +33,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"><a class="nav-link" href="#">iPhone <span class="sr-only">(current)</span>
+                    <li class="nav-item active"><a class="nav-link" href="/search?category_master=iPhone">iPhone <span class="sr-only">(current)</span>
                         </a></li>
-
-                    <li class="nav-item active"><a class="nav-link" href="#">Xperia <span class="sr-only">(current)</span></a></li>
-
-                    <li class="nav-item active"><a class="nav-link" href="#">Galaxy <span class="sr-only">(current)</span></a></li>
-
-                    <li class="nav-item active"><a class="nav-link" href="#">AQUOS<span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item active"><a class="nav-link" href="/search?category_master=Xperia">Xperia <span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item active"><a class="nav-link" href="/search?category_master=Galaxy">Galaxy <span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item active"><a class="nav-link" href="/search?category_master=AQUOS">AQUOS<span class="sr-only">(current)</span></a></li>
                 </ul>
                 <form class="form-inline">
                     <ul class="navbar-nav mr-auto ">
