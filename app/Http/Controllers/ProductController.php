@@ -45,11 +45,11 @@ class ProductController extends Controller
         $tax = $tax->getTax();
 
         //masterカテゴリーから商品の絞り込みをして表示する
-        $master = new Product();
-        $master = $master->getMaster($request);
+        $products = new Product();
+        $products = $products->getMaster($request);
 
         $data = [
-            'master' => $master,
+            'products' => $products,
             'Tax' => $tax,
         ];
         return view('EC.search', $data);
