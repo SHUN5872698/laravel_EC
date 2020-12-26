@@ -34,6 +34,7 @@ class Product extends Model
                 'products.category',
                 'products.capacity',
                 'productimages.image',
+
             )
             //商品をランダムに12件取得
             ->inRandomOrder()
@@ -47,7 +48,7 @@ class Product extends Model
     {
         $master = Product::with('productimage')
             ->join('productimages', 'product_id',  '=', 'products.id')
-            ->where('products.category_master', $request->master)
+            ->where('products.category_master', $request->category_master)
             ->where('productimages.kubun', 'main')
             ->select(
                 'products.id',
@@ -60,6 +61,7 @@ class Product extends Model
                 'productimages.product_id',
                 'productimages.image',
             )
+            ->orderby('products.id', 'asc')
             ->paginate(12);
         return $master;
     }
