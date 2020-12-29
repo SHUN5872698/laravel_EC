@@ -20,8 +20,8 @@ class Product extends Model
         return $this->hasMany('App\Models\Productimage', 'product_id', 'image', 'kubun');
     }
 
-    /** 商品情報と画像データをランダムに取得*/
-    public function getProducts()
+    /** 商品情報をランダムに取得*/
+    public function Products()
     {
         $products = Product::with('productimage')
             ->join('productimages', 'product_id',  '=', 'products.id')
@@ -43,6 +43,27 @@ class Product extends Model
         return $products;
     }
 
+    /**商品詳細情報の取得 */
+    public function getProduct(Request $request)
+    {
+        $product = Product::with('productimage')
+            ->join('productimages', 'product_id',  '=', 'products.id')
+            ->where('products.id', $request->id)
+            ->select(
+                'products.id',
+                'products.name',
+                'products.description',
+                'products.price',
+                'products.category_master',
+                'products.category',
+                'products.capacity',
+                'productimages.image',
+            )
+            ->orderBy('productimages.id', 'asc')
+            ->get();
+        return $product;
+    }
+
     /** category_masterから商品の絞り込みをして取得*/
     public function getMaster(Request $request)
     {
@@ -53,12 +74,10 @@ class Product extends Model
             ->select(
                 'products.id',
                 'products.name',
-                'products.description',
                 'products.price',
                 'products.category_master',
                 'products.category',
                 'products.capacity',
-                'productimages.product_id',
                 'productimages.image',
             )
             ->orderby('products.id', 'asc')
@@ -89,12 +108,10 @@ class Product extends Model
             ->select(
                 'products.id',
                 'products.name',
-                'products.description',
                 'products.price',
                 'products.category_master',
                 'products.category',
                 'products.capacity',
-                'productimages.product_id',
                 'productimages.image',
             )
             ->orderby('products.id', 'asc')
@@ -127,12 +144,10 @@ class Product extends Model
             ->select(
                 'products.id',
                 'products.name',
-                'products.description',
                 'products.price',
                 'products.category_master',
                 'products.category',
                 'products.capacity',
-                'productimages.product_id',
                 'productimages.image',
             )
             ->orderby('products.id', 'asc')

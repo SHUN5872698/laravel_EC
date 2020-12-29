@@ -12,7 +12,6 @@ class ProductController extends Controller
 
     /**
      * メインページ
-     *　現在の税率と商品情報をランダムに取得する
      * @param Request $request
      * @return void
      */
@@ -24,13 +23,40 @@ class ProductController extends Controller
 
         //商品情報と画像データをランダムに取得
         $products = new Product();
-        $products = $products->getProducts();
+        $products = $products->Products();
 
         $data = [
             'products' => $products,
-            'Tax' => $tax,
+            'tax' => $tax,
         ];
         return view('EC.main', $data);
+    }
+
+    /**
+     * 商品の詳細ページ
+     * @param Request $request
+     * @return void
+     */
+    public function product(Request $request)
+    {
+        //現在の税率の取得
+        $tax = new Tax();
+        $tax = $tax->getTax();
+
+        //商品情報の取得
+        $products = new Product();
+        $products = $products->getProduct($request);
+
+        //category情報を取得して表示する
+        $categorys = new Product();
+        $categorys = $categorys->getCategory($request);
+
+        $data = [
+            'products' => $products,
+            'tax' => $tax,
+            'categorys' => $categorys,
+        ];
+        return view('EC.product', $data);
     }
 
     /**
@@ -54,7 +80,7 @@ class ProductController extends Controller
 
         $data = [
             'products' => $products,
-            'Tax' => $tax,
+            'tax' => $tax,
             'categorys' => $categorys,
         ];
         return view('EC.search', $data);
@@ -85,7 +111,7 @@ class ProductController extends Controller
 
         $data = [
             'products' => $products,
-            'Tax' => $tax,
+            'tax' => $tax,
             'categorys' => $categorys,
             'capacitys' =>  $capacitys,
         ];
@@ -118,7 +144,7 @@ class ProductController extends Controller
 
         $data = [
             'products' => $products,
-            'Tax' => $tax,
+            'tax' => $tax,
             'categorys' => $categorys,
             'capacitys' =>  $capacitys,
         ];
