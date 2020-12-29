@@ -2192,7 +2192,7 @@ class ProductimagesTableSeeder extends Seeder
             ],
             /**sub1 */
             [
-                'product_id' => 85,
+                'product_id' => 84,
                 'image' => 'XS ゴールド sub1.jpg',
                 'kubun' => 'sub',
             ],
