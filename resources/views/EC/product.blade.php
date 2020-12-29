@@ -49,14 +49,23 @@
         <div class="card mr-3 mt-3">
             <div class="card-header">
                 <font color="red">
-                    商品を購入するにはログインが必要です。
+                    ※商品を購入するにはログインが必要です。
                 </font>
+                <br>
+                <div class="btnarea">
+                    <a href="{{ route('login') }}">
+                        <input type="submit" value="ログイン" class="login mt-3">
+                    </a>
+                    <br>
+                    <a href="{{ route('register') }}">
+                        <input type="submit" value="新規登録" class="register mt-3">
+                    </a>
+                </div>
+                <ul class="list-group list-group-flush">
+                </ul>
             </div>
-            <ul class="list-group list-group-flush">
-            </ul>
         </div>
     </div>
-</div>
-@endsection
-@yield('footer')
-@endsection
+    @endsection
+    @yield('footer')
+    @endsection
