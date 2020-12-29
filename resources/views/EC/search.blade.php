@@ -14,7 +14,7 @@
                 <text class="ml-3 mt-2">機種別で選ぶ</text>
                 <li class="list-group-item">
                     @foreach ($categorys as $category)
-                    <a href="/details?category={{$category->category}}&category_master={{$category->category_master}}">{{$category->category}}</a>
+                    <a href="/details/category?category={{$category->category}}&category_master={{$category->category_master}}">{{$category->category}}</a>
                     <br>
                     @endforeach</li>
             </ul>

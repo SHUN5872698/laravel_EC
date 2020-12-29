@@ -73,10 +73,9 @@ class Product extends Model
             ->distinct()
             ->select(
                 'category',
-                'category_master'
+                'category_master',
             )
             ->get();
-
         return $category;
     }
 
@@ -101,5 +100,43 @@ class Product extends Model
             ->orderby('products.id', 'asc')
             ->paginate(12);
         return $searchcategory;
+    }
+
+    /** capacity情報の取得 */
+    public function getCapacity(Request $request)
+    {
+        $capacity = Product::where('category', $request->category)
+            ->distinct()
+            ->select(
+                'category_master',
+                'category',
+                'capacity',
+            )
+            ->get();
+        return $capacity;
+    }
+
+    /** capacityから商品情報を絞り込み */
+    public function getSearchCapacity(Request $request)
+    {
+        $searchcapacity = Product::with('productimage')
+            ->join('productimages', 'product_id',  '=', 'products.id')
+            ->where('products.category', $request->category)
+            ->where('products.capacity', $request->capacity)
+            ->where('productimages.kubun', 'main')
+            ->select(
+                'products.id',
+                'products.name',
+                'products.description',
+                'products.price',
+                'products.category_master',
+                'products.category',
+                'products.capacity',
+                'productimages.product_id',
+                'productimages.image',
+            )
+            ->orderby('products.id', 'asc')
+            ->paginate(12);
+        return $searchcapacity;
     }
 }

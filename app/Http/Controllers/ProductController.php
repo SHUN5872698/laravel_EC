@@ -61,7 +61,7 @@ class ProductController extends Controller
     }
 
     /**
-     * categoryから商品の絞り込みをして表示する
+     * categoryから商品の絞り込みをして取得
      * @param Request $request
      * @return void
      */
@@ -71,9 +71,13 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        //category情報を取得して表示する
+        //category情報の取得
         $categorys = new Product();
         $categorys = $categorys->getCategory($request);
+
+        //capacity情報の取得
+        $capacitys = new Product();
+        $capacitys = $capacitys->getCapacity($request);
 
         //categoryから商品の絞り込みをして取得する
         $products = new Product();
@@ -83,6 +87,40 @@ class ProductController extends Controller
             'products' => $products,
             'Tax' => $tax,
             'categorys' => $categorys,
+            'capacitys' =>  $capacitys,
+        ];
+        return view('EC.deatail', $data);
+    }
+
+    /**
+     * capacityから商品の絞り込みをして取得
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function capacity(Request $request)
+    {
+        //現在の税率の取得
+        $tax = new Tax();
+        $tax = $tax->getTax();
+
+        //category情報の取得
+        $categorys = new Product();
+        $categorys = $categorys->getCategory($request);
+
+        //capacity情報の取得
+        $capacitys = new Product();
+        $capacitys = $capacitys->getCapacity($request);
+
+        //capacityから商品の絞り込みをして取得する
+        $products = new Product();
+        $products = $products->getSearchCapacity($request);
+
+        $data = [
+            'products' => $products,
+            'Tax' => $tax,
+            'categorys' => $categorys,
+            'capacitys' =>  $capacitys,
         ];
         return view('EC.deatail', $data);
     }

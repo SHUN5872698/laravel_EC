@@ -11,12 +11,21 @@
         <div class="card ml-3 mt-3">
             <div class="card-header">詳細検索</div>
             <ul class="list-group list-group-flush">
-                <text class="ml-3 mt-2">機種別で選ぶ</text>
+                <text class="ml-3 mt-2">スペックで選択</text>
                 <li class="list-group-item">
                     @foreach ($categorys as $category)
-                    <a href="/details?category={{$category->category}}&category_master={{$category->category_master}}">{{$category->category}}</a>
+                    <a href="/details/category?category={{$category->category}}&category_master={{$category->category_master}}">{{$category->category}}</a>
                     <br>
                     @endforeach</li>
+                <text class="ml-3 mt-2">容量で選択</text>
+                <li class="list-group-item">
+                    @foreach ($capacitys as $capacity)
+                    <a href="/details/capacity?category_master={{$capacity->category_master}}&category={{$capacity->category}}
+                        &capacity={{$capacity->capacity}}">
+                        {{$capacity->capacity}}</a>
+                    <br>
+                    @endforeach
+                </li>
             </ul>
         </div>
     </div>
