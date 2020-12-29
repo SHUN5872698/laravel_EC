@@ -6,6 +6,76 @@
     color: #ccc;
 }
 
+.btnarea {
+    text-align: center;
+    display: block;
+}
+
+.login {
+    display: inline-block;
+    border-radius: 5%;
+    /* 角丸       */
+    font-size: 14pt;
+    /* 文字サイズ */
+    text-align: center;
+    /* 文字位置   */
+    cursor: pointer;
+    /* カーソル   */
+    padding: 12px 49px;
+    /* 余白       */
+    background: #999999;
+    /* 背景色     */
+    color: #ffffff;
+    /* 文字色     */
+    line-height: 1em;
+    /* 1行の高さ  */
+    transition: .3s;
+    /* なめらか変化 */
+    box-shadow: 2px 2px 2px #666666;
+    /* 影の設定 */
+}
+
+.login:hover {
+    box-shadow: none;
+    /* カーソル時の影消去 */
+    opacity: 1;
+    /* カーソル時透明度 */
+
+}
+
+.register {
+    display: inline-block;
+    border-radius: 5%;
+    /* 角丸       */
+    font-size: 14pt;
+    /* 文字サイズ */
+    text-align: center;
+    /* 文字位置   */
+    cursor: pointer;
+    /* カーソル   */
+    padding: 12px 49px;
+    /* 余白       */
+    background: #1a1aff;
+    /* 背景色     */
+    color: #ffffff;
+    /* 文字色     */
+    line-height: 1em;
+    /* 1行の高さ  */
+    opacity: 0.9;
+    /* 透明度     */
+    transition: .3s;
+    /* なめらか変化 */
+    box-shadow: 2px 2px 2px #666666;
+    /* 影の設定 */
+}
+
+.register:hover {
+    box-shadow: none;
+    /* カーソル時の影消去 */
+    opacity: 1;
+    /* カーソル時透明度 */
+}
+
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
 
