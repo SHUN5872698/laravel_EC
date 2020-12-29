@@ -28,6 +28,9 @@ Route::get('/main', 'ProductController@main');
 /**検索結果ページ */
 Route::get('/search', 'ProductController@master');
 
+/**詳細検索ページ */
+Route::get('/details', 'ProductController@category');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
