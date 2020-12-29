@@ -66,7 +66,7 @@ class Product extends Model
         return $master;
     }
 
-    /** カテゴリー情報から商品の絞り込みをして取得 */
+    /** category情報の取得 */
     public function getCategory(Request $request)
     {
         $category = Product::where('category_master', 'like', $request->category_master . '%')
@@ -77,5 +77,28 @@ class Product extends Model
             ->get();
 
         return $category;
+    }
+
+    /** categoryから機種を絞り込みをして取得 */
+    public function getSearchCategory(Request $request)
+    {
+        $searchcategory = Product::with('productimage')
+            ->join('productimages', 'product_id',  '=', 'products.id')
+            ->where('products.category', $request->category)
+            ->where('productimages.kubun', 'main')
+            ->select(
+                'products.id',
+                'products.name',
+                'products.description',
+                'products.price',
+                'products.category_master',
+                'products.category',
+                'products.capacity',
+                'productimages.product_id',
+                'productimages.image',
+            )
+            ->orderby('products.id', 'asc')
+            ->paginate(12);
+        return $searchcategory;
     }
 }
