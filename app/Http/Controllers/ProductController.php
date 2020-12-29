@@ -44,17 +44,21 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        //masterカテゴリーから商品の絞り込みをして表示する
+        //masterカテゴリーから商品の絞り込みをして取得する
         $products = new Product();
         $products = $products->getMaster($request);
+
+        //category情報を取得して表示する
+        $categorys = new Product();
+        $categorys = $categorys->getCategory($request);
 
         $data = [
             'products' => $products,
             'Tax' => $tax,
+            'categorys' => $categorys,
         ];
         return view('EC.search', $data);
     }
-
 
     /**ログイン済みのメインページに移動 */
     public function login_main(Request $request)
