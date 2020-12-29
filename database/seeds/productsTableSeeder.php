@@ -987,7 +987,7 @@ class ProductsTableSeeder extends Seeder
                 'capacity' => '64GB',
             ],
             [
-                'name' => 'Phone XR イエロー 64GB',
+                'name' => 'iPhone XR イエロー 64GB',
                 'description' => '触れるたびに鮮やか。
                 すべてが新しいLiquid Retinaディスプレイ。それは、業界の中で
                 最も先進的なLCD。さらに速くなったFace IDも。スマートフォンの中で
