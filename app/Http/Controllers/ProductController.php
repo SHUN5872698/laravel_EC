@@ -34,7 +34,7 @@ class ProductController extends Controller
     }
 
     /**
-     * masterカテゴリーから商品の絞り込みをして表示する
+     * category_masterから商品の絞り込みをして表示する
      * @param Request $request
      * @return void
      */
@@ -44,7 +44,7 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        //masterカテゴリーから商品の絞り込みをして取得する
+        //category_masterから商品の絞り込みをして取得する
         $products = new Product();
         $products = $products->getMaster($request);
 
@@ -58,6 +58,28 @@ class ProductController extends Controller
             'categorys' => $categorys,
         ];
         return view('EC.search', $data);
+    }
+
+    /**
+     * categoryから商品の絞り込みをして表示する
+     * @param Request $request
+     * @return void
+     */
+    public function category(Request $request)
+    {
+        //現在の税率の取得
+        $tax = new Tax();
+        $tax = $tax->getTax();
+
+        //categoryから商品の絞り込みをして取得する
+        $products = new Product();
+        $products = $products->getSearchCategory($request);
+
+        $data = [
+            'products' => $products,
+            'Tax' => $tax,
+        ];
+        return view('EC.deatail', $data);
     }
 
     /**ログイン済みのメインページに移動 */
