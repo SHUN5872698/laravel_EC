@@ -71,6 +71,10 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
+        //category情報を取得して表示する
+        $categorys = new Product();
+        $categorys = $categorys->getCategory($request);
+
         //categoryから商品の絞り込みをして取得する
         $products = new Product();
         $products = $products->getSearchCategory($request);
@@ -78,6 +82,7 @@ class ProductController extends Controller
         $data = [
             'products' => $products,
             'Tax' => $tax,
+            'categorys' => $categorys,
         ];
         return view('EC.deatail', $data);
     }
