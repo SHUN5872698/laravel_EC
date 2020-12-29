@@ -25,13 +25,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 /** メインページ */
 Route::get('/main', 'ProductController@main');
 
+/** 商品ページ */
+Route::get('/product', 'ProductController@product');
+
 /** 検索結果ページ */
 Route::get('/search', 'ProductController@master');
 
 /**詳細検索ページ */
-/** categoryで検索 */
+//categoryで検索
 Route::get('/details/category', 'ProductController@category');
-/**capacityで絞り込み */
+//capacityで絞り込み
 Route::get('/details/capacity', 'ProductController@capacity');
 
 Auth::routes();
