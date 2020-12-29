@@ -42,7 +42,15 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 /** ログイン済みのメインページ */
-Route::get('/login_main', 'ProductController@login_main')->middleware('auth');
+Route::get('/login/main', 'ProductController@login_main')->middleware('auth');
+
+/** ログイン済みの商品ページ */
+Route::get('/login/product', 'ProductController@login_product');
+
+/** ログイン済みの検索結果ページ */
+Route::get('/login/search', 'ProductController@login_master');
+
+
 
 /** ユーザー情報ページ */
 Route::get('/user_inf', 'UserController@user_inf')->middleware('auth');
