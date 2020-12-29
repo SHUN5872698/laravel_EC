@@ -15,7 +15,7 @@ class ProductController extends Controller
      * @param Request $request
      * @return void
      */
-    public function main(Request $request)
+    public function main()
     {
         //現在の税率の取得
         $tax = new Tax();
@@ -47,7 +47,7 @@ class ProductController extends Controller
         $products = new Product();
         $products = $products->getProduct($request);
 
-        //category情報を取得して表示する
+        //category情報を取得
         $categorys = new Product();
         $categorys = $categorys->getCategory($request);
 
@@ -60,7 +60,8 @@ class ProductController extends Controller
     }
 
     /**
-     * category_masterから商品の絞り込みをして表示する
+     * category_masterから商品の絞り込み
+     * カテゴリー検索ページ
      * @param Request $request
      * @return void
      */
@@ -70,11 +71,11 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        //category_masterから商品の絞り込みをして取得する
+        //category_masterから商品の絞り込み
         $products = new Product();
         $products = $products->getMaster($request);
 
-        //category情報を取得して表示する
+        //category情報を取得
         $categorys = new Product();
         $categorys = $categorys->getCategory($request);
 
@@ -87,7 +88,8 @@ class ProductController extends Controller
     }
 
     /**
-     * categoryから商品の絞り込みをして取得
+     * categoryから商品の絞り込み
+     * 商品詳細ページ
      * @param Request $request
      * @return void
      */
@@ -119,8 +121,8 @@ class ProductController extends Controller
     }
 
     /**
-     * capacityから商品の絞り込みをして取得
-     *
+     * capacityから商品の絞り込み
+     * 商品詳細ページ
      * @param Request $request
      * @return void
      */
@@ -151,9 +153,80 @@ class ProductController extends Controller
         return view('EC.deatail', $data);
     }
 
-    /**ログイン済みのメインページに移動 */
+    /**
+     * ログイン済みのメインページ
+     * @param Request $request
+     * @return void
+     */
     public function login_main(Request $request)
     {
-        return view('login_EC.login_main');
+        //現在の税率の取得
+        $tax = new Tax();
+        $tax = $tax->getTax();
+
+        //商品情報と画像データをランダムに取得
+        $products = new Product();
+        $products = $products->Products();
+
+        $data = [
+            'products' => $products,
+            'tax' => $tax,
+        ];
+        return view('login_EC.login_main', $data);
+    }
+
+    /**
+     * ログイン済みの商品ページ
+     * @param Request $request
+     * @return void
+     */
+    public function login_product(Request $request)
+    {
+        //現在の税率の取得
+        $tax = new Tax();
+        $tax = $tax->getTax();
+
+        //商品情報の取得
+        $products = new Product();
+        $products = $products->getProduct($request);
+
+        //category情報を取得して表示する
+        $categorys = new Product();
+        $categorys = $categorys->getCategory($request);
+
+        $data = [
+            'products' => $products,
+            'tax' => $tax,
+            'categorys' => $categorys,
+        ];
+        return view('login_EC.login_product', $data);
+    }
+
+    /**
+     * category_masterから商品の絞り込み
+     * ログイン済みのカテゴリー検索ページ
+     * @param Request $request
+     * @return void
+     */
+    public function login_master(Request $request)
+    {
+        //現在の税率の取得
+        $tax = new Tax();
+        $tax = $tax->getTax();
+
+        //category_masterから商品の絞り込み
+        $products = new Product();
+        $products = $products->getMaster($request);
+
+        //category情報を取得
+        $categorys = new Product();
+        $categorys = $categorys->getCategory($request);
+
+        $data = [
+            'products' => $products,
+            'tax' => $tax,
+            'categorys' => $categorys,
+        ];
+        return view('login_EC.login_search', $data);
     }
 }
