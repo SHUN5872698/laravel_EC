@@ -37,13 +37,15 @@
                     <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
                     <div class="card-body">
                         <p>
-                            <font size="2"><a href="#">{{$product->name}}</a></font>
+                            <font size="2"><a href="/product?id={{$product->id}}&category_master={{$product->category_master}}">{{$product->name}}</a></font>
                             <br>
                             価格:
                             <font size="3" color="red">
-                                ¥{{number_format($product->price * $Tax->percentage)}}</font>(税込)
+                                ¥{{number_format($product->price * $tax->percentage)}}</font>
+                            <font size="2" color="red">(税込)</font>
                             <br>
-                            <font size="3"><a href="#">カテゴリー: {{$product->category}}</a></font>
+                            スペック:
+                            <a href="/details/category?category={{$product->category}}&category_master={{$product->category_master}}"> {{$product->category}}</a>
                         </p>
                     </div>
                 </div>
