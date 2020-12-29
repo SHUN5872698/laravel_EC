@@ -1,6 +1,6 @@
 @extends('layouts.ec')
 @yield('css')
-@section('title', 'メインページ')
+@section('title', '詳細検索ページ')
 
 @section('menubar')
 

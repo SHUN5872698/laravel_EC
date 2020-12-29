@@ -1,11 +1,11 @@
-@extends('layouts.ec')
+@extends('layouts.login_ec')
 @yield('css')
-@section('title', 'メインページ')
+@section('title', 'ログイン済み商品ページ')
 
 @section('menubar')
 
 @section('content')
-<h1>ログイン済みの商品ページ</h1>
+<h1>ログイン済み商品ページ</h1>
 <div class="row">
     <div class="col-md-3">
         <div class="card ml-3 mt-3">
@@ -29,7 +29,7 @@
                     商品を絞り込む
                     <br>
                     @foreach ($categorys as $category)
-                    <a href="/details/category?category={{$category->category}}&category_master={{$category->category_master}}">{{$category->category}}</a>
+                    <a href="/login/details/category?category={{$category->category}}&category_master={{$category->category_master}}">{{$category->category}}</a>
                     <br>
                     @endforeach</li>
             </ul>

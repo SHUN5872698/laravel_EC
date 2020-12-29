@@ -1,5 +1,6 @@
 @extends('layouts.login_ec')
-@section('title', 'メインページ')
+@yield('css')
+@section('title', 'ログイン済みメインページ')
 
 @section('menubar')
 
