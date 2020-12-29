@@ -43,7 +43,7 @@ class Product extends Model
         return $products;
     }
 
-    /** masterカテゴリーから商品の絞り込みをして表示する*/
+    /** category_masterから商品の絞り込みをして取得*/
     public function getMaster(Request $request)
     {
         $master = Product::with('productimage')
@@ -64,5 +64,18 @@ class Product extends Model
             ->orderby('products.id', 'asc')
             ->paginate(12);
         return $master;
+    }
+
+    /** カテゴリー情報から商品の絞り込みをして取得 */
+    public function getCategory(Request $request)
+    {
+        $category = Product::where('category_master', 'like', $request->category_master . '%')
+            ->distinct()
+            ->select(
+                'category',
+            )
+            ->get();
+
+        return $category;
     }
 }
