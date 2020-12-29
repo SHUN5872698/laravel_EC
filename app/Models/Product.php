@@ -73,6 +73,7 @@ class Product extends Model
             ->distinct()
             ->select(
                 'category',
+                'category_master'
             )
             ->get();
 
