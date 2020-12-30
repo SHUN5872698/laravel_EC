@@ -45,12 +45,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/login/main', 'ProductController@login_main')->middleware('auth');
 
 /** ログイン済みの商品ページ */
-Route::get('/login/product', 'ProductController@login_product');
+Route::get('/login/product', 'ProductController@login_product')->middleware('auth');
 
 /** ログイン済みの検索結果ページ */
-Route::get('/login/search', 'ProductController@login_master');
+Route::get('/login/search', 'ProductController@login_master')->middleware('auth');
 
-
+/** ログイン済みの詳細検索結果ページ */
+//categoryで検索
+Route::get('/login/details/category', 'ProductController@login_category')->middleware('auth');
+//capacityで絞り込み
+Route::get('/login/details/capacity', 'ProductController@login_capacity')->middleware('auth');
 
 /** ユーザー情報ページ */
 Route::get('/user_inf', 'UserController@user_inf')->middleware('auth');
