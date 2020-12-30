@@ -56,7 +56,7 @@
                     ※商品を購入するにはログインが必要です。
                 </font>
                 <br>
-                <div class="btnarea">
+                <div class="card-product">
                     <a href="{{ route('login') }}">
                         <input type="submit" value="ログイン" class="login mt-3">
                     </a>
