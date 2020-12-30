@@ -229,4 +229,70 @@ class ProductController extends Controller
         ];
         return view('login_EC.login_search', $data);
     }
+
+    /**
+     * categoryから商品の絞り込み
+     * ログイン済みの商品詳細ページ
+     * @param Request $request
+     * @return void
+     */
+    public function login_category(Request $request)
+    {
+        //現在の税率の取得
+        $tax = new Tax();
+        $tax = $tax->getTax();
+
+        //category情報の取得
+        $categorys = new Product();
+        $categorys = $categorys->getCategory($request);
+
+        //capacity情報の取得
+        $capacitys = new Product();
+        $capacitys = $capacitys->getCapacity($request);
+
+        //categoryから商品の絞り込みをして取得する
+        $products = new Product();
+        $products = $products->getSearchCategory($request);
+
+        $data = [
+            'products' => $products,
+            'tax' => $tax,
+            'categorys' => $categorys,
+            'capacitys' =>  $capacitys,
+        ];
+        return view('login_EC.login_details', $data);
+    }
+
+    /**
+     * capacityから商品の絞り込み
+     * ログイン済みの商品詳細ページ
+     * @param Request $request
+     * @return void
+     */
+    public function login_capacity(Request $request)
+    {
+        //現在の税率の取得
+        $tax = new Tax();
+        $tax = $tax->getTax();
+
+        //category情報の取得
+        $categorys = new Product();
+        $categorys = $categorys->getCategory($request);
+
+        //capacity情報の取得
+        $capacitys = new Product();
+        $capacitys = $capacitys->getCapacity($request);
+
+        //capacityから商品の絞り込みをして取得する
+        $products = new Product();
+        $products = $products->getSearchCapacity($request);
+
+        $data = [
+            'products' => $products,
+            'tax' => $tax,
+            'categorys' => $categorys,
+            'capacitys' =>  $capacitys,
+        ];
+        return view('login_EC.login_details', $data);
+    }
 }
