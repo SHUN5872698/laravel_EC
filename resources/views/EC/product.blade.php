@@ -22,7 +22,11 @@
                     <font size="2" color="red">(税込)</font>
                     <br>
                     容量: {{$product->capacity}}
-                    <br>{{$product->description}}
+                </li>
+                <li class="list-group-item">
+
+                    <p>商品概要
+                        <br>{{$product->description}}</p>
                 </li>
                 <li class="list-group-item">
                     商品を絞り込む
