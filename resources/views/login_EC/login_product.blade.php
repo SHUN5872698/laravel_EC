@@ -54,6 +54,31 @@
     <div class="col-md-3">
         <div class="card mr-3 mt-3">
             <div class="card-header">
+                <form action="/login/cart" method="post">
+                    @csrf
+                    <div class="card-product">
+                        <p class="count">
+                            数量：
+                            <select name="count">
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </p>
+                        <input type="hidden" name="user_id" value={{Auth::user()->id}}>
+                        @foreach ($products as $product)
+                        @endforeach
+                        <input type="hidden" name="product_id" value={{$product->id}}>
+                        <input type="submit" value="カートに追加する" class="cart_in">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
