@@ -157,7 +157,7 @@ class ProductController extends Controller
      * @param Request $request
      * @return void
      */
-    public function login_main(Request $request)
+    public function login_main()
     {
         //現在の税率の取得
         $tax = new Tax();
