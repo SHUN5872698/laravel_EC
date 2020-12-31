@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-use Carbon\Carbon;
 use App\Models\Tax;
 
 class ProductController extends Controller
