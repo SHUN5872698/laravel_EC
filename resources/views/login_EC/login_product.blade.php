@@ -54,7 +54,7 @@
     <div class="col-md-3">
         <div class="card mr-3 mt-3">
             <div class="card-header">
-                <form action="/login/cart" method="post">
+                <form action="/login/cart_in" method="post">
                     @csrf
                     <div class="card-product">
                         <p class="count">
