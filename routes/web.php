@@ -56,6 +56,9 @@ Route::get('/login/details/category', 'ProductController@login_category')->middl
 //capacityで絞り込み
 Route::get('/login/details/capacity', 'ProductController@login_capacity')->middleware('auth');
 
+/** cartに追加処理 */
+Route::post('/login/cart_in', 'CartController@cart_in')->middleware('auth');
+
 /** ユーザー情報ページ */
 Route::get('/user_inf', 'UserController@user_inf')->middleware('auth');
 
