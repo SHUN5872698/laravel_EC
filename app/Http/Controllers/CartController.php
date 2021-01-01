@@ -5,10 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Cart_item;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Cartitem;
 use App\User;
-use App\Models\Product;
-use App\Models\Productimage;
+use App\Models\Tax;
 use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
@@ -38,18 +36,65 @@ class CartController extends Controller
             //レコードを新規作成
             $cart_in->fill($form)->save();
 
-            //userのカート情報を取得してcart情報ページへ移動
-            return view('login_EC.login_main');
-        } else if ($cart_in != null) {
+            //現在の税率の取得
+            $tax = new Tax();
+            $tax = $tax->getTax();
+
+            //userのカート情報と税率を取得してcart情報ページへ移動
+            $cart_items = new Cart_item();
+            $cart_items = $cart_items->getCart_items($request);
+
+            $data = [
+                'tax' => $tax,
+                'cart_items' => $cart_items,
+            ];
+            return view('login_EC.login_cart', $data);
             /**レコードが存在していた場合は該当のレコードの購入数に追加してレコードをアップデート */
+        } else if ($cart_in != null) {
             $form = $request->count;
 
             //タイムスタンプを無効化
             $cart_in->timestamps = false;
+            //該当レコードの購入数を追加
             $cart_in->increment('count', $form);
 
-            //userのカート情報を取得してcart情報ページへ移動
-            return view('login_EC.login_main');
+            //現在の税率の取得
+            $tax = new Tax();
+            $tax = $tax->getTax();
+
+            //userのカート情報と税率を取得してcart情報ページへ移動
+            $cart_items = new Cart_item();
+            $cart_items = $cart_items->getCart_items($request);
+
+            $data = [
+                'tax' => $tax,
+                'cart_items' => $cart_items,
+            ];
+            dd($data);
+            return view('login_EC.login_cart', $data);
         }
+    }
+
+    /**
+     * カートページ
+     * @param Request $request
+     * @return void
+     */
+    public function cart_read(Request $request)
+    {
+        //現在の税率の取得
+        $tax = new Tax();
+        $tax = $tax->getTax();
+
+        //userのカート情報と税率を取得してcart情報ページへ移動
+        $cart_items = new Cart_item();
+        $cart_items = $cart_items->getCart_items($request);
+
+        $data = [
+            'tax' => $tax,
+            'cart_items' => $cart_items,
+        ];
+        // dd($data);
+        return view('login_EC.login_cart', $data);
     }
 }
