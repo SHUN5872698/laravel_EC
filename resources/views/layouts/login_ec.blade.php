@@ -52,6 +52,10 @@
                                     <font color="black">ユーザー情報</font>
                                 </a>
                                 <br>
+                                <a href="/login/cart_read">
+                                    <font color="black">カート情報</font>
+                                </a>
+                                <br>
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                                     <font color="black">ログアウト</font>
