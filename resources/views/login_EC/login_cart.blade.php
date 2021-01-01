@@ -11,22 +11,31 @@
         <div class="card ml-3 mt-3">
             <div class="card-header">ショッピングカート</div>
             <div class="row">
-                @foreach ($cart_items as $product)
-                <div class="col-md-3 ml-3 my-2">
+                @foreach ($cart_items as $cart)
+                <div class="col-md-3 my-2">
                     <div class="card">
-                        <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="250">
+                        <img src="../images/{{$cart->image}}" class="card-img-top my-3" alt="..." width="300" height="250">
                         <div class="card-body">
-                            <p>
-                                <font size="2"><a href="/login/product?id={{$product->id}}&category_master={{$product->category_master}}">{{$product->name}}</a></font>
-                                <br>
-                                価格:
-                                <font size="3" color="red">
-                                    ¥{{number_format($product->price * $tax->percentage)}}</font>
-                                <font size="2" color="red">(税込)</font>
-                                <br>
-                                スペック:
-                                <a href="/login/details/category?category={{$product->category}}&category_master={{$product->category_master}}"> {{$product->category}}</a>
-                            </p>
+                            <div class="row ml-2">
+                                <p class="product-name">
+                                    <font size="3"><a href="/login/product?id={{$cart->id}}&category_master={{$cart->category_master}}">{{$cart->name}}</a></font>
+                                </p>
+                                <p class="product-price">
+                                    単品価格:
+                                    <font size="2" color="red">
+                                        ¥{{number_format($cart->price * $tax->percentage)}}</font>
+                                    <font size="2" color="red">(税込)</font>
+                                </p>
+                                <p class="cart-count">購入数</p>
+                                <form action="/login/cart_count_up" method="GET">
+                                    <input type="number" class='count-number ml-1' name="count" min="0" max="100" value={{$cart->count}}>
+                                    <button type="button" class="btn btn-secondary btn-sm ml-2">変更</button>
+                                </form>
+                                <p class="product-spec">
+                                    スペック:
+                                    <a href="/login/details/category?category={{$cart->category}}&category_master={{$cart->category_master}}"> {{$cart->category}}</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
