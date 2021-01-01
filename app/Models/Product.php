@@ -23,7 +23,7 @@ class Product extends Model
     /** 商品情報をランダムに取得*/
     public function Products()
     {
-        $products = Product::with('productimage')
+        $products = Product::with('Productimage')
             ->join('productimages', 'product_id',  '=', 'products.id')
             ->where('productimages.kubun', 'main')
             ->select(
@@ -46,7 +46,7 @@ class Product extends Model
     /**商品詳細情報の取得 */
     public function getProduct(Request $request)
     {
-        $product = Product::with('productimage')
+        $product = Product::with('Productimage')
             ->join('productimages', 'product_id',  '=', 'products.id')
             ->where('products.id', $request->id)
             ->select(
@@ -67,7 +67,7 @@ class Product extends Model
     /** category_masterから商品の絞り込みをして取得*/
     public function getMaster(Request $request)
     {
-        $master = Product::with('productimage')
+        $master = Product::with('Productimage')
             ->join('productimages', 'product_id',  '=', 'products.id')
             ->where('products.category_master', $request->category_master)
             ->where('productimages.kubun', 'main')
@@ -101,7 +101,7 @@ class Product extends Model
     /** categoryから機種を絞り込みをして取得 */
     public function getSearchCategory(Request $request)
     {
-        $searchcategory = Product::with('productimage')
+        $searchcategory = Product::with('Productimage')
             ->join('productimages', 'product_id',  '=', 'products.id')
             ->where('products.category', $request->category)
             ->where('productimages.kubun', 'main')
@@ -136,7 +136,7 @@ class Product extends Model
     /** capacityから商品情報を絞り込み */
     public function getSearchCapacity(Request $request)
     {
-        $searchcapacity = Product::with('productimage')
+        $searchcapacity = Product::with('Productimage')
             ->join('productimages', 'product_id',  '=', 'products.id')
             ->where('products.category', $request->category)
             ->where('products.capacity', $request->capacity)
