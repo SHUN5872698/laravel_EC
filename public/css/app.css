@@ -12,7 +12,7 @@
     display: block;
 }
 
-/* 商品ページ */
+/** ログインボタン */
 .login {
     display: inline-block;
     border-radius: 5%;
@@ -71,6 +71,7 @@
     /* 影の設定 */
 }
 
+/** 新規登録ボタン*/
 .register:hover {
     box-shadow: none;
     /* カーソル時の影消去 */
@@ -78,7 +79,7 @@
     /* カーソル時透明度 */
 }
 
-/*ログイン済み商品ページ */
+/** カートに追加するボタン */
 .cart_in {
     display: inline-block;
     border-radius: 5%;
@@ -111,6 +112,12 @@
     opacity: 2;
     /* カーソル時透明度 */
 }
+
+/** cartの購入数 */
+input.count-number {
+    width: 60px;
+}
+
 
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
