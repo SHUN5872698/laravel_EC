@@ -8,7 +8,7 @@
 <h1>詳細検索</h1>
 <div class="row">
     <div class="col-md-3">
-        <div class="card ml-3 mt-3">
+        <div class="card ml-4 mt-3">
             <div class="card-header">詳細検索</div>
             <ul class="list-group list-group-flush">
                 <text class="ml-3 mt-2">スペックで選択</text>
@@ -29,12 +29,13 @@
             </ul>
         </div>
     </div>
-    <div class="col-md-9">
+
+    <div class="col-md-8 ml-4">
         <div class="row">
             @foreach ($products as $product)
             <div class="col-md-4 my-3">
                 <div class="card">
-                    <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
+                    <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="250" height="280">
                     <div class="card-body">
                         <p>
                             <font size="2"><a href="/product?id={{$product->id}}&category_master={{$product->category_master}}">{{$product->name}}</a></font>

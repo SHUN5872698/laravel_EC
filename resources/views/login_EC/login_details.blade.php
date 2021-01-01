@@ -30,12 +30,12 @@
         </div>
     </div>
 
-    <div class="col-md-9">
+    <div class="col-md-8 ml-4">
         <div class="row">
             @foreach ($products as $product)
             <div class="col-md-4 my-3">
                 <div class="card">
-                    <img src="/images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
+                    <img src="/images/{{$product->image}}" class="card-img-top my-3" alt="..." width="250" height="280">
                     <div class="card-body">
                         <p>
                             <font size="2"><a href="/login/product?id={{$product->id}}&category_master={{$product->category_master}}">{{$product->name}}</a></font>

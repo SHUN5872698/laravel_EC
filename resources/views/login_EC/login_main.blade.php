@@ -9,7 +9,7 @@
 <div class="row">
     @foreach ($products as $product)
     <div class="col-md-3 my-3">
-        <div class="card ml-3">
+        <div class="card mx-3">
             <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
             <div class="card-body">
                 <p>
@@ -29,5 +29,6 @@
     @endforeach
 </div>
 @endsection
+
 @yield('footer')
 @endsection
