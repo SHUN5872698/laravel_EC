@@ -59,6 +59,9 @@ Route::get('/login/details/capacity', 'ProductController@login_capacity')->middl
 /** cartに追加処理 */
 Route::post('/login/cart_in', 'CartController@cart_in')->middleware('auth');
 
+/** カートページ */
+Route::get('/login/cart_read', 'CartController@cart_read')->middleware('auth');
+
 /** ユーザー情報ページ */
 Route::get('/user_inf', 'UserController@user_inf')->middleware('auth');
 
