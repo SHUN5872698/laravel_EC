@@ -521,7 +521,7 @@ class ProductsTableSeeder extends Seeder
 
             /**iPhone 11 Pro Max 512GB */
             [
-                'name' => 'iPhone 11 Pro Max ミッドナイトグリーン　512GB',
+                'name' => 'iPhone 11 Pro Max ミッドナイトグリーン512GB',
                 'description' => 'iPhone 11はデュアルカメラシステム、一日中持続するバッテリー、パワフルなA13 Bionicチップを搭載。背面には傷に強い、とても頑丈なガラスを採用。',
                 'price' => 157800,
                 'category_master' => 'iPhone',
