@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class Cart_item extends Model
 {
+    public $timestamps = false;
+
     /**ガードするフィールド */
     protected $guarded = array('id');
 
@@ -27,6 +30,7 @@ class Cart_item extends Model
     {
         return $this->hasMany('App\Models\Product', 'id', 'name', 'description', 'price', 'category_master', 'category', 'capacity');
     }
+
     /**
      * productimagesテーブルとのリレーション
      * @return void
@@ -36,10 +40,10 @@ class Cart_item extends Model
         return $this->hasMany('App\Models\Productimage', 'product_id', 'image', 'kubun');
     }
 
-    /**カート情報の取得 */
-    public function getCart_items(Request $request)
+    /** カート情報の取得 */
+    public function getCart_items()
     {
-        $cart_items = Cart_item::with('User')
+        $cart_items = Cart_item::with('User', 'Product', 'Productimage')
             ->join('users', 'users.id', '=', 'cart_items.user_id')
             ->join('products', 'products.id', '=', 'cart_items.product_id')
             ->join('productimages', 'productimages.product_id', '=', 'products.id')
@@ -59,6 +63,20 @@ class Cart_item extends Model
             )
             ->orderby('cart_items.id', 'asc')
             ->paginate(12);
+
         return $cart_items;
     }
+
+    // /** 購入数の変更*/
+    // public function CountUp(Request $request)
+    // {
+
+    //     $cart_items = Cart_item::where('user_id', Auth::user()->id)
+    //         ->where('product_id', $request->product_id)
+    //         ->update([
+    //             'count' => $request->count,
+    //         ]);
+    //     dd($cart_items);
+    //     return $cart_items;
+    // }
 }
