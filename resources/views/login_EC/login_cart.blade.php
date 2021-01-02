@@ -16,22 +16,21 @@
                     <div class="card">
                         <img src="../images/{{$cart->image}}" class="card-img-top my-3" alt="..." width="300" height="250">
                         <div class="card-body">
-                            <div class="row ml-2">
-                                <p class="product-name">
+                            <div class="row">
+
+                                <p class="cart-items">
                                     <font size="3"><a href="/login/product?id={{$cart->id}}&category_master={{$cart->category_master}}">{{$cart->name}}</a></font>
-                                </p>
-                                <p class="product-price">
+                                    <br>
                                     単品価格:
-                                    <font size="2" color="red">
+                                    <font size="3" color="red">
                                         ¥{{number_format($cart->price * $tax->percentage)}}</font>
                                     <font size="2" color="red">(税込)</font>
-                                </p>
-                                <p class="cart-count">購入数</p>
-                                <form action="/login/cart_count_up" method="GET">
-                                    <input type="number" class='count-number ml-1' name="count" min="0" max="100" value={{$cart->count}}>
-                                    <button type="button" class="btn btn-secondary btn-sm ml-2">変更</button>
-                                </form>
-                                <p class="product-spec">
+                                    <br>
+                                    <form action="/login/cart_count_up" method="GET">
+                                        購入数
+                                        <input type="number" class='count-number ml-1' name="count" min="0" max="100" value={{$cart->count}}>
+                                        <button type="button" class="btn btn-secondary btn-sm ml-2">変更</button>
+                                    </form>
                                     スペック:
                                     <a href="/login/details/category?category={{$cart->category}}&category_master={{$cart->category_master}}"> {{$cart->category}}</a>
                                 </p>
@@ -48,7 +47,11 @@
     <div class="col-md-3">
         <div class="card mr-3 mt-3">
             <div class="card-header">小計</div>
-            <div class="card-body"></div>
+            <div class="card-body">
+                <font size="6" color="red">
+                    ¥{{number_format($total_price * $tax->percentage)}}</font>
+                <font size="2" color="red">(税込)</font>
+            </div>
         </div>
     </div>
 </div>
