@@ -36,19 +36,9 @@ class CartController extends Controller
             //レコードを新規作成
             $cart_in->fill($form)->save();
 
-            //現在の税率の取得
-            $tax = new Tax();
-            $tax = $tax->getTax();
+            //カートページにリダイレクト
+            return redirect('login/cart_read');
 
-            //userのカート情報と税率を取得してcart情報ページへ移動
-            $cart_items = new Cart_item();
-            $cart_items = $cart_items->getCart_items($request);
-
-            $data = [
-                'tax' => $tax,
-                'cart_items' => $cart_items,
-            ];
-            return view('login_EC.login_cart', $data);
             /**レコードが存在していた場合は該当のレコードの購入数に追加してレコードをアップデート */
         } else if ($cart_in != null) {
             $form = $request->count;
@@ -58,20 +48,8 @@ class CartController extends Controller
             //該当レコードの購入数を追加
             $cart_in->increment('count', $form);
 
-            //現在の税率の取得
-            $tax = new Tax();
-            $tax = $tax->getTax();
-
-            //userのカート情報と税率を取得してcart情報ページへ移動
-            $cart_items = new Cart_item();
-            $cart_items = $cart_items->getCart_items($request);
-
-            $data = [
-                'tax' => $tax,
-                'cart_items' => $cart_items,
-            ];
-            dd($data);
-            return view('login_EC.login_cart', $data);
+            //カートページにリダイレクト
+            return redirect('login/cart_read');
         }
     }
 
@@ -90,11 +68,18 @@ class CartController extends Controller
         $cart_items = new Cart_item();
         $cart_items = $cart_items->getCart_items($request);
 
+        $total_price = 0;
+
+        foreach ($cart_items as $cart) {
+            $total_price += $cart->price * $cart->count;
+        }
+
+
         $data = [
             'tax' => $tax,
             'cart_items' => $cart_items,
+            'total_price' => $total_price,
         ];
-        // dd($data);
         return view('login_EC.login_cart', $data);
     }
 }
