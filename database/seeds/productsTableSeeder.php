@@ -1004,7 +1004,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'Galaxy Note20 Ultra ブロンズ 256GB',
                 'description' => 'ビジネスやプライベートを彩るミスティックカラー
                 精巧なディテールと卓越したカラーによって昇華されたメタルボディに、高耐久ガラスのCorning® Gorilla® Glass Victus™を装備。1 本体との統一感を損なわない同色のSペンが付属します。',
-                'price' => 107320,
+                'price' => 107273,
                 'category_master' => 'Galaxy',
                 'category' => 'Note20 Ultra',
                 'capacity' => '256GB',
@@ -1013,7 +1013,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'Galaxy Note20 Ultra ブラック 256GB',
                 'description' => 'ビジネスやプライベートを彩るミスティックカラー
                 精巧なディテールと卓越したカラーによって昇華されたメタルボディに、高耐久ガラスのCorning® Gorilla® Glass Victus™を装備。1 本体との統一感を損なわない同色のSペンが付属します。',
-                'price' => 107320,
+                'price' => 107273,
                 'category_master' => 'Galaxy',
                 'category' => 'Note20 Ultra',
                 'capacity' => '256GB',
@@ -1025,7 +1025,7 @@ class ProductsTableSeeder extends Seeder
                 'description' => '未来の形を変えるスマートフォンが今ここに。
                 最先端の折りたたみスマホ Galaxy Z Fold2 5Gは、パワフルな性能、フォルダブルガラス、
                 一日中利用可能な大容量バッテリーを搭載した手のひらサイズのデバイスです。',
-                'price' => 203915,
+                'price' => 203909,
                 'category_master' => 'Galaxy',
                 'category' => 'Z Fold2',
                 'capacity' => '256GB',
@@ -1035,7 +1035,7 @@ class ProductsTableSeeder extends Seeder
                 'description' => '未来の形を変えるスマートフォンが今ここに。
                 最先端の折りたたみスマホ Galaxy Z Fold2 5Gは、パワフルな性能、フォルダブルガラス、
                 一日中利用可能な大容量バッテリーを搭載した手のひらサイズのデバイスです。',
-                'price' => 203915,
+                'price' => 203909,
                 'category_master' => 'Galaxy',
                 'category' => 'Z Fold2',
                 'capacity' => '256GB',
@@ -1046,7 +1046,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'Galaxy Z FLIP ブラック 256GB',
                 'description' => '革命的なフレキシブルガラスが生み出したのは、フルスクリーンなのに折りたたんでポケットにすっぽりと収まるスマホ。カメラは自立での撮影が可能に。デュアルバッテリーで、一日中ストレスなく操作できます。
                 あなたが手にするのは、スマホの未来を変える、新たなカタチです。',
-                'price' => 85855,
+                'price' => 85818,
                 'category_master' => 'Galaxy',
                 'category' => 'Z FLIP',
                 'capacity' => '256GB',
@@ -1055,7 +1055,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'Galaxy Z FLIP パープル 256GB',
                 'description' => '革命的なフレキシブルガラスが生み出したのは、フルスクリーンなのに折りたたんでポケットにすっぽりと収まるスマホ。カメラは自立での撮影が可能に。デュアルバッテリーで、一日中ストレスなく操作できます。
                 あなたが手にするのは、スマホの未来を変える、新たなカタチです。',
-                'price' => 85855,
+                'price' => 85818,
                 'category_master' => 'Galaxy',
                 'category' => 'Z FLIP',
                 'capacity' => '256GB',
@@ -1064,7 +1064,7 @@ class ProductsTableSeeder extends Seeder
                 'name' => 'Galaxy Z FLIP ゴールド 256GB',
                 'description' => '革命的なフレキシブルガラスが生み出したのは、フルスクリーンなのに折りたたんでポケットにすっぽりと収まるスマホ。カメラは自立での撮影が可能に。デュアルバッテリーで、一日中ストレスなく操作できます。
                 あなたが手にするのは、スマホの未来を変える、新たなカタチです。',
-                'price' => 85855,
+                'price' => 85818,
                 'category_master' => 'Galaxy',
                 'category' => 'Z FLIP',
                 'capacity' => '256GB',
@@ -1154,7 +1154,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'AQUOS zero2 ブラック 256GB',
                 'description' => '世界最軽量4倍速ディスプレイで異次元の操作体験へ',
-                'price' => 80728,
+                'price' => 80727,
                 'category_master' => 'AQUOS',
                 'category' => 'zero2',
                 'capacity' => '256GB',
@@ -1162,7 +1162,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'AQUOS zero2 シルバー 256GB',
                 'description' => '世界最軽量4倍速ディスプレイで異次元の操作体験へ',
-                'price' => 80728,
+                'price' => 80727,
                 'category_master' => 'AQUOS',
                 'category' => 'zero2',
                 'capacity' => '256GB',
@@ -1172,7 +1172,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'AQUOS sense4 ライトカッパー 64GB',
                 'description' => 'AQUOS 史上最大容量のバッテリーを備え、長時間の電池持ちをかなえたモデルです。',
-                'price' => 35900,
+                'price' => 33636,
                 'category_master' => 'AQUOS',
                 'category' => 'sense4',
                 'capacity' => '64GB',
@@ -1180,7 +1180,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'AQUOS sense4 ブラック 64GB',
                 'description' => 'AQUOS 史上最大容量のバッテリーを備え、長時間の電池持ちをかなえたモデルです。',
-                'price' => 35900,
+                'price' => 33636,
                 'category_master' => 'AQUOS',
                 'category' => 'sense4',
                 'capacity' => '64GB',
@@ -1188,7 +1188,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'AQUOS sense4 シルバーホワイト',
                 'description' => 'AQUOS 史上最大容量のバッテリーを備え、長時間の電池持ちをかなえたモデルです。',
-                'price' => 35900,
+                'price' => 33636,
                 'category_master' => 'AQUOS',
                 'category' => 'sense4',
                 'capacity' => '64GB',
@@ -1198,7 +1198,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'AQUOS sense3 ライトカッパー 64GB',
                 'description' => '充電から、あなたを解き放つ。圧倒的な電池持ちを追求したモデルです。4,000mAhの大容量バッテリーを搭載。これまで同様の持ちやすさもキープしつつ、長時間の電池持ちを実現しました。消費電力の低減を追及したシャープ独自のIGZOディスプレイと、大容量バッテリーとの相乗効果で、充電を気にせず使えます。急速充電を繰り返しても電池が劣化しにくいよう、充電を賢くコントロールする「インテリジェントチャージ」に対応。急速充電規格「USB Power Delivery」に対応している同梱のACアダプターを使用すれば、高速充電が可能です。',
-                'price' => 30400,
+                'price' => 29091,
                 'category_master' => 'AQUOS',
                 'category' => 'sense3',
                 'capacity' => '64GB',
@@ -1206,7 +1206,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'AQUOS sense3 ブラック 64GB',
                 'description' => '充電から、あなたを解き放つ。圧倒的な電池持ちを追求したモデルです。4,000mAhの大容量バッテリーを搭載。これまで同様の持ちやすさもキープしつつ、長時間の電池持ちを実現しました。消費電力の低減を追及したシャープ独自のIGZOディスプレイと、大容量バッテリーとの相乗効果で、充電を気にせず使えます。急速充電を繰り返しても電池が劣化しにくいよう、充電を賢くコントロールする「インテリジェントチャージ」に対応。急速充電規格「USB Power Delivery」に対応している同梱のACアダプターを使用すれば、高速充電が可能です。',
-                'price' => 30400,
+                'price' => 29091,
                 'category_master' => 'AQUOS',
                 'category' => 'sense3',
                 'capacity' => '64GB',
@@ -1214,7 +1214,7 @@ class ProductsTableSeeder extends Seeder
             [
                 'name' => 'AQUOS sense3 シルバーホワイト 64GB',
                 'description' => '充電から、あなたを解き放つ。圧倒的な電池持ちを追求したモデルです。4,000mAhの大容量バッテリーを搭載。これまで同様の持ちやすさもキープしつつ、長時間の電池持ちを実現しました。消費電力の低減を追及したシャープ独自のIGZOディスプレイと、大容量バッテリーとの相乗効果で、充電を気にせず使えます。急速充電を繰り返しても電池が劣化しにくいよう、充電を賢くコントロールする「インテリジェントチャージ」に対応。急速充電規格「USB Power Delivery」に対応している同梱のACアダプターを使用すれば、高速充電が可能です。',
-                'price' => 30400,
+                'price' => 29091,
                 'category_master' => 'AQUOS',
                 'category' => 'sense3',
                 'capacity' => '64GB',
