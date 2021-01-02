@@ -17,20 +17,27 @@
                         <img src="../images/{{$cart->image}}" class="card-img-top my-3" alt="..." width="300" height="250">
                         <div class="card-body">
                             <div class="row">
-
                                 <p class="cart-items">
                                     <font size="3"><a href="/login/product?id={{$cart->id}}&category_master={{$cart->category_master}}">{{$cart->name}}</a></font>
-                                    <br>
+                                </p>
+                                <p class="price">
                                     単品価格:
                                     <font size="3" color="red">
                                         ¥{{number_format($cart->price * $tax->percentage)}}</font>
                                     <font size="2" color="red">(税込)</font>
                                     <br>
-                                    <form action="/login/cart_count_up" method="GET">
+                                </p>
+                                <p>
+                                    <form action="CountUp" method="get">
+                                        @csrf
                                         購入数
-                                        <input type="number" class='count-number ml-1' name="count" min="0" max="100" value={{$cart->count}}>
-                                        <button type="button" class="btn btn-secondary btn-sm ml-2">変更</button>
+                                        <input type="number" class='count-number ml-1' name="count" min="1" max="100" value={{$cart->count}}>
+                                        <input type="hidden" name="product_id" value={{$cart->product_id}}>
+                                        <input type="submit" class="btn btn-secondary btn-sm ml-1" value="変更">
+                                        <button type="button" class="btn btn-outline-danger btn-sm ml-1" onclick="location.href='/login/delete?product_id={{$cart->product_id}}';">削除</button>
                                     </form>
+                                </p>
+                                <p class="spec mt-3">
                                     スペック:
                                     <a href="/login/details/category?category={{$cart->category}}&category_master={{$cart->category_master}}"> {{$cart->category}}</a>
                                 </p>
