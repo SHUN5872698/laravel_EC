@@ -46,47 +46,16 @@ class CartController extends Controller
      */
     public function cart_in(Request $request)
     {
-        $cart_in = Cart_item::where('user_id', $request->user_id)
-            ->where('product_id', $request->product_id)
-            ->get();
-        /** 同一のuser_idとproduct_idが存在しなかった場合
-         * cart_itemsテーブルにレコードを新規作成*/
-        if ($cart_in == null) {
+        Cart_item::updateOrInsert(
+            ['user_id' => $request->user_id, 'product_id' => $request->product_id],
+            ['count' => $request->count]
+        );
 
-            // Cart_itemモデルのオブジェクト作成
-            $cart_in = new Cart_item();
-
-            // formの内容を全て取得
-            $form = $request->all();
-
-            // ユーザーIDはログインユーザーのuser_idを代入
-            $form['user_id'] = Auth::user()->id;
-
-            //タイムスタンプを無効化
-            $cart_in->timestamps = false;
-
-            //レコードを新規作成
-            $cart_in->fill($form)->save();
-
-            //カートページにリダイレクト
-            return redirect('login/cart_read');
-
-            /**レコードが存在していた場合は該当のレコードの購入数に追加してレコードをアップデート */
-        } else if ($cart_in != null) {
-
-            // formから送られてきた商品数を取得
-            $form = $request->count;
-
-            //タイムスタンプを無効化
-            $cart_in->timestamps = false;
-
-            //該当レコードの購入数を追加
-            $cart_in->increment('count', $form);
-
-            //カートページにリダイレクト
-            return redirect('login/cart_read');
-        }
+        //カートページにリダイレクト
+        return redirect('login/cart_read');
     }
+
+
 
     /** カートの商品購入数の変更 */
     public function CountUp(Request $request)
