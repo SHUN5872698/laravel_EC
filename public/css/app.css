@@ -118,6 +118,41 @@ input.count-number {
     width: 60px;
 }
 
+/** カートに追加するボタン */
+.order_check {
+    display: inline-block;
+    border-radius: 5%;
+    /* 角丸       */
+    font-size: 12pt;
+    /* 文字サイズ */
+    text-align: center;
+    /* 文字位置   */
+    cursor: pointer;
+    /* カーソル   */
+    padding: 8px 69px;
+    /* 余白       */
+    background: #ff7f00;
+    /* 背景色     */
+    color: #ffffff;
+    /* 文字色     */
+    line-height: 1em;
+    /* 1行の高さ  */
+    opacity: 0.9;
+    /* 透明度     */
+    transition: .3s;
+    /* なめらか変化 */
+    box-shadow: 4px 4px 3px #666666;
+    /* 影の設定 */
+}
+
+.order_check:hover {
+    box-shadow: none;
+    /* カーソル時の影消去 */
+    opacity: 2;
+    /* カーソル時透明度 */
+}
+
+
 
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
