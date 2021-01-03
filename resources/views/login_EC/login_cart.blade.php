@@ -16,7 +16,7 @@
                     <div class="card">
                         <img src="../images/{{$cart->image}}" class="card-img-top my-3" alt="..." width="300" height="250">
                         <div class="card-body">
-                            <div class="row">
+                            <div clproass="row">
                                 <p class="cart-items">
                                     <font size="3"><a href="/login/product?id={{$cart->id}}&category_master={{$cart->category_master}}">{{$cart->name}}</a></font>
                                 </p>
@@ -58,6 +58,7 @@
                 <font size="6" color="red">
                     ¥{{number_format($total_price * $tax->percentage)}}</font>
                 <font size="2" color="red">(税込)</font>
+                <a href="/login/order_check"><input type="submit" value="購入確認ページへ" class="order_check"></a>
             </div>
         </div>
     </div>
