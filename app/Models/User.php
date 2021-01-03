@@ -18,4 +18,27 @@ class User extends Model
     {
         return $this->hasOne('App\Models\Prefecture', 'id');
     }
+
+    public function getUser()
+    {
+        //users情報の取得
+        $users = User::with('prefecture')
+            ->join('prefectures', 'prefectures.id',  '=', 'users.prefecture_id')
+            ->where('users.id', Auth::user()->id)
+            //ユーザー情報を取得して確認ページへ渡す
+            ->select(
+                'users.id',
+                'prefectures.name as prefectures_name',
+                'users.name',
+                'users.email',
+                'users.phone',
+                'users.postcode',
+                'users.city',
+                'users.block',
+                'users.building'
+            )
+            ->get();
+
+        return $users;
+    }
 }

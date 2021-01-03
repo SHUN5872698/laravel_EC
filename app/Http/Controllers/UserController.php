@@ -16,24 +16,9 @@ class UserController extends Controller
      */
     public function user_inf()
     {
-        //usersテーブルとprefecturesテーブルのリレーションを実行
-        $users = User::with('prefecture')
-            ->join('prefectures', 'prefectures.id',  '=', 'users.prefecture_id')
-            ->where('users.id', Auth::user()->id)
-            //ユーザー情報を取得して確認ページへ渡す
-            ->select(
-                'users.id',
-                'prefectures.name as prefectures_name',
-                'users.name',
-                'users.password',
-                'users.email',
-                'users.phone',
-                'users.postcode',
-                'users.city',
-                'users.block',
-                'users.building'
-            )
-            ->paginate(10);
+        //Userモデルからユーザ情報の取得
+        $users = new User();
+        $users = $users->getUser();
 
         $data = [
             'users' => $users,
