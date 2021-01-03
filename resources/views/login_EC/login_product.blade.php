@@ -8,7 +8,7 @@
 <h1>ログイン済み商品ページ</h1>
 <div class="row">
     <div class="col-md-3">
-        <div class="card ml-3 mt-3">
+        <div class="card ml-3 my-3">
             <div class="card-header">商品情報</div>
             <ul class="list-group list-group-flush">
                 @foreach ($products as $product)
@@ -40,10 +40,10 @@
             </ul>
         </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 my-3">
         <div class="row">
             @foreach ($products as $product)
-            <div class="col-md-6 my-3">
+            <div class="col-md-6 mb-3">
                 <div class="card">
                     <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
                 </div>
@@ -52,12 +52,12 @@
         </div>
     </div>
     <div class="col-md-3">
-        <div class="card mr-3 mt-3">
+        <div class="card mr-3 my-3">
             <div class="card-header">
-                <form action="/login/cart_in" method="post">
-                    @csrf
-                    <div class="card-product">
-                        <p class="count">
+                <div class="card-product">
+                    <form action="/login/cart_in" method="post">
+                        @csrf
+                        <div class="count">
                             数量：
                             <select name="count">
                                 <option value="1" selected>1</option>
@@ -71,13 +71,13 @@
                                 <option value="9">9</option>
                                 <option value="10">10</option>
                             </select>
-                        </p>
+                        </div>
                         <input type="hidden" name="user_id" value={{Auth::user()->id}}>
                         @foreach ($products as $product)
                         @endforeach
                         <input type="hidden" name="product_id" value={{$product->id}}>
-                        <input type="submit" value="カートに追加する" class="cart_in">
-                    </div>
+                        <input type="submit" value="カートに追加する" class="cart_in my-3">
+                </div>
                 </form>
             </div>
         </div>
