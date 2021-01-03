@@ -40,7 +40,10 @@ class Cart_item extends Model
         return $this->hasMany('App\Models\Productimage', 'product_id', 'image', 'kubun');
     }
 
-    /** カート情報の取得 */
+    /**
+     * カート情報の取得
+     * @return void
+     */
     public function getCart_items()
     {
         $cart_items = Cart_item::with('User', 'Product', 'Productimage')
@@ -65,6 +68,26 @@ class Cart_item extends Model
             ->paginate(12);
 
         return $cart_items;
+    }
+    /**
+     * 購入確認のデータ取得
+     */
+    public function getOrder_Check()
+    {
+        $order_check = Cart_item::with('User', 'Product')
+            ->join('users', 'users.id', '=', 'cart_items.user_id')
+            ->join('products', 'products.id', '=', 'cart_items.product_id')
+            ->where('cart_items.user_id', Auth::user()->id)
+            ->select(
+                'cart_items.id',
+                'cart_items.count',
+                'products.name',
+                'products.price',
+            )
+            ->orderby('cart_items.id', 'asc')
+            ->paginate(12);
+
+        return $order_check;
     }
 
     // /** 購入数の変更*/

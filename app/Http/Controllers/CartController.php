@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart_item;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
-use App\User;
+use App\Models\User;
 use App\Models\Tax;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,7 +29,7 @@ class CartController extends Controller
         $total_price = 0;
         foreach ($cart_items as $cart) {
             $total_price += $cart->price * $cart->count;
-        }
+        };
 
         $data = [
             'tax' => $tax,
@@ -46,6 +46,7 @@ class CartController extends Controller
      */
     public function cart_in(Request $request)
     {
+        //商品がカートにあればレコードを更新、なければレコードを作成
         Cart_item::updateOrInsert(
             ['user_id' => $request->user_id, 'product_id' => $request->product_id],
             ['count' => $request->count]
@@ -58,7 +59,7 @@ class CartController extends Controller
 
 
     /** カートの商品購入数の変更 */
-    public function CountUp(Request $request)
+    public function countUp(Request $request)
     {
         // // formの内容を全て取得
         // $form = $request->all();
@@ -79,5 +80,34 @@ class CartController extends Controller
             ->where('product_id', $request->product_id)
             ->delete();
         return redirect('login/cart_read');
+    }
+
+    /** 購入確認 */
+    public function order_check()
+    {
+        //Userモデルからユーザ情報の取得
+        $users = new User();
+        $users = $users->getUser();
+
+        //現在の税率の取得
+        $tax = new Tax();
+        $tax = $tax->getTax();
+
+        $order_check = new Cart_item();
+        $order_check = $order_check->getOrder_Check();
+
+        //商品の合計金額を算出
+        $total_price = 0;
+        foreach ($order_check as $cart) {
+            $total_price += $cart->price * $cart->count;
+        };
+
+        $data = [
+            'tax' => $tax,
+            'order_check' => $order_check,
+            'total_price' => $total_price,
+            'users' => $users,
+        ];
+        return view('login_EC.order_check', $data);
     }
 }
