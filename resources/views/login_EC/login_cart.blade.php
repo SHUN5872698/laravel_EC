@@ -28,7 +28,7 @@
                                     <br>
                                 </p>
                                 <p>
-                                    <form action="CountUp" method="get">
+                                    <form action="countUp" method="get">
                                         @csrf
                                         購入数
                                         <input type="number" class='count-number ml-1' name="count" min="1" max="100" value={{$cart->count}}>
