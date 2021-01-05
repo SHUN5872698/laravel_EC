@@ -29,7 +29,7 @@ class CartController extends Controller
         $total_price = 0;
         foreach ($cart_items as $cart) {
             $total_price += $cart->price * $cart->count;
-        };
+        }
 
         $data = [
             'tax' => $tax,
@@ -109,5 +109,16 @@ class CartController extends Controller
             'users' => $users,
         ];
         return view('login_EC.order_check', $data);
+    }
+
+    public function order_countUp(Request $request)
+    {
+        /** 購入数の変更*/
+        Cart_item::where('user_id', Auth::user()->id)
+            ->where('product_id', $request->product_id)
+            ->update([
+                'count' => $request->count,
+            ]);
+        return redirect('login/order_check');
     }
 }

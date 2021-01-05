@@ -59,15 +59,18 @@ Route::get('/login/details/capacity', 'ProductController@login_capacity')->middl
 /** カートページ */
 //カートページ移動
 Route::get('/login/cart_read', 'CartController@cart_read')->middleware('auth');
-/** 商品をカートに追加 */
+//商品をカートに追加
 Route::post('/login/cart_in', 'CartController@cart_in')->middleware('auth');
-/**商品の購入数を変更 */
-Route::get('/login/CountUp', 'CartController@countUp')->middleware('auth');
-/**商品をカートから削除 */
+//商品の購入数を変更
+Route::get('/login/countUp', 'CartController@countUp')->middleware('auth');
+//商品をカートから削除
 Route::get('/login/delete', 'CartController@delete')->middleware('auth');
 
 /** 購入確認ページ */
+//購入確認ページ
 Route::get('/login/order_check', 'CartController@order_check')->middleware('auth');
+//購入数の変更
+Route::post('/login/countUp', 'CartController@order_countUp')->middleware('auth');
 
 /** ユーザー情報ページ */
 Route::get('/user_inf', 'UserController@user_inf')->middleware('auth');
