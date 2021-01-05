@@ -10,7 +10,9 @@
                 コンテンツ
             </div>
             <div class="card-body">
-
+                <a href="/login/cart_read">
+                    カート情報
+                </a>
             </div>
         </div>
     </div>
@@ -22,7 +24,6 @@
                     <div class="col-12">
                         <table class="table table-border">
                             @foreach ($users as $user)
-                            @endforeach
                             <tr>
                                 <th>ユーザー名:</th>
                                 <th>{{$user->name}}</th>
@@ -46,6 +47,7 @@
                                 <th></th>
                                 <td></td>
                             </tr>
+                            @endforeach
                         </table>
                     </div>
 
