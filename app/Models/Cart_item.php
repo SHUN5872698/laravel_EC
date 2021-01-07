@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Cart_item extends Model
 {
+    //タイムスタンプを無効化
     public $timestamps = false;
 
     /**ガードするフィールド */
@@ -30,7 +31,6 @@ class Cart_item extends Model
     {
         return $this->hasMany('App\Models\Product', 'id', 'name', 'description', 'price', 'category_master', 'category', 'capacity');
     }
-
     /**
      * productimagesテーブルとのリレーション
      * @return void
@@ -67,6 +67,7 @@ class Cart_item extends Model
             ->orderby('cart_items.id', 'asc')
             ->paginate(12);
 
+
         return $cart_items;
     }
     /**
@@ -80,12 +81,32 @@ class Cart_item extends Model
             ->where('cart_items.user_id', Auth::user()->id)
             ->select(
                 'cart_items.id',
+                'cart_items.user_id',
+                'cart_items.product_id',
                 'cart_items.count',
                 'products.name',
                 'products.price',
             )
             ->orderby('cart_items.id', 'asc')
             ->paginate(12);
+
+        return $order_check;
+    }
+
+    public function products_confirmed(Request $request)
+    {
+        $order_check = Cart_item::with('User', 'Product')
+            ->join('users', 'users.id', '=', 'cart_items.user_id')
+            ->join('products', 'products.id', '=', 'cart_items.product_id')
+            ->where('cart_items.user_id', $request->user_id)
+            ->select(
+                'cart_items.product_id',
+                'cart_items.count',
+                'products.name',
+                'products.price',
+            )
+            ->orderby('cart_items.id', 'asc')
+            ->get();
 
         return $order_check;
     }

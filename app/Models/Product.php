@@ -154,4 +154,17 @@ class Product extends Model
             ->paginate(12);
         return $searchcapacity;
     }
+
+    // public function order_items(Request $request)
+    // {
+    //     $order_items = Product::where('product.id', $request->product_id)
+    //         ->select(
+    //             'products.id',
+    //             'products.name',
+    //             'products.price',
+    //         )
+    //         ->orderby('products.id', 'asc')
+    //         ->get();
+    //     return $order_items;
+    // }
 }

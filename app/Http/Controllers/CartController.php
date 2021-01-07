@@ -56,8 +56,6 @@ class CartController extends Controller
         return redirect('login/cart_read');
     }
 
-
-
     /** カートの商品購入数の変更 */
     public function countUp(Request $request)
     {
@@ -87,7 +85,7 @@ class CartController extends Controller
     {
         //Userモデルからユーザ情報の取得
         $users = new User();
-        $users = $users->getUser();
+        $users = $users->orderUser();
 
         //現在の税率の取得
         $tax = new Tax();
@@ -111,9 +109,9 @@ class CartController extends Controller
         return view('login_EC.order_check', $data);
     }
 
+    /** 購入確認画面での購入数の変更処理*/
     public function order_countUp(Request $request)
     {
-        /** 購入数の変更*/
         Cart_item::where('user_id', Auth::user()->id)
             ->where('product_id', $request->product_id)
             ->update([
