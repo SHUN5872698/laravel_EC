@@ -7,8 +7,8 @@
 @section('content')
 <h1>購入確認ページ</h1>
 <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-7">
+
+    <div class="col-md-3">
         <div class="card ml-3 my-3">
             <div class="card-header">お届け先情報</div>
             <div class="row">
@@ -22,11 +22,13 @@
                         </tr>
                         <tr>
                             <td>
-                                {{ $user->postcode}}
-                                <br>
-                                {{$user->prefectures_name}}{{$user->city}}{{$user->block}}
-                                <br>
-                                {{$user->building}}
+                                <font size="2">
+                                    {{ $user->postcode}}
+                                    <br>
+                                    {{$user->prefectures_name}}{{$user->city}}{{$user->block}}
+                                    <br>
+                                    {{$user->building}}
+                                </font>
                             </td>
                         </tr>
                         <tr>
@@ -42,42 +44,20 @@
         </div>
     </div>
 
-    <div class="col-md-3">
-        <div class="card mr-3 mt-3">
-            <div class="card-header">注文確認</div>
-            <div class="card-product my-2">
-                <p class="total ml-2">
-                    <font size="6" color="red">
-                        ¥{{number_format($total_price * $tax->percentage)}}</font>
-                    <font size="2" color="red">(税込)</font>
-                </p>
-                <form action="order_confirmed" method="post">
-                    @foreach ($order_check as $order)
-                    <input type="hidden" name="user_id" value={{$order->user_id}}>
-                    <input type="hidden" name="product_id" value={{$order->product_id}}>
-                    @endforeach
-                    <input type="submit" value="注文を確定" class="order_Confirm mb-3">
-                </form>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-2"></div>
     <div class="col-md-6">
         <div class="card ml-3 my-3">
             <div class="card-header">注文商品</div>
             <div class="row">
                 <div class="card-body">
                     <table class="table table-border">
-                        <tr>
+                        <tr align="center">
                             <th>商品名</th>
                             <th>単品価格(税込)</th>
                             <th>購入数</th>
                             <th>合計金額</th>
                         </tr>
                         @foreach ($order_check as $order)
-                        <tr>
+                        <tr align="center">
                             <td>
                                 <font size="2">{{$order->name}}</font>
                             </td>
@@ -103,6 +83,29 @@
                         @endforeach
                     </table>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card mr-3 mt-3">
+            <div class="card-header">注文確認</div>
+            <div class="card-product my-2">
+                <p class="total ml-2">
+                    <font size="6" color="red">
+                        ¥{{number_format($total_price * $tax->percentage)}}</font>
+                    <font size="2" color="red">(税込)</font>
+                </p>
+                <form action="order_confirmed" method="get">
+                    @csrf
+                    <input type="hidden" name="total_price" value={{$total_price}}>
+                    <input type="hidden" name="user_id" value={{$user->id}}>
+                    @foreach ($users as $user)
+                    <input type="hidden" name="prefecture_id" value={{$user->prefecture_id}}>
+                    @endforeach
+                    <input type="submit" value="注文を確定" class="order_Confirm mb-3">
+                </form>
+
             </div>
         </div>
     </div>
