@@ -51,6 +51,7 @@
         </div>
     </div>
 
+    @if ($total_price != 0)
     <div class="col-md-3">
         <div class="card mr-3 mt-3">
             <div class="card-header">小計</div>
@@ -61,9 +62,11 @@
                     <font size="2" color="red">(税込)</font>
                 </p>
                 <a href="/login/order_check"><input type="submit" value="購入確認ページへ" class="order_check mb-3"></a>
+
             </div>
         </div>
     </div>
+    @endif
 </div>
 
 @endsection
