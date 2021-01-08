@@ -93,6 +93,11 @@ class Cart_item extends Model
         return $order_check;
     }
 
+    /**
+     *order_itemsテーブルに登録する商品情報の取得
+     * @param Request $request
+     * @return void
+     */
     public function products_confirmed(Request $request)
     {
         $order_check = Cart_item::with('User', 'Product')
@@ -109,6 +114,18 @@ class Cart_item extends Model
             ->get();
 
         return $order_check;
+    }
+
+    /**
+     *該当ユーザのcart情報を削除
+     * @param Request $request
+     * @return void
+     */
+    public function delete_cart(Request $request)
+    {
+        $delete_cart = Cart_item::where('user_id', $request->user_id)
+            ->delete();
+        return $delete_cart;
     }
 
     // /** 購入数の変更*/
