@@ -35,6 +35,7 @@ class Order extends Model
     {
         return $this->hasone('App\Models\Prefecture', 'name');
     }
+
     /**
      * order_itemsテーブルとのリレーション
      * @return void
@@ -44,15 +45,22 @@ class Order extends Model
         return $this->hasmany('App\Models\order_items', 'product_id', 'order_id', 'name', 'price', 'count');
     }
 
-    //購入データの作成
+    /**
+     *新規レコードの作成処理
+     * @param Request $request
+     * @return void
+     */
     public function order_confirmed(Request $request)
     {
+        //登録するユーザー情報の取得
         $users = new User();
         $users = $users->order_confirmed($request);
 
+        //登録する税率の取得
         $tax = new Tax();
         $tax = $tax->percentage();
 
+        //購入日の作成
         $now = Carbon::now()->format('Y-m-d');
 
         $order_confirmed = Order::create(
@@ -71,7 +79,11 @@ class Order extends Model
         );
         return ($order_confirmed);
     }
-
+    /**
+     *order_itemsテーブルに登録するorder_id情報を取得
+     * @param Request $request
+     * @return void
+     */
     public function getorder_User(Request $request)
     {
         $getorder_User = Order::where('id', $request->user_id)

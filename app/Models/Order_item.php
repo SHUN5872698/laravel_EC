@@ -41,6 +41,11 @@ class Order_item extends Model
         return $this->hasMany('App\Models\Product', 'product_id', 'count');
     }
 
+    /**
+     *新規レコードの作成処理
+     * @param Request $request
+     * @return void
+     */
     public function items_confirmed(Request $request)
     {
         //登録する商品情報の取得
@@ -51,6 +56,7 @@ class Order_item extends Model
         $order_id = new Order();
         $order_id = $order_id->getorder_User($request);
 
+        //レコードの作成
         foreach ($products_confirmed as $confirmed) {
             $order_confirmed = Order_item::create(
                 [
