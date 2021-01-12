@@ -15,8 +15,8 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unique()->unsigned();
-            $table->integer('prefecture_id')->unique()->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->integer('prefecture_id')->unsigned();
             $table->integer('total_price');
             $table->date('order_date');
             $table->string('name', 30);
@@ -24,17 +24,17 @@ class CreateOrdersTable extends Migration
             $table->string('city', 24);
             $table->string('block', 64);
             $table->string('building');
-            $table->integer('tax');
+            $table->float('tax');
 
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
+            // $table->foreign('user_id')
+            //     ->references('id')
+            //     ->on('users')
+            //     ->onDelete('cascade');
 
-            $table->foreign('prefecture_id')
-                ->references('id')
-                ->on('prefectures')
-                ->onDelete('cascade');
+            // $table->foreign('prefecture_id')
+            //     ->references('id')
+            //     ->on('prefectures')
+            //     ->onDelete('cascade');
         });
     }
 
