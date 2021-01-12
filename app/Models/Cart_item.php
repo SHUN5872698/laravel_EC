@@ -29,7 +29,7 @@ class Cart_item extends Model
      */
     public function product()
     {
-        return $this->hasMany('App\Models\Product', 'id', 'name', 'description', 'price', 'category_master', 'category', 'capacity');
+        return $this->hasMany('App\Models\Product', 'id');
     }
     /**
      * productimagesテーブルとのリレーション
@@ -37,7 +37,7 @@ class Cart_item extends Model
      */
     public function productimage()
     {
-        return $this->hasMany('App\Models\Productimage', 'product_id', 'image', 'kubun');
+        return $this->hasMany('App\Models\Productimage', 'product_id');
     }
 
     /**
@@ -66,7 +66,6 @@ class Cart_item extends Model
             )
             ->orderby('cart_items.id', 'asc')
             ->paginate(12);
-
 
         return $cart_items;
     }
