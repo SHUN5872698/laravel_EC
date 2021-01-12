@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -64,6 +65,28 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Prefecture', 'id', 'name');
     }
 
+    public function getUser()
+    {
+        //users情報の取得
+        $users = User::with('prefecture')
+            ->join('prefectures', 'prefectures.id',  '=', 'users.prefecture_id')
+            ->where('users.id', Auth::user()->id)
+            //ユーザー情報を取得して確認ページへ渡す
+            ->select(
+                'users.id',
+                'users.prefecture_id',
+                'prefectures.name as prefectures_name',
+                'users.name',
+                'users.email',
+                'users.phone',
+                'users.postcode',
+                'users.city',
+                'users.block',
+                'users.building'
+            )
+            ->first();
+        return $users;
+    }
     /**
      * 都道県情報の取得
      */
