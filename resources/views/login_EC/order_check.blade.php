@@ -14,30 +14,28 @@
             <div class="row">
                 <div class="card-body">
                     <table class="table table-borderless">
-                        @foreach ($users as $user)
                         <tr>
                             <th>お届け先住所</th>
                         <tr>
-                            <td>{{$user->name}}</td>
+                            <td>{{$users->name}}</td>
                         </tr>
                         <tr>
                             <td>
                                 <font size="2">
-                                    {{ $user->postcode}}
+                                    {{ $users->postcode}}
                                     <br>
-                                    {{$user->prefectures_name}}{{$user->city}}{{$user->block}}
+                                    {{$users->prefectures_name}}{{$users->city}}{{$users->block}}
                                     <br>
-                                    {{$user->building}}
+                                    {{$users->building}}
                                 </font>
                             </td>
                         </tr>
                         <tr>
-                            <td>連絡先：{{$user->phone}}</td>
+                            <td>連絡先：{{$users->phone}}</td>
                         </tr>
                         <tr>
-                            <td>アドレス：{{$user->email }}</td>
+                            <td>アドレス：{{$users->email }}</td>
                         </tr>
-                        @endforeach
                     </table>
                 </div>
             </div>
@@ -99,10 +97,8 @@
                 <form action="order_confirmed" method="get">
                     @csrf
                     <input type="hidden" name="total_price" value={{$total_price}}>
-                    <input type="hidden" name="user_id" value={{$user->id}}>
-                    @foreach ($users as $user)
-                    <input type="hidden" name="prefecture_id" value={{$user->prefecture_id}}>
-                    @endforeach
+                    <input type="hidden" name="user_id" value={{$users->id}}>
+                    <input type="hidden" name="prefecture_id" value={{$users->prefecture_id}}>
                     <input type="submit" value="注文を確定" class="order_Confirm mb-3">
                 </form>
 

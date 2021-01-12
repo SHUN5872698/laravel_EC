@@ -19,7 +19,7 @@
                                 {{ __('Name') }}　　<font color="red">必須</font></label>
 
                             <div class="col-md-6">
-                                <input id="name" type="name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ empty(old('name')) ? (Auth::user()->name) : old('name')}}" required autocomplete="name">
+                                <input id="name" type="name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ empty(old('name')) ? ($users->name) : old('name')}}" required autocomplete="name">
 
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -34,7 +34,7 @@
                                 {{ __('E-Mail Address') }}　<font color="red">必須</font></label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ empty(old('email')) ? (Auth::user()->email) : old('email')}}" required autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ empty(old('email')) ? ($users->email) : old('email')}}" required autocomplete="email">
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -49,7 +49,7 @@
                                 {{ __('電話番号') }}　　<font color="red">必須</font></label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ empty(old('phone')) ? (Auth::user()->phone) : old('phone')}}" placeholder="000-0000-0000" required autocomplete="new-phone">
+                                <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ empty(old('phone')) ? ($users->phone): old('phone')}}" placeholder="000-0000-0000" required autocomplete="new-phone">
 
                                 @error('phone')
                                 <span class="invalid-feedback" role="alert">
@@ -64,7 +64,7 @@
                                 {{ __('郵便番号') }}　　<font color="red">必須</font></label>
 
                             <div class="col-md-6">
-                                <input id="inputAddress01" type="text" class="form-control @error('postcode') is-invalid @enderror" name="postcode" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','prefecture_id','city');" placeholder="550-0011" value="{{ empty(old('postcode')) ? (Auth::user()->postcode) : old('postcode')}}" required autocomplete="new-phone">
+                                <input id="inputAddress01" type="text" class="form-control @error('postcode') is-invalid @enderror" name="postcode" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','prefecture_id','city');" value="{{ empty(old('postcode')) ? ($users->postcode) : old('postcode')}}" required autocomplete="new-phone">
 
                                 @error('postcode')
                                 <span class="invalid-feedback" role="alert">
@@ -80,9 +80,9 @@
 
                             <div class="col-md-6">
                                 <select name="prefecture_id" id="inputAddress02">
-                                    <option value="">--- 選択してください ---</option>
+                                    <option value={{$users->prefecture_id}}>{{($users->prefectures_name)}}</option>
                                     @foreach ($prefectures as $prefecture)
-                                    <option value={{$prefecture->id}} @if(old('prefecture_id')=='01' ) selected @endif>
+                                    <option value={{$prefecture->id}} @if(old('prefecture_id')==$prefecture->id ) selected @endif>
                                         {{$prefecture->name}}</option>
                                     @endforeach
                                 </select>
@@ -100,7 +100,7 @@
                                 {{ __('市町村区') }}　　<font color="red">必須</font></label>
 
                             <div class="col-md-6">
-                                <input id="inputAddress03" type="text" name="city" class="form-control" placeholder="大阪市西区阿波座" value="{{ empty(old('city')) ? (Auth::user()->city) : old('city')}}" required autocomplete="new-city">
+                                <input id="inputAddress03" type="text" name="city" class="form-control" value="{{ empty(old('city')) ? ($users->city) : old('city')}}" required autocomplete="new-city">
 
                                 @error('city')
                                 <span class="invalid-feedback" role="alert">
@@ -115,7 +115,7 @@
                                 {{ __('番地') }}　　<font color="red">必須</font></label>
 
                             <div class="col-md-6">
-                                <input id="inputAddress04" type="text" name="block" class="form-control" placeholder="１丁目１３−１６" value="{{ empty(old('block')) ? (Auth::user()->block) : old('block')}}" required autocomplete="new-block">
+                                <input id="inputAddress04" type="text" name="block" class="form-control" value="{{ empty(old('block')) ? ($users->block) : old('block')}}" required autocomplete="new-block">
 
                                 @error('block')
                                 <span class="invalid-feedback" role="alert">
@@ -130,7 +130,7 @@
                                 {{ __('建物名・部屋番号') }}　　</label>
 
                             <div class="col-md-6">
-                                <input id="inputAddress05" type="text" name="building" class="form-control" placeholder="松本フォレストビル501" value="{{ empty(old('building')) ? (Auth::user()->building) : old('building')}}">
+                                <input id="inputAddress05" type="text" name="building" class="form-control" value="{{ empty(old('building')) ? ($users->building) : old('building')}}">
 
                                 @error('building')
                                 <span class="invalid-feedback" role="alert">

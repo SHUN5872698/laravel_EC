@@ -23,31 +23,29 @@
                 <div class="form-group row justify-content-center">
                     <div class="col-12">
                         <table class="table table-border">
-                            @foreach ($users as $user)
                             <tr>
-                                <th>ユーザー名:</th>
-                                <th>{{$user->name}}</th>
+                                <td>ユーザー名</td>
+                                <td>{{$users->name}}</td>
                             </tr>
                             <tr>
-                                <th>メールアドレス</th>
-                                <th>{{$user->email }}</th>
+                                <td>メールアドレス</td>
+                                <td>{{$users->email }}</td>
                             </tr>
                             <tr>
-                                <th>電話番号</th>
-                                <th>{{$user->phone}}</th>
+                                <td>電話番号</td>
+                                <td>{{$users->phone}}</td>
                             </tr>
                             <tr>
-                                <th>郵便番号</th>
-                                <th>{{ $user->postcode}}</th>
+                                <td>郵便番号</td>
+                                <td>{{ $users->postcode}}</td>
                             </tr>
                             <tr>
-                                <th>登録住所</th>
-                                <th>{{$user->prefectures_name}} {{$user->city}} {{$user->block}} {{$user->building}}</th>
+                                <td>登録住所</td>
+                                <td>{{$users->prefectures_name}} {{$users->city}} {{$users->block}} {{$users->building}}</td>
                             <tr>
-                                <th></th>
+                                <td></td>
                                 <td></td>
                             </tr>
-                            @endforeach
                         </table>
                     </div>
 
