@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Models\Prefecture;
 
+
 class UpdateUserController extends Controller
 {
     /**
@@ -14,11 +15,20 @@ class UpdateUserController extends Controller
      */
     public function user_edit(Request $request)
     {
+        //ユーザー情報の取得
+        $users = new User();
+        $users = $users->getUser();
+
         //都道府県情報の取得
         $prefectures = new Prefecture();
         $prefectures = $prefectures->getData();
 
-        return view('Login_EC.user_up', ['prefectures' => $prefectures]);
+        $data = [
+            'users' => $users,
+            'prefectures' => $prefectures,
+        ];
+
+        return view('Login_EC.user_up', $data);
     }
 
     /**
@@ -40,6 +50,6 @@ class UpdateUserController extends Controller
         $auth->fill($form)->save();
 
         /**ユーザ情報ページにリダイレクト */
-        return view('EC.main');
+        return redirect('/login/main');
     }
 }
