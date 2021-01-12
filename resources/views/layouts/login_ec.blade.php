@@ -56,6 +56,10 @@
                                     <font color="black">カート情報</font>
                                 </a>
                                 <br>
+                                <a href="/login/order_history">
+                                    <font color="black">購入履歴</font>
+                                </a>
+                                <br>
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                                     <font color="black">ログアウト</font>
