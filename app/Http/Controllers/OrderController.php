@@ -31,8 +31,23 @@ class OrderController extends Controller
             //存在する場合は該当ユーザーのcart情報を削除
             $delete_cart = new Cart_item();
             $delete_cart = $delete_cart->delete_cart($request);
-            //購入履歴ページにリダイレクと
+            //購入履歴ページにリダイレクト
             return redirect('login/cart_read');
         }
+    }
+
+    /**
+     * 購入履歴の取得
+     * @return void
+     */
+    public function Order_History()
+    {
+        $order_History = new Order();
+        $order_History = $order_History->Order_History();
+
+        $data = [
+            'order_History' => $order_History,
+        ];
+        return view('login_EC.order_history', $data);
     }
 }
