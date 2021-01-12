@@ -38,7 +38,7 @@ class User extends Model
                 'users.block',
                 'users.building'
             )
-            ->get();
+            ->first();
         return $users;
     }
 
@@ -61,7 +61,7 @@ class User extends Model
                 'users.block',
                 'users.building'
             )
-            ->get();
+            ->first();
         return $users;
     }
 
