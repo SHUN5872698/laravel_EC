@@ -3,21 +3,23 @@
 @section('menubar')
 
 @section('content')
+<h1>ユーザー情報確認</h1>
 <div class="row">
-    <div class="col-3 ml-3">
-        <div class="card">
+    <div class="col-md-3">
+        <div class="card ml-3 my-3">
             <div class="card-header">
                 コンテンツ
             </div>
             <div class="card-body">
-                <a href="/login/cart_read">
-                    カート情報
-                </a>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="/login/cart_read">カート情報</a></li>
+                    <li class="list-group-item"><a href="/login/order_history">購入履歴</a></li>
+                </ul>
             </div>
         </div>
     </div>
     <div class="col-md-6">
-        <div class="card">
+        <div class="card ml-3 my-3">
             <div class="card-header">ユーザー情報確認</div>
             <div class="card-body">
                 <div class="form-group row justify-content-center">
@@ -57,7 +59,7 @@
     </div>
 </div>
 </div>
-<div class="col-3"></div>
+<div class="col-md-3"></div>
 </div>
 @endsection
 

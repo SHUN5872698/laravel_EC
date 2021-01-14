@@ -1,9 +1,10 @@
 @extends('layouts.login_ec')
-@section('title', 'ユーザー情報変更ページ')
+@section('title', 'ユーザー情報更新ページ')
 
 @section('menubar')
 
 @section('content')
+<h1>ユーザー情報更新</h1>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
