@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class Order extends Model
@@ -111,16 +112,12 @@ class Order extends Model
      */
     public function Order_History()
     {
-        $order_History = Order::with('Order_item', 'Productimage', 'prefecture')
+        $histroy = Order::with('Order_item', 'Productimage', 'prefecture')
             ->join('order_items', 'order_items.order_id', '=', 'orders.id')
             ->join('prefectures', 'prefectures.id', '=', 'orders.prefecture_id')
             ->join('productimages', 'productimages.product_id', '=', 'order_items.product_id')
-            ->where('orders.user_id', Auth::user()->id)
-            ->where('productimages.kubun', 'main')
-            ->orderby('orders.id', 'desc')
             ->select(
                 'orders.id',
-                'orders.total_price',
                 'orders.name',
                 'orders.order_date',
                 'orders.postcode',
@@ -135,8 +132,66 @@ class Order extends Model
                 'order_items.price',
                 'order_items.count',
             )
-            ->paginate(12);
+            ->whereYear('order_date', 2021)
+            ->whereMonth('order_date', 1)
+            ->where('orders.user_id', Auth::user()->id)
+            ->where('productimages.kubun', 'main')
+            ->orderby('orders.id', 'desc')
+            ->get()
+            ->groupBy(
+                function ($val) {
+                    return Carbon::parse($val->order_date)->format("Y-m-d");
+                }
+            );
+        return ($histroy);
+    }
 
-        return ($order_History);
+    // public function Order_History()
+    // {
+    //     $order_History = Order::with('Order_item', 'Productimage', 'prefecture')
+    //         ->join('order_items', 'order_items.order_id', '=', 'orders.id')
+    //         ->join('prefectures', 'prefectures.id', '=', 'orders.prefecture_id')
+    //         ->join('productimages', 'productimages.product_id', '=', 'order_items.product_id')
+    //         ->where('orders.user_id', Auth::user()->id)
+    //         ->where('productimages.kubun', 'main')
+    //         ->orderby('orders.id', 'desc')
+    //         ->select(
+    //             'orders.id',
+    //             'orders.total_price',
+    //             'orders.name',
+    //             'orders.order_date',
+    //             'orders.postcode',
+    //             'orders.city',
+    //             'orders.block',
+    //             'orders.building',
+    //             'orders.tax',
+    //             'prefectures.name as prefectures_name',
+    //             'productimages.image',
+    //             'order_items.product_id',
+    //             'order_items.name as order_name',
+    //             'order_items.price',
+    //             'order_items.count',
+    //         )
+    //         ->paginate(12);
+    //     dd($order_History);
+
+    //     return ($order_History);
+    // }
+
+    public function Total_Price()
+    {
+        $total_price = Order::whereYear('order_date', 2021)
+            ->whereMonth('order_date', 1)
+            ->where('user_id', Auth::user()->id)
+            ->distinct()
+            ->select('total_price', 'order_date')
+            ->get()
+            ->groupBy(
+                function ($val) {
+                    return Carbon::parse($val->order_date)->format("Y-m-d");
+                }
+            );
+
+        return ($total_price);
     }
 }
