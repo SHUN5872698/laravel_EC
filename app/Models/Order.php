@@ -117,7 +117,7 @@ class Order extends Model
             ->join('productimages', 'productimages.product_id', '=', 'order_items.product_id')
             ->where('orders.user_id', Auth::user()->id)
             ->where('productimages.kubun', 'main')
-            ->orderby('orders.id', 'asc')
+            ->orderby('orders.id', 'desc')
             ->select(
                 'orders.id',
                 'orders.total_price',
