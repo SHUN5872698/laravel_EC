@@ -28,7 +28,7 @@ class CartController extends Controller
         //商品の合計金額を算出
         $total_price = 0;
         foreach ($cart_items as $cart) {
-            $total_price += $cart->price * $cart->count;
+            $total_price += round($cart->price * $tax->percentage) * $cart->count;
         }
 
         $data = [
@@ -74,7 +74,7 @@ class CartController extends Controller
     /**  カートの商品を削除*/
     public function delete(Request $request)
     {
-        $cart = Cart_item::where('user_id', Auth::user()->id)
+        Cart_item::where('user_id', Auth::user()->id)
             ->where('product_id', $request->product_id)
             ->delete();
         return redirect('login/cart_read');
@@ -94,10 +94,14 @@ class CartController extends Controller
         $order_check = new Cart_item();
         $order_check = $order_check->getOrder_Check();
 
+        foreach ($order_check as $check) {
+            $check->price = round($check->price * $tax->percentage);
+        }
+
         //商品の合計金額を算出
         $total_price = 0;
-        foreach ($order_check as $cart) {
-            $total_price += $cart->price * $cart->count;
+        foreach ($order_check as $order) {
+            $total_price += $order->price * $order->count;
         };
 
         $data = [

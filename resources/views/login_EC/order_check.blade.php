@@ -91,7 +91,7 @@
             <div class="card-product my-2">
                 <p class="total ml-2">
                     <font size="6" color="red">
-                        ¥{{number_format($total_price * $tax->percentage)}}</font>
+                        ¥{{number_format($total_price)}}</font>
                     <font size="2" color="red">(税込)</font>
                 </p>
                 <form action="order_confirmed" method="get">
