@@ -61,7 +61,7 @@
                             </td>
                             <td>
                                 <font size="3">
-                                    ¥{{number_format($order->price * $tax->percentage)}}
+                                    ¥{{number_format($order->price)}}
                                 </font>
                             </td>
                             <td>
@@ -74,7 +74,7 @@
                             </td>
                             <td>
                                 <font size="3" color="red">
-                                    ¥{{number_format(($order->price * $order->count) * $tax->percentage)}}
+                                    ¥{{number_format(($order->price * $order->count))}}
                                 </font>
                             </td>
                         </tr>

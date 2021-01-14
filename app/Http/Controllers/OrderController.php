@@ -42,12 +42,16 @@ class OrderController extends Controller
      */
     public function Order_History()
     {
-        $order_History = new Order();
-        $order_History = $order_History->Order_History();
+        $orders = new Order();
+        $orders = $orders->Order_History();
+
+        $total_price = new Order();
+        $total_price = $total_price->Total_Price();
+        dd($total_price);
 
         $data = [
-            'order_History' => $order_History,
+            'orders' => $orders,
         ];
-        return view('login_EC.order_history', $data);
+        return view('login_EC.order_histories', $data);
     }
 }

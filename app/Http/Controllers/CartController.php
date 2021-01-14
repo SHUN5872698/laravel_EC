@@ -28,7 +28,7 @@ class CartController extends Controller
         //商品の合計金額を算出
         $total_price = 0;
         foreach ($cart_items as $cart) {
-            $total_price += round($cart->price * $tax->percentage) * $cart->count;
+            $total_price += round($cart->price * $tax->percentage)  * $cart->count;
         }
 
         $data = [
@@ -101,7 +101,7 @@ class CartController extends Controller
         //商品の合計金額を算出
         $total_price = 0;
         foreach ($order_check as $order) {
-            $total_price += $order->price * $order->count;
+            $total_price += round($order->price * $order->count);
         };
 
         $data = [
