@@ -116,48 +116,9 @@ class Order extends Model
      * @param Request $request
      * @return void
      */
-    // public function Order_History()
-    // {
-    //     $History = Order::with('Order_item', 'Productimage', 'prefecture')
-    //         ->join('order_items', 'order_items.order_id', '=', 'orders.id')
-    //         ->join('prefectures', 'prefectures.id', '=', 'orders.prefecture_id')
-    //         ->join('productimages', 'productimages.product_id', '=', 'order_items.product_id')
-    //         ->select(
-    //             'orders.id',
-    //             'orders.name',
-    //             'orders.order_date',
-    //             'orders.postcode',
-    //             'orders.city',
-    //             'orders.block',
-    //             'orders.building',
-    //             'orders.tax',
-    //             'prefectures.name as prefectures_name',
-    //             'productimages.image',
-    //             'order_items.product_id',
-    //             'order_items.name as order_name',
-    //             'order_items.price',
-    //             'order_items.count',
-    //         )
-    //         ->whereYear('order_date', 2021)
-    //         ->whereMonth('order_date', 1)
-    //         ->where('orders.user_id', Auth::user()->id)
-    //         ->where('productimages.kubun', 'main')
-    //         ->orderby('orders.id', 'desc')
-    //         ->paginate(12)
-    //         ->groupBy(function ($histroy) {
-    //             return $histroy->order_date->format('d');
-    //         });
-
-    // ->groupBy(
-    //     function ($val) {
-    //         return Carbon::parse($val->order_date)->format("Y-m-d");
-    //     }
-    // );
-    //     return $History;
-    // }
-
     public function Order_History()
     {
+        //ordersテーブルの情報を取得
         $users = Order::with('prefecture')
             ->join('prefectures', 'prefectures.id', '=', 'orders.prefecture_id')
             ->where('orders.user_id', Auth::user()->id)
@@ -175,8 +136,10 @@ class Order extends Model
                 'orders.tax',
             )
             ->paginate(12);
+
         $i = 0;
         $orders = array();
+        //orders.idから購入商品の情報を取得
         foreach ($users as $user) {
             $items = Order_item::with('Productimage')
                 ->join('products', 'products.id', '=', 'order_items.product_id')
@@ -214,22 +177,4 @@ class Order extends Model
     //     return ($total_price);
     // }
 
-    // public function Total_Price()
-    // {
-    //     $total_price = Order::whereYear('order_date', 2021)
-    //         ->whereMonth('order_date', 1)
-    //         ->where('user_id', Auth::user()->id)
-    //         ->distinct()
-    //         ->select('total_price', 'order_date')
-    //         ->get()
-    //         ->groupBy(
-    //             function ($val) {
-    //                 return Carbon::parse($val->order_date)->format("Y-m-d");
-    //             }
-    //         )
-    //         ->map(function ($day) {
-    //             return $day->sum('total_price');
-    //         });
-    //     return ($total_price);
-    // }
 }
