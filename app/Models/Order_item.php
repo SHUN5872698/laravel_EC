@@ -29,8 +29,15 @@ class Order_item extends Model
      */
     public function product()
     {
-        return $this->hasMany('App\Models\Product', 'name', 'price');
+        return $this->hasMany('App\Models\Product', 'id');
     }
+
+
+    public function productimage()
+    {
+        return $this->hasMany('App\Models\Productimage', 'product_id');
+    }
+
 
     /**
      * cart_itemsテーブルとのリレーション
