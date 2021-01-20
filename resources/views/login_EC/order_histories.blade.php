@@ -19,24 +19,53 @@
         </div>
     </div>
     <div class="col-md-9">
+        @foreach ($orders as $order)
         <div class="card mx-3 my-3">
-            <div class="card-header">購入履歴</div>
-            @foreach ($orders as $order)
-            <div class="card-body">
+            <div class="card-header">
                 <div class="row">
-                    <div class="image">
-                        <img src="../images/{{$order->image}}" width="150" height="150">
-                    </div>
-                    <div class="product">
-                        {{$order->order_name}}
-                        <br>単品価格：¥{{number_format($order->price * $order->tax)}}円(税込)
-                        <br>購入数：{{$order->count}}個
-                        <br>購入日：{{$order->order_date}}
-                    </div>
+                    <p class="date mx-3">
+                        <font size="2">注文日</font>
+                        <br>{{$order['order']['order_date']->format('Y年m月d日')}}
+                    </p>
+                    <p class="total_price mx-3">
+                        <font size="2">合計</font>
+                        <br>{{number_format($order['order']['total_price'])}}円
+                    </p>
+                    <p class="address">
+                        <script>
+                            (function () {
+                                window.addEventListener("load", function () {
+                                    $('[data-toggle="popover"]').popover();
+                                });
+                            })();
+
+                        </script>
+                        <button type="button" class="btn btn-primary" data-toggle="popover" data-content="{{$order['order']['name']}}<br>{{$order['order']['postcode']}}">お届け先情報
+                        </button>
+
+                        <br>{{$order['order']['postcode']}}<br>{{$order['order']['prefectures_name']}}
+                    </p>
                 </div>
             </div>
-            @endforeach
+            <div class="card-body">
+                @foreach ($order['item'] as $item)
+                <div class="row mb-3">
+                    <div class="image">
+                        <img src="../images/{{$item['image']}}" width="150" height="150">
+                    </div>
+                    <div class="product mt-2">
+                        <a href="/login/product?id={{$item['product_id']}}&category_master={{$item['category_master']}}">{{$item['order_name']}}</a>
+                        <br>
+                        価格:
+                        <font color="red">¥{{number_format($item['price'] * $order['order']['tax'])}}円(税込)</font>
+                        <br>
+                        購入数：{{$item['count']}}個
+                    </div>
+                </div>
+                @endforeach
+            </div>
         </div>
+        @endforeach
     </div>
 </div>
 

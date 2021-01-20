@@ -57,7 +57,8 @@
                 </form>
             </div>
         </nav>
-        <main class="py-4">@yield('content')</main>
+        <main class="py-4">
+            @yield('content')</main>
 
         @section('footer')
         <div class="footer">
