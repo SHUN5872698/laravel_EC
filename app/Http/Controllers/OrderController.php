@@ -24,6 +24,7 @@ class OrderController extends Controller
         //order_itemsテーブルにレコードを新規作成
         $items_confirmed = new Order_item();
         $items_confirmed = $items_confirmed->items_confirmed($request);
+
         if (is_null($order_confirmed && $items_confirmed)) {
             //該当レコードが存在しない場合はカートページにリダイレクト
             return redirect('login/cart_read');
@@ -44,10 +45,11 @@ class OrderController extends Controller
     {
         $orders = new Order();
         $orders = $orders->Order_History();
+        // dd($orders);
 
-        $total_price = new Order();
-        $total_price = $total_price->Total_Price();
-        dd($total_price);
+        // $total_price = new Order();
+        // $total_price = $total_price->Total_Price();
+        // dd($total_price);
 
         $data = [
             'orders' => $orders,

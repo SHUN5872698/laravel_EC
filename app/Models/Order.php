@@ -16,8 +16,14 @@ class Order extends Model
     /**ガードするフィールド */
     protected $guarded = array('id');
 
+    protected $dates = ['order_date'];
+
+    // protected $casts = ['total_price' => 'int'];
+
     /**ホワイトリスト */
     protected $fillable = ['user_id', 'prefecture_id', 'total_price', 'order_date', 'name', 'postcode', 'city', 'postcode', 'block', 'building', 'tax'];
+
+
 
     // /**
     //  * usersテーブルとのリレーション
@@ -110,54 +116,14 @@ class Order extends Model
      * @param Request $request
      * @return void
      */
-    public function Order_History()
-    {
-        $histroy = Order::with('Order_item', 'Productimage', 'prefecture')
-            ->join('order_items', 'order_items.order_id', '=', 'orders.id')
-            ->join('prefectures', 'prefectures.id', '=', 'orders.prefecture_id')
-            ->join('productimages', 'productimages.product_id', '=', 'order_items.product_id')
-            ->select(
-                'orders.id',
-                'orders.name',
-                'orders.order_date',
-                'orders.postcode',
-                'orders.city',
-                'orders.block',
-                'orders.building',
-                'orders.tax',
-                'prefectures.name as prefectures_name',
-                'productimages.image',
-                'order_items.product_id',
-                'order_items.name as order_name',
-                'order_items.price',
-                'order_items.count',
-            )
-            ->whereYear('order_date', 2021)
-            ->whereMonth('order_date', 1)
-            ->where('orders.user_id', Auth::user()->id)
-            ->where('productimages.kubun', 'main')
-            ->orderby('orders.id', 'desc')
-            ->get()
-            ->groupBy(
-                function ($val) {
-                    return Carbon::parse($val->order_date)->format("Y-m-d");
-                }
-            );
-        return ($histroy);
-    }
-
     // public function Order_History()
     // {
-    //     $order_History = Order::with('Order_item', 'Productimage', 'prefecture')
+    //     $History = Order::with('Order_item', 'Productimage', 'prefecture')
     //         ->join('order_items', 'order_items.order_id', '=', 'orders.id')
     //         ->join('prefectures', 'prefectures.id', '=', 'orders.prefecture_id')
     //         ->join('productimages', 'productimages.product_id', '=', 'order_items.product_id')
-    //         ->where('orders.user_id', Auth::user()->id)
-    //         ->where('productimages.kubun', 'main')
-    //         ->orderby('orders.id', 'desc')
     //         ->select(
     //             'orders.id',
-    //             'orders.total_price',
     //             'orders.name',
     //             'orders.order_date',
     //             'orders.postcode',
@@ -172,26 +138,98 @@ class Order extends Model
     //             'order_items.price',
     //             'order_items.count',
     //         )
-    //         ->paginate(12);
-    //     dd($order_History);
+    //         ->whereYear('order_date', 2021)
+    //         ->whereMonth('order_date', 1)
+    //         ->where('orders.user_id', Auth::user()->id)
+    //         ->where('productimages.kubun', 'main')
+    //         ->orderby('orders.id', 'desc')
+    //         ->paginate(12)
+    //         ->groupBy(function ($histroy) {
+    //             return $histroy->order_date->format('d');
+    //         });
 
-    //     return ($order_History);
+    // ->groupBy(
+    //     function ($val) {
+    //         return Carbon::parse($val->order_date)->format("Y-m-d");
+    //     }
+    // );
+    //     return $History;
     // }
 
-    public function Total_Price()
+    public function Order_History()
     {
-        $total_price = Order::whereYear('order_date', 2021)
-            ->whereMonth('order_date', 1)
-            ->where('user_id', Auth::user()->id)
-            ->distinct()
-            ->select('total_price', 'order_date')
-            ->get()
-            ->groupBy(
-                function ($val) {
-                    return Carbon::parse($val->order_date)->format("Y-m-d");
-                }
-            );
-
-        return ($total_price);
+        $users = Order::with('prefecture')
+            ->join('prefectures', 'prefectures.id', '=', 'orders.prefecture_id')
+            ->where('orders.user_id', Auth::user()->id)
+            ->orderby('order_date', 'desc')
+            ->select(
+                'orders.id',
+                'orders.total_price',
+                'orders.name',
+                'orders.order_date',
+                'orders.postcode',
+                'prefectures.name as prefectures_name',
+                'orders.city',
+                'orders.block',
+                'orders.building',
+                'orders.tax',
+            )
+            ->paginate(12);
+        $i = 0;
+        $orders = array();
+        foreach ($users as $user) {
+            $items = Order_item::with('Productimage')
+                ->join('products', 'products.id', '=', 'order_items.product_id')
+                ->join('productimages', 'productimages.product_id', '=', 'order_items.product_id')
+                ->where('order_items.order_id', $user->id)
+                ->where('productimages.kubun', 'main')
+                ->select(
+                    'products.category_master',
+                    'productimages.image',
+                    'order_items.product_id',
+                    'order_items.name as order_name',
+                    'order_items.price',
+                    'order_items.count',
+                )
+                ->paginate(12);
+            $orders[$i]['order'] = $user;
+            $orders[$i]['item'] = $items;
+            $i++;
+        }
+        return $orders;
     }
+
+
+    // public function Total_Price()
+    // {
+    //     $total_price = DB::table('orders')
+    //         ->whereYear('order_date', 2021)
+    //         ->whereMonth('order_date', 1)
+    //         ->where('orders.user_id', Auth::user()->id)
+    //         ->select('order_date')
+    //         ->selectRaw('SUM(total_price) as total_price',)
+    //         ->orderby('order_date', 'desc')
+    //         ->groupBy('order_date')
+    //         ->get();
+    //     return ($total_price);
+    // }
+
+    // public function Total_Price()
+    // {
+    //     $total_price = Order::whereYear('order_date', 2021)
+    //         ->whereMonth('order_date', 1)
+    //         ->where('user_id', Auth::user()->id)
+    //         ->distinct()
+    //         ->select('total_price', 'order_date')
+    //         ->get()
+    //         ->groupBy(
+    //             function ($val) {
+    //                 return Carbon::parse($val->order_date)->format("Y-m-d");
+    //             }
+    //         )
+    //         ->map(function ($day) {
+    //             return $day->sum('total_price');
+    //         });
+    //     return ($total_price);
+    // }
 }
