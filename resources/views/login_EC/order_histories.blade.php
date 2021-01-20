@@ -31,19 +31,29 @@
                         <font size="2">合計</font>
                         <br>{{number_format($order['order']['total_price'])}}円
                     </p>
+                    <p class="buyer mx-3">
+                        <font size="2">購入者名</font>
+                        <br>{{$order['order']['name']}}
+                    </p>
                     <p class="address">
                         <script>
                             (function () {
                                 window.addEventListener("load", function () {
                                     $('[data-toggle="popover"]').popover();
+                                    $(this).popover({
+                                        html: true
+                                    });
+
+
                                 });
                             })();
 
                         </script>
-                        <button type="button" class="btn btn-primary" data-toggle="popover" data-content="{{$order['order']['name']}}<br>{{$order['order']['postcode']}}">お届け先情報
-                        </button>
 
-                        <br>{{$order['order']['postcode']}}<br>{{$order['order']['prefectures_name']}}
+                        <button type="button" class="btn btn-outline-primary mt-1" data-toggle="popover" data-content="{{$order['order']['postcode']}}<br>
+                        {{$order['order']['prefectures_name']}}<br>{{$order['order']['city']}}
+                        {{$order['order']['block']}}<br>{{$order['order']['building']}}" data-html="true" data-placement="bottom">お届け先情報
+                        </button>
                     </p>
                 </div>
             </div>
