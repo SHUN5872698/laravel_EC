@@ -23,7 +23,7 @@ class User extends Authenticatable
     /**ユーザ情報更新用のバリデーション*/
     //名前
     public static $name_rules = [
-        'name' => ['required', 'string', 'between:2,8'],
+        'name' => ['required', 'string', 'between:2,8',],
     ];
     //パスワード
     public static $pass_rules = [
@@ -35,7 +35,7 @@ class User extends Authenticatable
     ];
     //電話番号
     public static $phone_rules = [
-        'phone' => ['required', 'between:11,20'],
+        'phone' => ['required', 'between:11,20',],
     ];
     //住所
     public static $add_rules = [
