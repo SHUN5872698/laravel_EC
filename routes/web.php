@@ -82,6 +82,6 @@ Route::get('/login/order_history', 'OrderController@Order_History')->middleware(
 Route::get('/user_inf', 'UserController@user_inf')->middleware('auth');
 
 /** ユーザー情報変更ページ */
-Route::get('/user_edit', 'UpdateUserController@user_edit')->middleware('auth');
+Route::get('/user_edit', 'UserController@user_edit')->middleware('auth');
 
-Route::post('/user_up', 'UpdateUserController@user_up')->middleware('auth');
+Route::post('/user_up', 'UserController@user_up')->middleware('auth');
