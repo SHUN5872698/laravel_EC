@@ -193,6 +193,10 @@ p.total {
     /* カーソル時透明度 */
 }
 
+div.user-inf {
+    float: right;
+}
+
 /*デフォルトcss */
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
