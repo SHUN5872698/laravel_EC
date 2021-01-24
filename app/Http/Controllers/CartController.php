@@ -85,7 +85,7 @@ class CartController extends Controller
     {
         //Userモデルからユーザ情報の取得
         $users = new User();
-        $users = $users->orderUser();
+        $users = $users->User_Data();
 
         //現在の税率の取得
         $tax = new Tax();
