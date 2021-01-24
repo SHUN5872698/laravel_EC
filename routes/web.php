@@ -81,6 +81,27 @@ Route::get('/login/order_history', 'OrderController@Order_History')->middleware(
 /** ユーザー情報ページ */
 Route::get('/user_inf', 'UserController@user_inf')->middleware('auth');
 
+/** ユーザー名変更 */
+Route::get('/name_up', 'UserController@name_edit')->middleware('auth');
+Route::post('/name_up', 'UserController@name_update')->middleware('auth');
+
+/** パスワード変更 */
+Route::get('/pass_up', 'UserController@pass_edit')->middleware('auth');
+Route::post('/pass_up', 'UserController@pass_update')->middleware('auth');
+
+/** メールアドレス変更 */
+Route::get('/email_up', 'UserController@email_edit')->middleware('auth');
+Route::post('/email_up', 'UserController@email_update')->middleware('auth');
+
+/** 電話番号変更 */
+Route::get('/phone_up', 'UserController@phone_edit')->middleware('auth');
+Route::post('/phone_up', 'UserController@phone_update')->middleware('auth');
+
+/** 住所変更 */
+Route::get('/address_up', 'UserController@address_edit')->middleware('auth');
+Route::post('/address_up', 'UserController@address_update')->middleware('auth');
+
+
 /** ユーザー情報変更ページ */
 Route::get('/user_edit', 'UserController@user_edit')->middleware('auth');
 
