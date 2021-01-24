@@ -3,10 +3,10 @@
 @section('menubar')
 
 @section('content')
-<h1>ユーザー情報確認</h1>
+
 <div class="row">
     <div class="col-md-3">
-        <div class="card ml-3 my-3">
+        <div class="card ml-4 my-3">
             <div class="card-header">
                 コンテンツ
             </div>
@@ -18,45 +18,51 @@
             </div>
         </div>
     </div>
-    <div class="col-md-6">
-        <div class="card ml-3 my-3">
-            <div class="card-header">ユーザー情報確認</div>
-            <div class="card-body">
-                <div class="form-group row justify-content-center">
-                    <div class="col-12">
-                        <table class="table table-border">
-                            <tr>
-                                <td>ユーザー名</td>
-                                <td>{{$users->name}}</td>
-                            </tr>
-                            <tr>
-                                <td>メールアドレス</td>
-                                <td>{{$users->email }}</td>
-                            </tr>
-                            <tr>
-                                <td>電話番号</td>
-                                <td>{{$users->phone}}</td>
-                            </tr>
-                            <tr>
-                                <td>郵便番号</td>
-                                <td>{{ $users->postcode}}</td>
-                            </tr>
-                            <tr>
-                                <td>登録住所</td>
-                                <td>{{$users->prefectures_name}} {{$users->city}} {{$users->block}} {{$users->building}}</td>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </table>
-                    </div>
+    <div class="col-md-1"></div>
 
-                    <a class="btn btn-primary mx-3" href="{{ url('/user_edit') }}" role="button">ユーザー情報を変更</a>
-                    <a class="btn btn-outline-primary mx-3" href="{{ url('/login_main') }}" role="button">キャンセル</a>
-                </div>
-            </div>
+    <div class="col-md-5">
+        <div class="card my-3">
+            <div class="card-header">ユーザー情報</div>
+            <ul class="list-group list-group-flush text-left">
+                <li class="list-group-item">
+                    <div class="user-inf">
+                        <a class="btn btn-outline-secondary btn-sm mt-2" href="/name_up?id={{$id}}" role="button">変更</a>
+                    </div> お名前:<br>{{$name}}
+                </li>
+                <li class="list-group-item">
+                    <div class="user-inf">
+                        <button type="button" class="btn btn-outline-secondary btn-sm mt-2">変更</button>
+                    </div>
+                    パスワード:<br>*********
+                </li>
+                <li class="list-group-item">
+                    <div class="user-inf">
+                        <button type="button" class="btn btn-outline-secondary btn-sm mt-2">変更</button>
+                    </div>
+                    メールアドレス:<br>{{$email}}
+                </li>
+                <li class="list-group-item">
+                    <div class="user-inf">
+                        <button type="button" class="btn btn-outline-secondary btn-sm mt-2">変更</button>
+                    </div>
+                    電話番号:<br>{{$phone}}
+                </li>
+                <li class="list-group-item">
+                    <div class="user-inf">
+                        <button type="button" class="btn btn-outline-secondary btn-sm mt-2">変更</button>
+                    </div>
+                    登録住所:<br>{{ $postcode}}<br>{{$prefectures_name}}{{$city}}{{$block}}<br>{{$building}}
+                </li>
+                <li class="list-group-item"><a class="btn btn-primary mx-3" href="{{ url('/user_edit') }}" role="button">ユーザー情報を変更</a></li>
+                <li class="list-group-item">
+                    <a class="btn btn-outline-primary mx-3" href="{{ url('/login_main') }}" role="button">完了</a>
+                </li>
+
+
+            </ul>
         </div>
     </div>
+</div>
 </div>
 </div>
 <div class="col-md-3"></div>
