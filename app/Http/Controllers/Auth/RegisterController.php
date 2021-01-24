@@ -43,18 +43,18 @@ class RegisterController extends Controller
     }
 
     /**
-     *　バリデーションの条件の変更
+     *バリデーションの条件の変更
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'min:4|max:30', ''],
+            'name' => ['required', 'string', 'between:2,8'],
             'password' => ['required', 'string', 'min:8|max:30', 'confirmed'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'phone' => ['required', 'min:11|max:20'],
-            'postcode' => ['required', 'string', 'max:8'],
+            'phone' => ['required', 'between:11,20'],
+            'postcode' => ['required', 'string', 'between:7,8'],
             'prefecture_id' => ['required', 'integer'],
             'city' => ['required', 'string', 'max:24'],
             'block' => ['required', 'string', 'max:64'],
