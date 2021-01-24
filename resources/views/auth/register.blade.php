@@ -11,13 +11,14 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">
-                                {{ __('Name') }}　　<font color="red">必須</font></label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right mt-2">
+                                <font class="mx-2">{{ __('Name') }}</font>
+                                <font color="red">必須</font>
+                            </label>
 
                             <div class="col-md-6 mt-2">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" maxlength="30" name="name" value="{{ old('name') }}" placeholder="４文字以上30文字以内" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" maxlength="30" name="name" value="{{ old('name') }}" placeholder="2文字以上30文字以内" required autocomplete="name" autofocus>
 
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -28,23 +29,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">
-                                {{ __('E-Mail Address') }}　<font color="red">必須</font></label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">
-                                {{ __('Password') }}　　<font color="red">必須</font></label>
+                                <font class="mx-2">{{ __('Password') }}</font>
+                                <font color="red">必須</font>
+                            </label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" maxlength="30" placeholder="8文字以上３０文字以内" required autocomplete="new-password">
@@ -58,18 +46,42 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}　<font color="red">必須</font></label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">
+                                <font class="mx-2">{{ __('Confirm Password') }}</font>
+                                <font color="red">必須</font>
+                            </label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" maxlength="30" required autocomplete="new-password">
                             </div>
                         </div>
+
                         <div class="form-group row">
-                            <label for="phone" class="col-md-4 col-form-label text-md-right">
-                                {{ __('電話番号') }}　　<font color="red">必須</font></label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">
+                                <font class="mx-2">{{ __('E-Mail Address') }}</font>
+                                <font color="red">必須</font>
+                            </label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" placeholder="000-0000-0000" required autocomplete="new-phone">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="phone" class="col-md-4 col-form-label text-md-right">
+                                <font class="mx-2">{{ __('電話番号') }}</font>
+                                <font color="red">必須</font>
+                            </label>
+
+                            <div class="col-md-6">
+                                <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" placeholder="000-0000-0000" required autocomplete="phone">
 
                                 @error('phone')
                                 <span class="invalid-feedback" role="alert">
@@ -81,7 +93,9 @@
 
                         <div class="form-group row">
                             <label for="inputAddress01" class="col-md-4 col-form-label text-md-right">
-                                {{ __('郵便番号') }}　　<font color="red">必須</font></label>
+                                <font class="mx-2">{{ __('郵便番号') }}</font>
+                                <font color="red">必須</font>
+                            </label>
 
                             <div class="col-md-6">
                                 <input id="inputAddress01" type="text" class="form-control @error('postcode') is-invalid @enderror" name="postcode" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','prefecture_id','city');" placeholder="550-0011" value="{{ old('postcode') }}" required autocomplete="new-phone">
@@ -96,13 +110,15 @@
 
                         <div class="form-group row">
                             <label for="inputAddress02" class="col-md-4 col-form-label text-md-right">
-                                {{ __('都道府県') }}　　<font color="red">必須</font></label>
+                                <font class="mx-2">{{ __('都道府県') }}</font>
+                                <font color="red">必須</font>
+                            </label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 mt-2">
                                 <select name="prefecture_id" id="inputAddress02">
                                     <option value="">--- 選択してください ---</option>
                                     @foreach ($prefectures as $prefecture)
-                                    <option value={{$prefecture->id}} @if(old('prefecture_id')=='01' ) selected @endif>
+                                    <option value={{$prefecture->id}} @if(old('prefecture_id')==$prefecture->id ) selected @endif>
                                         {{$prefecture->name}}</option>
                                     @endforeach
                                 </select>
@@ -117,7 +133,9 @@
 
                         <div class="form-group row">
                             <label for="inputAddress03" class="col-md-4 col-form-label text-md-right">
-                                {{ __('市町村区') }}　　<font color="red">必須</font></label>
+                                <font class="mx-2">{{ __('市町村区') }}</font>
+                                <font color="red">必須</font>
+                            </label>
 
                             <div class="col-md-6">
                                 <input id="inputAddress03" type="text" name="city" class="form-control" placeholder="大阪市西区阿波座" value="{{ old('city') }}" required autocomplete="new-city">
@@ -132,7 +150,9 @@
 
                         <div class="form-group row">
                             <label for="inputAddress04" class="col-md-4 col-form-label text-md-right">
-                                {{ __('番地') }}　　<font color="red">必須</font></label>
+                                <font class="mx-2">{{ __('番地') }}</font>
+                                <font color="red">必須</font>
+                            </label>
 
                             <div class="col-md-6">
                                 <input id="inputAddress04" type="text" name="block" class="form-control" placeholder="１丁目１３−１６" value="{{ old('block') }}" required autocomplete="new-block">
@@ -147,7 +167,9 @@
 
                         <div class="form-group row">
                             <label for="inputAddress05" class="col-md-4 col-form-label text-md-right">
-                                {{ __('建物名・部屋番号') }}　　</label>
+                                <font class="">{{ __('建物名・部屋番号') }}</font>
+                                <font></font>
+                            </label>
 
                             <div class="col-md-6">
                                 <input id="inputAddress05" type="text" name="building" class="form-control" placeholder="松本フォレストビル501" value="{{ old('building') }}">
