@@ -161,20 +161,4 @@ class Order extends Model
         }
         return $orders;
     }
-
-
-    // public function Total_Price()
-    // {
-    //     $total_price = DB::table('orders')
-    //         ->whereYear('order_date', 2021)
-    //         ->whereMonth('order_date', 1)
-    //         ->where('orders.user_id', Auth::user()->id)
-    //         ->select('order_date')
-    //         ->selectRaw('SUM(total_price) as total_price',)
-    //         ->orderby('order_date', 'desc')
-    //         ->groupBy('order_date')
-    //         ->get();
-    //     return ($total_price);
-    // }
-
 }
