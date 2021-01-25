@@ -26,30 +26,30 @@
             <ul class="list-group list-group-flush text-left">
                 <li class="list-group-item">
                     <div class="user-inf">
-                        <a class="btn btn-outline-secondary btn-sm mt-2" href="/name_up?id={{$id}}" role="button">変更</a>
+                        <a class="btn btn-outline-secondary btn-sm mt-2" href="/name_up" role="button">変更</a>
                     </div> お名前:<br>{{$name}}
                 </li>
                 <li class="list-group-item">
                     <div class="user-inf">
-                        <a class="btn btn-outline-secondary btn-sm mt-2" href="/pass_up?id={{$id}}" role="button">変更</a>
+                        <a class="btn btn-outline-secondary btn-sm mt-2" href="/pass_up" role="button">変更</a>
                     </div>
                     パスワード:<br>*********
                 </li>
                 <li class="list-group-item">
                     <div class="user-inf">
-                        <a class="btn btn-outline-secondary btn-sm mt-2" href="/email_up?id={{$id}}" role="button">変更</a>
+                        <a class="btn btn-outline-secondary btn-sm mt-2" href="/email_up" role="button">変更</a>
                     </div>
                     メールアドレス:<br>{{$email}}
                 </li>
                 <li class="list-group-item">
                     <div class="user-inf">
-                        <a class="btn btn-outline-secondary btn-sm mt-2" href="/phone_up?id={{$id}}" role="button">変更</a>
+                        <a class="btn btn-outline-secondary btn-sm mt-2" href="/phone_up" role="button">変更</a>
                     </div>
                     電話番号:<br>{{$phone}}
                 </li>
                 <li class="list-group-item">
                     <div class="user-inf">
-                        <a class="btn btn-outline-secondary btn-sm mt-2" href="/address_up?id={{$id}}" role="button">変更</a>
+                        <a class="btn btn-outline-secondary btn-sm mt-2" href="/address_up" role="button">変更</a>
                     </div>
                     登録住所:<br>{{ $postcode}}<br>{{$prefectures_name}}{{$city}}{{$block}}<br>{{$building}}
                 </li>
