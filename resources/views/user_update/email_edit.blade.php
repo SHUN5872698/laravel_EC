@@ -39,7 +39,6 @@
 
                         <div class="form-group mt-3">
                             <div class="col-md-6 offset-md-3">
-                                <input type="hidden" name="id" value={{$id}}>
                                 <input type="submit" class="btn btn-outline-primary mx-3" value="変更を確定">
                                 <button type="button" class="btn btn-outline-secondary" onclick="location.href='/user_inf';">キャンセル</button>
                             </div>
