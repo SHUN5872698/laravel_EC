@@ -23,87 +23,71 @@ class UserController extends Controller
     }
 
     //ユーザー名変更ページへ移動
-    public function name_edit(Request $request)
+    public function name_edit()
     {
         //ユーザー情報の取得
-        $user = new User();
-        $user = $user->getName($request);
-
-        return view('user_update.name_edit', $user);
+        $auth = User::find(Auth::user()->id);
+        return view('user_update.name_edit', $auth);
     }
 
     //ユーザー名の変更を実行
     public function name_update(Request $request)
     {
-        // /**バリデーションの実行 */
+        //バリデーションの実行
         $this->validate($request, User::$name_rules);
 
-        $user = new User();
-        $user = $user->getName($request);
-        // dd($user);
+        //変更するユーザ情報の確定
+        $auth = User::find(Auth::user()->id);
 
-        /**formの内容を全て取得 */
-        $form = $request->all();
+        //更新内容の保存
+        $auth->name = $request->name;
+        $auth->save();
 
-        /**更新内容の保存 */
-        $user->fill($form)->save();
-        /**ユーザ情報ページにリダイレクト */
+        //ユーザ情報ページにリダイレクト
         return redirect('/user_inf');
     }
 
     //パスワード変更ページへ移動
-    public function pass_edit(Request $request)
+    public function pass_edit()
     {
-        //ユーザー情報の取得
-        $user = new User();
-        $user = $user->getName($request);
-
-        return view('user_update.pass_edit', $user);
+        return view('user_update.pass_edit');
     }
 
-    //ユーザー名の変更を実行
-    // public function pass_update(Request $request)
-    // {
-    //     // /**バリデーションの実行 */
-    //     $this->validate($request, User::$name_rules);
+    //パスワードの変更を実行
+    public function pass_update(Request $request)
+    {
+        /**バリデーションの実行 */
+        $this->validate($request, User::$pass_rules);
 
-    //     $user = new User();
-    //     $user = $user->getName($request);
-    //     // dd($user);
+        /**変更するユーザ情報の確定 */
+        $auth = User::find(Auth::user()->id);
 
-    //     /**formの内容を全て取得 */
-    //     $form = $request->all();
-
-    //     /**更新内容の保存 */
-    //     $user->fill($form)->save();
-    //     /**ユーザ情報ページにリダイレクト */
-    //     return redirect('/user_inf');
-    // }
+        //パスワードの更新
+        $auth->password = bcrypt($request->get('password'));
+        $auth->save();
+        return redirect('/user_inf');
+    }
 
     //メールアドレス変更ページへ移動
-    public function email_edit(Request $request)
+    public function email_edit()
     {
         //ユーザー情報の取得
-        $user = new User();
-        $user = $user->getName($request);
-
-        return view('user_update.email_edit', $user);
+        $auth = User::find(Auth::user()->id);
+        return view('user_update.email_edit', $auth);
     }
-    // メールアドレスの変更を実行
+    //メールアドレスの変更を実行
     public function email_update(Request $request)
     {
         /**バリデーションの実行 */
         $this->validate($request, User::$email_rules);
 
-        $user = new User();
-        $user = $user->getName($request);
-        // dd($user);
+        /**変更するユーザ情報の確定 */
+        $auth = User::find(Auth::user()->id);
 
-        /**formの内容を全て取得 */
-        $form = $request->all();
+        //更新内容の保存
+        $auth->email = $request->email;
+        $auth->save();
 
-        /**更新内容の保存 */
-        $user->fill($form)->save();
         /**ユーザ情報ページにリダイレクト */
         return redirect('/user_inf');
     }
@@ -112,27 +96,25 @@ class UserController extends Controller
     public function phone_edit(Request $request)
     {
         //ユーザー情報の取得
-        $user = new User();
-        $user = $user->getName($request);
+        /**変更するユーザ情報の確定 */
+        $auth = User::find(Auth::user()->id);
 
-        return view('user_update.phone_edit', $user);
+        return view('user_update.phone_edit', $auth);
     }
 
     //電話番号の変更を実行
     public function phone_update(Request $request)
     {
-        // /**バリデーションの実行 */
+        /**バリデーションの実行 */
         $this->validate($request, User::$phone_rules);
 
-        $user = new User();
-        $user = $user->getName($request);
-        // dd($user);
+        /**変更するユーザ情報の確定 */
+        $auth = User::find(Auth::user()->id);
 
-        /**formの内容を全て取得 */
-        $form = $request->all();
+        //更新内容の保存
+        $auth->phone = $request->phone;
+        $auth->save();
 
-        /**更新内容の保存 */
-        $user->fill($form)->save();
         /**ユーザ情報ページにリダイレクト */
         return redirect('/user_inf');
     }
@@ -140,20 +122,25 @@ class UserController extends Controller
     //住所変更ページへ移動
     public function address_edit(Request $request)
     {
-        //ユーザー情報の取得
+        /**ユーザー情報の取得
+         *都道県名も取得するのでmodelから取得*/
         $user = new User();
-        $user = $user->getName($request);
+        $user = $user->User_Data();
+
+        //都道府県情報の取得
+        $prefectures = new Prefecture();
+        $prefectures = $prefectures->getData();
 
         return view('user_update.address_edit', $user);
     }
-    // //住所の変更を実行
+    //住所の変更を実行
     // public function address_update(Request $request)
     // {
     //     // /**バリデーションの実行 */
     //     $this->validate($request, User::$name_rules);
 
     //     $user = new User();
-    //     $user = $user->getName($request);
+    //     $user = $user->User_Data();
     //     // dd($user);
 
     //     /**formの内容を全て取得 */
