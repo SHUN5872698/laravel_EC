@@ -5,31 +5,57 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-5">
+        <div class="col-md-8">
             <div class="card">
-                <div class="card-header">名前を変更</div>
+                <div class="card-header">パスワード変更</div>
 
                 <div class="card-body">
-                    <form method="POST" action="/name_up">
+                    <form method="POST" action="/pass_up">
                         @csrf
+
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right mt-2">
-                                <font class="mx-2">新しい名前</font>
+                            <label for="current_password" class="col-md-4 col-form-label text-md-right">
+                                現在のパスワード
                             </label>
 
-                            <div class="col-md-6 mt-2">
-                                <input id="name" type="name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ empty(old('name')) ? ($name) : old('name')}}" required autocomplete="name">
+                            <div class="col-md-6">
+                                <input id="current_password" type="password" class="form-control @error('current_password') is-invalid @enderror" name="current_password" maxlength="30" required autocomplete="current_password">
 
-                                @error('name')
+                                @error('current_password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group mt-4">
-                            <div class="col-md-５ offset-md-2">
-                                <input type="hidden" name="id" value={{$id}}>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">
+                                新しいパスワード
+                            </label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" maxlength="30" placeholder="8文字以上３０文字以内" required autocomplete="password">
+
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">
+                                {{ __('Confirm Password') }}
+                            </label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" maxlength="30" required autocomplete="password">
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <div class="col-md-6 offset-md-3">
                                 <input type="submit" class="btn btn-outline-primary mx-3" value="変更を確定">
                                 <button type="button" class="btn btn-outline-secondary" onclick="location.href='/user_inf';">キャンセル</button>
                             </div>
