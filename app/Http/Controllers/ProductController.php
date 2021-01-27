@@ -8,11 +8,8 @@ use App\Models\Tax;
 
 class ProductController extends Controller
 {
-
-    /**
-     * メインページ
-     * @param Request $request
-     * @return void
+    /**メインページ
+     * 現在の税率、商品ををランダムに12件、商品と紐づいたメイン画像を抽出
      */
     public function main()
     {
@@ -20,7 +17,7 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        //商品情報と画像データをランダムに取得
+        //商品情報と画像データをランダムに12件取得
         $products = new Product();
         $products = $products->Products();
 
@@ -35,6 +32,7 @@ class ProductController extends Controller
      * 商品の詳細ページ
      * @param Request $request
      * @return void
+     * 該当商品の商品情報と商品画像、関連するカテゴリー情報を抽出
      */
     public function product(Request $request)
     {
@@ -44,9 +42,9 @@ class ProductController extends Controller
 
         //商品情報の取得
         $products = new Product();
-        $products = $products->getProduct($request);
+        $products = $products->OneProduct($request);
 
-        //category情報を取得
+        //カテゴリー情報を取得
         $categorys = new Product();
         $categorys = $categorys->getCategory($request);
 
@@ -59,10 +57,10 @@ class ProductController extends Controller
     }
 
     /**
-     * category_masterから商品の絞り込み
      * カテゴリー検索ページ
      * @param Request $request
      * @return void
+     * カテゴリーマスターから商品の絞り込みをして抽出
      */
     public function master(Request $request)
     {
@@ -70,13 +68,13 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        //category_masterから商品の絞り込み
+        //カテゴリーマスターから商品の絞り込み
         $products = new Product();
-        $products = $products->getMaster($request);
+        $products = $products->Master($request);
 
         //category情報を取得
         $categorys = new Product();
-        $categorys = $categorys->getCategory($request);
+        $categorys = $categorys->Category($request);
 
         $data = [
             'products' => $products,
@@ -87,10 +85,10 @@ class ProductController extends Controller
     }
 
     /**
-     * categoryから商品の絞り込み
      * 商品詳細ページ
      * @param Request $request
      * @return void
+     * カテゴリーから絞り込みをしてレコードを抽出
      */
     public function category(Request $request)
     {
@@ -98,17 +96,17 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        //category情報の取得
+        //カテゴリー情報の取得
         $categorys = new Product();
-        $categorys = $categorys->getCategory($request);
+        $categorys = $categorys->Category($request);
 
-        //capacity情報の取得
+        //容量情報の取得
         $capacitys = new Product();
-        $capacitys = $capacitys->getCapacity($request);
+        $capacitys = $capacitys->Capacity($request);
 
-        //categoryから商品の絞り込みをして取得する
+        //カテゴリーから商品の絞り込みをして取得する
         $products = new Product();
-        $products = $products->getSearchCategory($request);
+        $products = $products->SearchCategory($request);
 
         $data = [
             'products' => $products,
@@ -120,10 +118,10 @@ class ProductController extends Controller
     }
 
     /**
-     * capacityから商品の絞り込み
      * 商品詳細ページ
      * @param Request $request
      * @return void
+     * 容量から商品の絞り込みをしてレコードを抽出
      */
     public function capacity(Request $request)
     {
@@ -131,17 +129,17 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        //category情報の取得
+        //カテゴリー情報の取得
         $categorys = new Product();
-        $categorys = $categorys->getCategory($request);
+        $categorys = $categorys->Category($request);
 
-        //capacity情報の取得
+        //容量情報の取得
         $capacitys = new Product();
-        $capacitys = $capacitys->getCapacity($request);
+        $capacitys = $capacitys->Capacity($request);
 
-        //capacityから商品の絞り込みをして取得する
+        //容量から商品の絞り込みをして取得する
         $products = new Product();
-        $products = $products->getSearchCapacity($request);
+        $products = $products->SearchCapacity($request);
 
         $data = [
             'products' => $products,
@@ -154,8 +152,7 @@ class ProductController extends Controller
 
     /**
      * ログイン済みのメインページ
-     * @param Request $request
-     * @return void
+     * 現在の税率、商品ををランダムに12件、商品と紐づいたメイン画像を抽出
      */
     public function login_main()
     {
@@ -163,7 +160,7 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        //商品情報と画像データをランダムに取得
+        //商品情報と画像データをランダムに12件取得
         $products = new Product();
         $products = $products->Products();
 
@@ -175,9 +172,10 @@ class ProductController extends Controller
     }
 
     /**
-     * ログイン済みの商品ページ
+     * ログイン済みの商品の詳細ページ
      * @param Request $request
      * @return void
+     * 該当商品の商品情報と商品画像、関連するカテゴリー情報を抽出
      */
     public function login_product(Request $request)
     {
@@ -187,11 +185,11 @@ class ProductController extends Controller
 
         //商品情報の取得
         $products = new Product();
-        $products = $products->getProduct($request);
+        $products = $products->OneProduct($request);
 
-        //category情報を取得して表示する
+        //カテゴリー情報を取得して表示する
         $categorys = new Product();
-        $categorys = $categorys->getCategory($request);
+        $categorys = $categorys->Category($request);
 
         $data = [
             'products' => $products,
@@ -202,10 +200,10 @@ class ProductController extends Controller
     }
 
     /**
-     * category_masterから商品の絞り込み
      * ログイン済みのカテゴリー検索ページ
      * @param Request $request
      * @return void
+     * カテゴリーマスターから商品の絞り込みをして抽出
      */
     public function login_master(Request $request)
     {
@@ -213,13 +211,13 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        //category_masterから商品の絞り込み
+        //カテゴリーマスターから商品の絞り込み
         $products = new Product();
-        $products = $products->getMaster($request);
+        $products = $products->Master($request);
 
-        //category情報を取得
+        //カテゴリー情報を取得
         $categorys = new Product();
-        $categorys = $categorys->getCategory($request);
+        $categorys = $categorys->Category($request);
 
         $data = [
             'products' => $products,
@@ -230,10 +228,10 @@ class ProductController extends Controller
     }
 
     /**
-     * categoryから商品の絞り込み
      * ログイン済みの商品詳細ページ
      * @param Request $request
      * @return void
+     * カテゴリーから絞り込みをしてレコードを抽出
      */
     public function login_category(Request $request)
     {
@@ -241,17 +239,17 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        //category情報の取得
+        //カテゴリー情報の取得
         $categorys = new Product();
-        $categorys = $categorys->getCategory($request);
+        $categorys = $categorys->Category($request);
 
-        //capacity情報の取得
+        //容量情報の取得
         $capacitys = new Product();
-        $capacitys = $capacitys->getCapacity($request);
+        $capacitys = $capacitys->Capacity($request);
 
-        //categoryから商品の絞り込みをして取得する
+        //カテゴリーから商品の絞り込みをして取得する
         $products = new Product();
-        $products = $products->getSearchCategory($request);
+        $products = $products->SearchCategory($request);
 
         $data = [
             'products' => $products,
@@ -263,10 +261,10 @@ class ProductController extends Controller
     }
 
     /**
-     * capacityから商品の絞り込み
-     * ログイン済みの商品詳細ページ
+     * 商品詳細ページ
      * @param Request $request
      * @return void
+     * 容量から商品の絞り込みをしてレコードを抽出
      */
     public function login_capacity(Request $request)
     {
@@ -274,17 +272,17 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        //category情報の取得
+        //カテゴリー情報の取得
         $categorys = new Product();
-        $categorys = $categorys->getCategory($request);
+        $categorys = $categorys->Category($request);
 
-        //capacity情報の取得
+        //容量情報の取得
         $capacitys = new Product();
-        $capacitys = $capacitys->getCapacity($request);
+        $capacitys = $capacitys->Capacity($request);
 
-        //capacityから商品の絞り込みをして取得する
+        //容量から商品の絞り込みをして取得する
         $products = new Product();
-        $products = $products->getSearchCapacity($request);
+        $products = $products->SearchCapacity($request);
 
         $data = [
             'products' => $products,

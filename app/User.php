@@ -20,6 +20,12 @@ class User extends Authenticatable
 
     protected $fillable = ['prefecture_id', 'name', 'password', 'email', 'phone', 'postcode',  'city',  'block', 'building',];
 
+    /** prefecturesテーブルとのリレーション */
+    public function prefecture()
+    {
+        return $this->hasMany('App\Models\Prefecture', 'id', 'name');
+    }
+
     /**ユーザ情報更新用のバリデーション*/
     //名前
     public static $name_rules = [
@@ -47,16 +53,13 @@ class User extends Authenticatable
         'building' => ['max:255'],
     ];
 
-    /**prefecturesテーブルとのリレーション*/
-    public function prefecture()
-    {
-        return $this->hasMany('App\Models\Prefecture', 'id', 'name');
-    }
-
-    //ユーザー情報の取得
+    /**
+     * ユーザー情報の取得
+     * prefecturesとjoinして都道府県名も取得
+     * @var array
+     */
     public function User_Data()
     {
-        //users情報の取得
         $users = User::with('prefecture')
             ->join('prefectures', 'prefectures.id',  '=', 'users.prefecture_id')
             ->where('users.id', Auth::user()->id)

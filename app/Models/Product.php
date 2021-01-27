@@ -11,16 +11,13 @@ class Product extends Model
     /**ガードするフィールド */
     protected $guarded = array('id');
 
-    /**
-     * productimagesテーブルとのリレーション
-     * @return void
-     */
+    /**productimagesテーブルとのリレーション*/
     public function productimage()
     {
         return $this->hasMany('App\Models\Productimage', 'product_id', 'image', 'kubun');
     }
 
-    /** 商品情報をランダムに取得*/
+    /** 商品情報をランダムに12件取得*/
     public function Products()
     {
         $products = Product::with('Productimage')
@@ -34,7 +31,6 @@ class Product extends Model
                 'products.category',
                 'products.capacity',
                 'productimages.image',
-
             )
             //商品をランダムに12件取得
             ->inRandomOrder()
@@ -44,7 +40,7 @@ class Product extends Model
     }
 
     /**商品詳細情報の取得 */
-    public function getProduct(Request $request)
+    public function OneProduct(Request $request)
     {
         $product = Product::with('Productimage')
             ->join('productimages', 'product_id',  '=', 'products.id')
@@ -64,8 +60,8 @@ class Product extends Model
         return $product;
     }
 
-    /** category_masterから商品の絞り込みをして取得*/
-    public function getMaster(Request $request)
+    /** カテゴリーマスターから商品の絞り込みをして取得*/
+    public function Master(Request $request)
     {
         $master = Product::with('Productimage')
             ->join('productimages', 'product_id',  '=', 'products.id')
@@ -86,7 +82,7 @@ class Product extends Model
     }
 
     /** category情報の取得 */
-    public function getCategory(Request $request)
+    public function Category(Request $request)
     {
         $category = Product::where('category_master', 'like', $request->category_master . '%')
             ->distinct()
@@ -99,7 +95,7 @@ class Product extends Model
     }
 
     /** categoryから機種を絞り込みをして取得 */
-    public function getSearchCategory(Request $request)
+    public function SearchCategory(Request $request)
     {
         $searchcategory = Product::with('Productimage')
             ->join('productimages', 'product_id',  '=', 'products.id')
@@ -120,7 +116,7 @@ class Product extends Model
     }
 
     /** capacity情報の取得 */
-    public function getCapacity(Request $request)
+    public function Capacity(Request $request)
     {
         $capacity = Product::where('category', $request->category)
             ->distinct()
@@ -134,7 +130,7 @@ class Product extends Model
     }
 
     /** capacityから商品情報を絞り込み */
-    public function getSearchCapacity(Request $request)
+    public function SearchCapacity(Request $request)
     {
         $searchcapacity = Product::with('Productimage')
             ->join('productimages', 'product_id',  '=', 'products.id')
@@ -154,17 +150,4 @@ class Product extends Model
             ->paginate(12);
         return $searchcapacity;
     }
-
-    // public function order_items(Request $request)
-    // {
-    //     $order_items = Product::where('product.id', $request->product_id)
-    //         ->select(
-    //             'products.id',
-    //             'products.name',
-    //             'products.price',
-    //         )
-    //         ->orderby('products.id', 'asc')
-    //         ->get();
-    //     return $order_items;
-    // }
 }

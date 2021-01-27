@@ -11,16 +11,21 @@ use App\Models\Prefecture;
 
 class UserController extends Controller
 {
-    /**ユーザー情報と都道府県情報を取得して確認ページへ渡す*/
+    /**
+     * ユーザー情報確認ページ
+     *ユーザー情報と都道府県情報を取得して確認ページへ渡す
+     */
     public function user_inf()
     {
-        /**都道県名も取得するのでUser情報をmodelから取得*/
+        /**都道県名も取得するのでmodelから取得*/
         $user = new User();
         $user = $user->User_Data();
         return view('user_update.user_inf', $user);
     }
 
-    /**ユーザー名変更ページへ移動 */
+    /**
+     * ユーザー名変更ページ
+     */
     public function name_edit()
     {
         /**ユーザー情報の取得 */
@@ -28,7 +33,11 @@ class UserController extends Controller
         return view('user_update.name_edit', $auth);
     }
 
-    //ユーザー名の変更を実行
+    /**
+     * ユーザー名の変更を実行
+     * @param Request $request
+     * @return void
+     */
     public function name_update(Request $request)
     {
         /**バリデーションの実行 */
@@ -45,13 +54,19 @@ class UserController extends Controller
         return redirect('/user_inf');
     }
 
-    /**パスワード変更ページへ移動 */
+    /**
+     * パスワード変更ページ
+     */
     public function pass_edit()
     {
         return view('user_update.pass_edit');
     }
 
-    /**パスワードの変更を実行 */
+    /**
+     * パスワードの変更を実行
+     * @param Request $request
+     * @return void
+     */
     public function pass_update(Request $request)
     {
         /**バリデーションの実行 */
@@ -68,7 +83,9 @@ class UserController extends Controller
         return redirect('/user_inf');
     }
 
-    /**メールアドレス変更ページへ移動 */
+    /**
+     * メールアドレス変更ページへ移動
+     */
     public function email_edit()
     {
         /**ユーザー情報の取得 */
@@ -78,6 +95,8 @@ class UserController extends Controller
 
     /**
      * メールアドレスの変更を実行
+     * @param Request $request
+     * @return void
      */
     public function email_update(Request $request)
     {
@@ -95,7 +114,9 @@ class UserController extends Controller
         return redirect('/user_inf');
     }
 
-    /**電話番号変更ページへ移動 */
+    /**
+     * 電話番号変更ページへ移動
+     */
     public function phone_edit(Request $request)
     {
         /**ユーザー情報の取得 */
@@ -103,7 +124,11 @@ class UserController extends Controller
         return view('user_update.phone_edit', $auth);
     }
 
-    /**電話番号の変更を実行 */
+    /**
+     * 電話番号の変更を実行
+     * @param Request $request
+     * @return void
+     */
     public function phone_update(Request $request)
     {
         /**バリデーションの実行 */
@@ -120,7 +145,9 @@ class UserController extends Controller
         return redirect('/user_inf');
     }
 
-    /**住所変更ページへ移動 */
+    /**
+     * 住所変更ページへ移動
+     */
     public function address_edit(Request $request)
     {
         /**都道県名も取得するのでUser情報をmodelから取得*/
@@ -136,7 +163,12 @@ class UserController extends Controller
         ];
         return view('user_update.address_edit', $data);
     }
-    /**住所の変更を実行 */
+
+    /**
+     *住所の変更を実行
+     * @param Request $request
+     * @return void
+     */
     public function address_update(Request $request)
     {
         /**バリデーションの実行 */
