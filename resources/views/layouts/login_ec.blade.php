@@ -82,6 +82,9 @@
         &copy;right 2020 fujii
     </div>
     </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+
 </body>
 
 </html>
