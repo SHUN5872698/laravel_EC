@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 mt-3">
             <div class="card">
                 <div class="card-header">パスワード変更</div>
 
@@ -54,11 +54,9 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" maxlength="30" required autocomplete="password">
                             </div>
                         </div>
-                        <div class="form-group mt-3">
-                            <div class="col-md-6 offset-md-3">
-                                <input type="submit" class="btn btn-outline-primary mx-3" value="変更を確定">
-                                <button type="button" class="btn btn-outline-secondary" onclick="location.href='/user_inf';">キャンセル</button>
-                            </div>
+                        <div class="row justify-content-center">
+                            <input type="submit" class="btn btn-outline-primary mx-2" value="変更を確定">
+                            <button type="button" class="btn btn-outline-secondary" onclick="location.href='/user_inf';">キャンセル</button>
                         </div>
                     </form>
                 </div>

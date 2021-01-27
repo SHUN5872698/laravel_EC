@@ -6,7 +6,7 @@
 
 <div class="row">
     <div class="col-md-3">
-        <div class="card ml-4 my-3">
+        <div class="card ml-3 my-3">
             <div class="card-header">
                 コンテンツ
             </div>
@@ -53,18 +53,15 @@
                     </div>
                     登録住所:<br>{{ $postcode}}<br>{{$prefectures_name}}{{$city}}{{$block}}<br>{{$building}}
                 </li>
-                <li class="list-group-item"><a class="btn btn-primary mx-3" href="{{ url('/user_edit') }}" role="button">ユーザー情報を変更</a></li>
-                <li class="list-group-item">
-                    <a class="btn btn-outline-primary mx-3" href="{{ url('/login_main') }}" role="button">完了</a>
-                </li>
-
-
             </ul>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-outline-secondary" onclick="location.href='/user_inf';">キャンセル</button>
         </div>
     </div>
 </div>
-</div>
-</div>
+
+
 <div class="col-md-3"></div>
 </div>
 @endsection

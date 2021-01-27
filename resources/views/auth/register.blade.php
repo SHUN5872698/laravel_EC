@@ -4,7 +4,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-10 mt-3">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
@@ -35,7 +35,7 @@
                             </label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" maxlength="30" placeholder="8文字以上３０文字以内" required autocomplete="new-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" maxlength="30" placeholder="8文字以上３０文字以内" required autocomplete="password">
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -52,7 +52,7 @@
                             </label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" maxlength="30" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" maxlength="30" required autocomplete="password">
                             </div>
                         </div>
 
@@ -97,14 +97,17 @@
                                 <font color="red">必須</font>
                             </label>
 
-                            <div class="col-md-6">
-                                <input id="inputAddress01" type="text" class="form-control @error('postcode') is-invalid @enderror" name="postcode" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','prefecture_id','city');" placeholder="550-0011" value="{{ old('postcode') }}" required autocomplete="new-phone">
 
+                            <div class="col-md-3">
+                                <input id="inputAddress01" type="text" class="form-control @error('postcode') is-invalid @enderror" name="postcode" maxlength="8" placeholder="550-0011" value="{{ old('postcode') }}" required autocomplete="new-phone">
                                 @error('postcode')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
+                            </div>
+                            <div class="mt-1">
+                                <input type="button" onkeyup="AjaxZip3.zip2addr('postcode','','prefecture_id','city');" onclick="AjaxZip3.zip2addr('postcode','','prefecture_id','city');" value="検索">
                             </div>
                         </div>
 
@@ -138,7 +141,7 @@
                             </label>
 
                             <div class="col-md-6">
-                                <input id="inputAddress03" type="text" name="city" class="form-control" placeholder="大阪市西区阿波座" value="{{ old('city') }}" required autocomplete="new-city">
+                                <input id="inputAddress03" type="text" name="city" class="form-control" value="{{ old('city') }}" required autocomplete="new-city">
 
                                 @error('city')
                                 <span class="invalid-feedback" role="alert">
@@ -155,7 +158,7 @@
                             </label>
 
                             <div class="col-md-6">
-                                <input id="inputAddress04" type="text" name="block" class="form-control" placeholder="１丁目１３−１６" value="{{ old('block') }}" required autocomplete="new-block">
+                                <input id="inputAddress04" type="text" name="block" class="form-control" value="{{ old('block') }}" required autocomplete="new-block">
 
                                 @error('block')
                                 <span class="invalid-feedback" role="alert">
@@ -172,7 +175,7 @@
                             </label>
 
                             <div class="col-md-6">
-                                <input id="inputAddress05" type="text" name="building" class="form-control" placeholder="松本フォレストビル501" value="{{ old('building') }}">
+                                <input id="inputAddress05" type="text" name="building" class="form-control" value="{{ old('building') }}">
 
                                 @error('building')
                                 <span class="invalid-feedback" role="alert">
