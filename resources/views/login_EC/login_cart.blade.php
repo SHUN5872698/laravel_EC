@@ -7,6 +7,16 @@
 @section('content')
 
 <div class="row mt-3">
+    @if( $items->count() == 0 )
+    <div class="col-md-9">
+        <div class="card ml-3">
+            <div class="card-header">ショッピングカート</div>
+            <div class="card-body">
+                <h1>お客様のカートに商品はありません。</h1>
+            </div>
+        </div>
+    </div>
+    @else
     <div class="col-md-9">
         <div class="card ml-4">
             <div class="card-header">ショッピングカート</div>
@@ -51,6 +61,7 @@
             {{$items->appends(request()->query())->links()}}
         </div>
     </div>
+    @endif
 
     <div class="col-md-3">
         <div class="card mr-3">
