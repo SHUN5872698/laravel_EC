@@ -119,6 +119,10 @@ input.count-number {
     width: 60px;
 }
 
+.cart-item {
+    border-bottom: 1px solid #dcdcdc;
+}
+
 /** 合計金額*/
 p.total {
     text-align: left;
