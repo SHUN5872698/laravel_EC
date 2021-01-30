@@ -17,8 +17,12 @@ class Tax extends Model
     {
         $tax = Tax::whereDate('taxes.from', '<=', Carbon::now()->format('Y-m-d'))
             ->orderby('taxes.from', 'desc')
+            ->select(
+                'taxes.percentage',
+            )
             ->first();
         $tax->percentage = ($tax->percentage + 100) / 100;
+
         return $tax;
     }
 
@@ -27,7 +31,7 @@ class Tax extends Model
         $percentage = Tax::whereDate('taxes.from', '<=', Carbon::now()->format('Y-m-d'))
             ->orderby('taxes.from', 'desc')
             ->select(
-                'taxes.percentage'
+                'taxes.percentage',
             )
             ->first();
         return $percentage;
