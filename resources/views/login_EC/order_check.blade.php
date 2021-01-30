@@ -6,16 +6,16 @@
 
 @section('content')
 <h1>購入確認ページ</h1>
-<div class="row">
+<div class="row mt-3">
 
     <div class="col-md-3">
-        <div class="card ml-3 my-3">
+        <div class="card ml-3 ">
             <div class="card-header">お届け先情報</div>
             <div class="row">
                 <div class="card-body">
                     <table class="table table-borderless">
                         <tr>
-                            <th>お届け先住所</th>
+                            <td>お届け先住所</td>
                         <tr>
                             <td>{{$users->name}}</td>
                         </tr>
@@ -43,50 +43,47 @@
     </div>
 
     <div class="col-md-6">
-        <div class="card ml-3 my-3">
+        <div class="card">
             <div class="card-header">注文商品</div>
-            <div class="row">
+            @foreach ($items as $item)
+            <div class="cart-item">
                 <div class="card-body">
-                    <table class="table table-border">
-                        <tr align="center">
-                            <th>商品名</th>
-                            <th>単品価格(税込)</th>
-                            <th>購入数</th>
-                            <th>合計金額</th>
-                        </tr>
-                        @foreach ($order_check as $order)
-                        <tr align="center">
-                            <td>
-                                <font size="2">{{$order->name}}</font>
-                            </td>
-                            <td>
-                                <font size="3">
-                                    ¥{{number_format($order->price)}}
-                                </font>
-                            </td>
-                            <td>
-                                <form action="countUp" method="post">
-                                    @csrf
-                                    <input type="number" class='count-number ml-1' name="count" min="1" max="100" value={{$order->count}}>
-                                    <input type="hidden" name="product_id" value={{$order->product_id}}>
-                                    <input type="submit" class="btn btn-secondary btn-sm ml-1" value="変更">
-                                </form>
-                            </td>
-                            <td>
+                    <div class="row">
+                        <div class="image">
+                            <img src="../images/{{$item->image}}" width="100" height="100">
+                        </div>
+                        <div class="product">
+                            <div class="product_name">
+                                <a href="/login/product?id={{$item->id}}&category_master={{$item->category_master}}">{{$item->name}}</a>
+                            </div>
+                            <div class="price">
+                                単品価格:
                                 <font size="3" color="red">
-                                    ¥{{number_format(($order->price * $order->count))}}
-                                </font>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </table>
+                                    ¥{{number_format($item->price * $tax->percentage)}}円</font>
+                                <font size="2" color="red">(税込)</font>
+                            </div>
+                            <div class="count">
+                                購入数：{{$item->count}}個
+                            </div>
+                            <div class="total">
+                                合計:
+                                <font size="3" color="red">
+                                    ¥{{number_format(($item->price * $tax->percentage) * $item->count)}}円</font>
+                                <font size="2" color="red">(税込)</font>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            @endforeach
+        </div>
+        <div class="paginate  mt-1 ">
+            {{$items->appends(request()->query())->links()}}
         </div>
     </div>
 
     <div class="col-md-3">
-        <div class="card mr-3 mt-3">
+        <div class="card mr-3">
             <div class="card-header">注文確認</div>
             <div class="card-product my-2">
                 <p class="total ml-2">
