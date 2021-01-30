@@ -69,8 +69,6 @@ Route::get('/login/delete', 'CartController@delete')->middleware('auth');
 /** 購入確認ページ */
 //購入確認ページ
 Route::get('/login/order_check', 'CartController@order_check')->middleware('auth');
-//購入数の変更
-Route::post('/login/countUp', 'CartController@order_countUp')->middleware('auth');
 
 /** 購入確定処理*/
 Route::get('/login/order_confirmed', 'OrderController@order_confirmed')->middleware('auth');
