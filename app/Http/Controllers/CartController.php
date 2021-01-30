@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart_item;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
+use App\User;
 use App\Models\Tax;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,7 +13,7 @@ class CartController extends Controller
 {
     /**
      * カートページに移動
-     * @return void
+     *
      */
     public function cart_read()
     {
@@ -21,20 +21,23 @@ class CartController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        //userのカート情報を取得
-        $cart_items = new Cart_item();
-        $cart_items = $cart_items->getCart_items();
+        //該当ユーザーのカート情報を取得
+        $items = new Cart_item();
+        $items = $items->Cart_items();
+
+        //カート内商品の合計金額を取得
+        $totalprice = new Cart_item();
+        $totalprice = $totalprice->totalprice();
 
         //商品の合計金額を算出
-        $total_price = 0;
-        foreach ($cart_items as $cart) {
-            $total_price += round($cart->price * $tax->percentage)  * $cart->count;
-        }
-
+        // $totalprice = 0;
+        // foreach ($items as $item) {
+        //     $totalprice += $item->price * $tax->percentage  * $item->count;
+        // }
         $data = [
             'tax' => $tax,
-            'cart_items' => $cart_items,
-            'total_price' => $total_price,
+            'items' => $items,
+            'totalprice' => $totalprice,
         ];
         return view('login_EC.login_cart', $data);
     }
@@ -46,23 +49,47 @@ class CartController extends Controller
      */
     public function cart_in(Request $request)
     {
-        //商品がカートにあればレコードを更新、なければレコードを作成
-        Cart_item::updateOrInsert(
-            ['user_id' => $request->user_id, 'product_id' => $request->product_id],
-            ['count' => $request->count]
-        );
+        //該当レコードの検索
+        $cart_in = Cart_item::where('user_id', Auth::user()->id)
+            ->where('product_id', $request->product_id)
+            ->first();
+        /** 同一のuser_idとproduct_idが存在しなかった場合
+         * cart_itemsテーブルにレコードを新規作成*/
+        if ($cart_in == null) {
 
-        //カートページにリダイレクト
-        return redirect('login/cart_read');
+            // Cart_itemモデルのオブジェクト作成
+            $cart_in = new Cart_item();
+
+            // formの内容を全て取得
+            $form = $request->all();
+
+            // ユーザーIDはログインユーザーのuser_idを代入
+            $form['user_id'] = Auth::user()->id;
+
+            //タイムスタンプを無効化
+            $cart_in->timestamps = false;
+
+            //レコードを新規作成
+            $cart_in->fill($form)->save();
+
+            //カートページにリダイレクト
+            return redirect('login/cart_read');
+
+            /**レコードが存在していた場合は該当のレコードの購入数に追加してレコードをアップデート */
+        } else if ($cart_in != null) {
+
+
+            //該当レコードの購入数を追加
+            $cart_in->increment('count', $request->count);
+
+            //カートページにリダイレクト
+            return redirect('login/cart_read');
+        }
     }
 
-    /** カートの商品購入数の変更 */
+    /** 購入数の変更 */
     public function countUp(Request $request)
     {
-        // // formの内容を全て取得
-        // $form = $request->all();
-
-        /** 購入数の変更*/
         Cart_item::where('user_id', Auth::user()->id)
             ->where('product_id', $request->product_id)
             ->update([
@@ -91,36 +118,20 @@ class CartController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        $order_check = new Cart_item();
-        $order_check = $order_check->getOrder_Check();
+        //userのカート情報を取得
+        $items = new Cart_item();
+        $items = $items->Cart_items();
 
-        foreach ($order_check as $check) {
-            $check->price = round($check->price * $tax->percentage);
-        }
-
-        //商品の合計金額を算出
-        $total_price = 0;
-        foreach ($order_check as $order) {
-            $total_price += round($order->price * $order->count);
-        };
+        //カート内商品の合計金額を取得
+        $totalprice = new Cart_item();
+        $totalprice = $totalprice->totalprice();
 
         $data = [
             'tax' => $tax,
-            'order_check' => $order_check,
-            'total_price' => $total_price,
+            'items' => $items,
+            'total_price' => $totalprice,
             'users' => $users,
         ];
         return view('login_EC.order_check', $data);
-    }
-
-    /** 購入確認画面での購入数の変更処理*/
-    public function order_countUp(Request $request)
-    {
-        Cart_item::where('user_id', Auth::user()->id)
-            ->where('product_id', $request->product_id)
-            ->update([
-                'count' => $request->count,
-            ]);
-        return redirect('login/order_check');
     }
 }
