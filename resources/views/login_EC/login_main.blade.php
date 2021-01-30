@@ -18,7 +18,7 @@
                         <br>
                         価格:
                         <font color="red">
-                            ¥{{number_format($product->price * $tax->percentage)}}</font>
+                            ¥{{number_format($product->price * $tax->percentage)}}円</font>
                         <font size="2" color="red">(税込)</font>
                         <br>
                         スペック:
