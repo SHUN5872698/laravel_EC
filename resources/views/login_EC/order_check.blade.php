@@ -88,17 +88,10 @@
             <div class="card-product my-2">
                 <p class="total ml-2">
                     <font size="6" color="red">
-                        ¥{{number_format($total_price)}}</font>
+                        ¥{{number_format($total_price * $tax->percentage)}}円</font>
                     <font size="2" color="red">(税込)</font>
                 </p>
-                <form action="order_confirmed" method="get">
-                    @csrf
-                    <input type="hidden" name="total_price" value={{$total_price}}>
-                    <input type="hidden" name="user_id" value={{$users->id}}>
-                    <input type="hidden" name="prefecture_id" value={{$users->prefecture_id}}>
-                    <input type="submit" value="注文を確定" class="order_Confirm mb-3">
-                </form>
-
+                <a href="/login/order_confirmed"><input type="submit" value="購入確認ページへ" class="order_check mb-3"></a>
             </div>
         </div>
     </div>
