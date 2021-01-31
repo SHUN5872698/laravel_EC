@@ -13,6 +13,7 @@ class CartController extends Controller
     /**
      * カートページに移動
      * @return void
+     * 税率、カート内商品とその合計金額を抽出
      */
     public function cart_read()
     {
@@ -25,13 +26,13 @@ class CartController extends Controller
         $items = $items->Cart_items();
 
         //カート内商品の合計金額を取得
-        $totalprice = new Cart_item();
-        $totalprice = $totalprice->totalprice();
+        $total_price = new Cart_item();
+        $total_price = $total_price->Total_price();
 
         $data = [
             'tax' => $tax,
             'items' => $items,
-            'totalprice' => $totalprice,
+            'total_price' => $total_price,
         ];
         //カートページに移動
         return view('login_EC.login_cart', $data);
@@ -91,8 +92,8 @@ class CartController extends Controller
      * 購入確認ページ
      * @param Request $request
      * @return void
-     * ユーザーと商品、メイン画像、税率
-     * カート内商品とその合計金額を抽出
+     * ユーザー情報と商品情報、メイン画像、
+     * 税率、カート内商品とその合計金額を抽出
      */
     public function order_check()
     {
@@ -109,13 +110,13 @@ class CartController extends Controller
         $items = $items->Cart_items();
 
         //カート内商品の合計金額を取得
-        $totalprice = new Cart_item();
-        $totalprice = $totalprice->totalprice();
+        $total_price = new Cart_item();
+        $total_price = $total_price->Total_price();
 
         $data = [
             'tax' => $tax,
             'items' => $items,
-            'total_price' => $totalprice,
+            'total_price' => $total_price,
             'users' => $users,
         ];
         //購入確認ページへ移動

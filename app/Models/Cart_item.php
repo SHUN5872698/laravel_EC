@@ -66,9 +66,9 @@ class Cart_item extends Model
      * カート内商品の合計金額の作成
      * @return void
      */
-    public function totalprice()
+    public function Total_price()
     {
-        $totalprice = 0;
+        $total_price = 0;
         $items = Cart_item::with('Product')
             ->join('products', 'products.id', '=', 'cart_items.product_id')
             ->where('cart_items.user_id', Auth::user()->id)
@@ -78,9 +78,9 @@ class Cart_item extends Model
             )
             ->get();
         foreach ($items as $item) {
-            $totalprice += $item->price  * $item->count;
+            $total_price += $item->price  * $item->count;
         }
-        return $totalprice;
+        return $total_price;
     }
 
     /**
@@ -155,14 +155,12 @@ class Cart_item extends Model
 
     /**
      * order_itemsテーブルに登録する商品情報の取得
-     * @param Request $request
      * @return void
      * 商品名と価格をproductsテーブルから抽出
      */
-    public function products_confirmed(Request $request)
+    public function Items()
     {
-        $order_check = Cart_item::with('User', 'Product')
-            ->join('users', 'users.id', '=', 'cart_items.user_id')
+        $check = Cart_item::with('Product')
             ->join('products', 'products.id', '=', 'cart_items.product_id')
             ->where('cart_items.user_id', Auth::user()->id)
             ->select(
@@ -174,15 +172,14 @@ class Cart_item extends Model
             ->orderby('cart_items.id', 'asc')
             ->get();
 
-        return $order_check;
+        return $check;
     }
 
     /**
      * 該当ユーザのcart情報を全て削除
-     * @param Request $request
      * @return void
      */
-    public function delete_cart(Request $request)
+    public function Delete_cart()
     {
         $delete = Cart_item::where('user_id', Auth::user()->id)
             ->delete();
