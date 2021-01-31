@@ -39,7 +39,11 @@ class Product extends Model
         return $products;
     }
 
-    /**商品詳細情報の取得 */
+    /**
+     * 商品詳細情報の取得
+     * @param Request $request
+     * @return void
+     */
     public function OneProduct(Request $request)
     {
         $product = Product::with('Productimage')
@@ -60,7 +64,11 @@ class Product extends Model
         return $product;
     }
 
-    /** カテゴリーマスターから商品の絞り込みをして取得*/
+    /**
+     *カテゴリーマスターから商品の絞り込みをして取得
+     * @param Request $request
+     * @return void
+     */
     public function Master(Request $request)
     {
         $master = Product::with('Productimage')
@@ -81,7 +89,11 @@ class Product extends Model
         return $master;
     }
 
-    /** category情報の取得 */
+    /**
+     * category情報の取得
+     * @param Request $request
+     * @return void
+     */
     public function Category(Request $request)
     {
         $category = Product::where('category_master', 'like', $request->category_master . '%')
@@ -94,7 +106,11 @@ class Product extends Model
         return $category;
     }
 
-    /** categoryから機種を絞り込みをして取得 */
+    /**
+     *categoryから機種を絞り込みをして取得
+     * @param Request $request
+     * @return void
+     */
     public function SearchCategory(Request $request)
     {
         $searchcategory = Product::with('Productimage')
@@ -115,7 +131,11 @@ class Product extends Model
         return $searchcategory;
     }
 
-    /** capacity情報の取得 */
+    /**
+     * capacity情報の取得
+     * @param Request $request
+     * @return void
+     */
     public function Capacity(Request $request)
     {
         $capacity = Product::where('category', $request->category)
@@ -129,7 +149,11 @@ class Product extends Model
         return $capacity;
     }
 
-    /** capacityから商品情報を絞り込み */
+    /**
+     * capacityから商品情報を絞り込み
+     * @param Request $request
+     * @return void
+     */
     public function SearchCapacity(Request $request)
     {
         $searchcapacity = Product::with('Productimage')
