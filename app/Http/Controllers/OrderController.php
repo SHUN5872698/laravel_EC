@@ -12,44 +12,50 @@ class OrderController extends Controller
 {
     /**
      * 購入された商品とユーザー情報の登録処理
-     * @param Request $request
      * @return void
+     * ordersテーブルに購入者情報を登録
+     * order_itemsテーブルに商品情報と購入数を登録
      */
-    public function order_confirmed(Request $request)
+    public function order_fixing()
     {
         //ordersテーブルにレコードを新規作成
-        $order_confirmed = new Order();
-        $order_confirmed = $order_confirmed->order_confirmed($request);
+        $order = new Order();
+        $order = $order->Order_add();
 
-        //order_itemsテーブルにレコードを新規作成
-        $items_confirmed = new Order_item();
-        $items_confirmed = $items_confirmed->items_confirmed($request);
-
-        if (is_null($order_confirmed && $items_confirmed)) {
+        if (is_null($order)) {
             //該当レコードが存在しない場合はカートページにリダイレクト
             return redirect('login/cart_read');
         } else {
-            //存在する場合は該当ユーザーのcart情報を削除
-            $delete_cart = new Cart_item();
-            $delete_cart = $delete_cart->delete_cart($request);
-            //購入履歴ページにリダイレクト
+
+            //存在する場合は//order_itemsテーブルにレコードを新規作成
+            $items = new Order_item();
+            $items = $items->Items_add();
+        }
+
+        if (is_null($order && $items)) {
+            //2つのテーブルに登録処理ができなかった場合はカートページにリダイレクト
             return redirect('login/cart_read');
+        } else {
+
+            //存在する場合は該当ユーザーのカート情報を削除を実行
+            $delete_cart = new Cart_item();
+            $delete_cart = $delete_cart->Delete_cart();
+
+            //購入履歴ページにリダイレクト
+            return redirect('/login/order_history');
         }
     }
 
     /**
      * 購入履歴の取得
      * @return void
+     * ログインしているユーザー情報から購入者情報を抽出
      */
     public function Order_History()
     {
+        //購入者情報と購入商品の情報を取得
         $orders = new Order();
         $orders = $orders->Order_History();
-        // dd($orders);
-
-        // $total_price = new Order();
-        // $total_price = $total_price->Total_Price();
-        // dd($total_price);
 
         $data = [
             'orders' => $orders,
