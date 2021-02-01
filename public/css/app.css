@@ -123,6 +123,11 @@ input.count-number {
     border-bottom: 1px solid #dcdcdc;
 }
 
+.order-item {
+    border-bottom: 1px solid #dcdcdc;
+}
+
+
 /** 合計金額*/
 p.total {
     text-align: left;
