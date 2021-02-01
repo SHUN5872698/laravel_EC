@@ -7,6 +7,8 @@ use App\Models\Cart_item;
 use App\Models\Order;
 use App\Models\Order_item;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Pagination\LengthAwarePaginator;
+
 
 class OrderController extends Controller
 {
@@ -51,11 +53,11 @@ class OrderController extends Controller
      * @return void
      * ログインしているユーザー情報から購入者情報を抽出
      */
-    public function Order_History()
+    public function order_history(Request $request)
     {
         //購入者情報と購入商品の情報を取得
         $orders = new Order();
-        $orders = $orders->Order_History();
+        $orders = $orders->Order_History($request);
 
         $data = [
             'orders' => $orders,

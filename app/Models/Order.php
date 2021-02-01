@@ -8,7 +8,7 @@ use Carbon\Carbon;
 use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class Order extends Model
 {
@@ -111,7 +111,7 @@ class Order extends Model
      * ログインしているユーザーidから購入者情報を購入日が新しい順に抽出
      * 抽出したidから購入した商品情報を取得して同一の連想配列内に格納
      */
-    public function Order_History()
+    public function Order_History(Request $request)
     {
         //ordersテーブルの情報を取得
         $users = Order::with('prefecture')
@@ -159,7 +159,14 @@ class Order extends Model
             $orders[$i]['item'] = $items;
             $i++;
         }
-
+        //$ordersを10件ずつに分割
+        $orders = new LengthAwarePaginator(
+            $orders,
+            count($orders),
+            10,
+            1,
+            array('path' => $request->url())
+        );
         return $orders;
     }
 }

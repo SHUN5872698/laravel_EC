@@ -1,14 +1,20 @@
 @extends('layouts.login_ec')
 @yield('css')
-@section('title', '購入履歴閲覧ページ')
+@section('title', '購入履歴ページ')
 
 @section('menubar')
 
 @section('content')
-<h1>購入履歴閲覧ページ</h1>
 <div class="row">
     <div class="col-md-3">
-        <div class="card ml-3 my-3">
+        <h1 class="ml-3">購入履歴</h1>
+    </div>
+    <div class="col-md-9"></div>
+    <div class="col-md-3"></div>
+</div>
+<div class="row mt-3">
+    <div class="col-md-3">
+        <div class="card ml-3 ">
             <div class="card-header">コンテンツ</div>
             <div class="card-body">
                 <ul class="list-group list-group-flush">
@@ -18,9 +24,19 @@
             </div>
         </div>
     </div>
+    @if($orders->count() == 0 )
+    <div class="col-md-9">
+        <div class="card mx-3 mb-3">
+            <div class="card-header">購入履歴</div>
+            <div class="card-body">
+                <h1>まだ購入された商品はありません。</h1>
+            </div>
+        </div>
+    </div>
+    @else
     <div class="col-md-9">
         @foreach ($orders as $order)
-        <div class="card mx-3 my-3">
+        <div class="card mx-3 mb-3">
             <div class="card-header">
                 <div class="row">
                     <p class="date mx-3">
@@ -43,40 +59,44 @@
                                     $(this).popover({
                                         html: true
                                     });
-
-
                                 });
                             })();
 
                         </script>
-
-                        <button type="button" class="btn btn-outline-primary mt-1" data-toggle="popover" data-content="{{$order['order']['postcode']}}<br>
+                        <button type="button" class="btn btn-outline-primary mt-2" data-toggle="popover" data-content="{{$order['order']['postcode']}}<br>
                         {{$order['order']['prefectures_name']}}<br>{{$order['order']['city']}}
                         {{$order['order']['block']}}<br>{{$order['order']['building']}}" data-html="true" data-placement="bottom">お届け先情報
                         </button>
                     </p>
                 </div>
             </div>
-            <div class="card-body">
-                @foreach ($order['item'] as $item)
-                <div class="row mb-3">
-                    <div class="image">
-                        <img src="../images/{{$item['image']}}" width="150" height="150">
-                    </div>
-                    <div class="product mt-2">
-                        <a href="/login/product?id={{$item['product_id']}}&category_master={{$item['category_master']}}">{{$item['order_name']}}</a>
-                        <br>
-                        価格:
-                        <font color="red">¥{{number_format($item['price'] * $order['order']['tax'])}}円(税込)</font>
-                        <br>
-                        購入数：{{$item['count']}}個
+            @foreach ($order['item'] as $item)
+            <div class="order-item">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="image">
+                            <img src="../images/{{$item['image']}}" width="150" height="150">
+                        </div>
+                        <div class="product mt-2">
+                            <a href="/login/product?id={{$item['product_id']}}&category_master={{$item['category_master']}}">{{$item['order_name']}}</a>
+                            <br>
+                            価格:
+                            <font color="red">¥{{number_format($item['price'] * $order['order']['tax'])}}円(税込)</font>
+                            <br>
+                            購入数：{{$item['count']}}個
+                        </div>
                     </div>
                 </div>
-                @endforeach
             </div>
+            @endforeach
         </div>
         @endforeach
+        <div class="links ml-3">
+            {{$orders->links()}}
+        </div>
     </div>
+
+    @endif
 </div>
 
 @endsection
