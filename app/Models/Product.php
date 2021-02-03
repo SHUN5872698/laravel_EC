@@ -52,7 +52,7 @@ class Product extends Model
     }
 
     /**
-     * 検索されたカテゴリーマスター情報を一件抽出
+     * 検索されたカテゴリーマスター名を抽出
      * @param Request $request
      * @return void
      * リクエストで送信されたcategory情報を抽出
