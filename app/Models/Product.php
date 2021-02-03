@@ -105,6 +105,20 @@ class Product extends Model
         return $master;
     }
 
+    /**
+     * 検索されたcategory情報を抽出
+     * @param Request $request
+     * @return void
+     * リクエストで送信されたcategory情報を一件取得
+     */
+    public function OneCategory(Request $request)
+    {
+        $category = Product::where('category',  $request->category)
+            ->pluck('category')
+            ->first();
+        return $category;
+    }
+
 
 
     /**
