@@ -6,15 +6,13 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-12">
         <h1 class="ml-3">商品概要</h1>
     </div>
-    <div class="col-md-9"></div>
-    <div class="col-md-3"></div>
 </div>
 <div class="row my-3">
     <div class="col-md-3">
-        <div class="card ml-3">
+        <div class="card ml-3 mb-3">
             <div class="card-header">商品情報</div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
@@ -35,13 +33,17 @@
                         {{$products->description}}
                     </p>
                 </li>
+            </ul>
+        </div>
+        <div class="card ml-3">
+            <div class="card-header">関連商品</div>
+            <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                    商品を絞り込む
-                    <br>
                     @foreach ($categorys as $category)
                     <a href="/details/category?category={{$category->category}}&category_master={{$category->category_master}}">{{$category->category}}</a>
                     <br>
-                    @endforeach</li>
+                    @endforeach
+                </li>
             </ul>
         </div>
     </div>
