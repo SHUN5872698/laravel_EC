@@ -141,7 +141,7 @@ class Product extends Model
      * @param Request $request
      * @return void
      */
-    public function SearchCategory(Request $request)
+    public function Search_Products(Request $request)
     {
         $searchcategory = Product::with('Productimage')
             ->join('productimages', 'product_id',  '=', 'products.id')
