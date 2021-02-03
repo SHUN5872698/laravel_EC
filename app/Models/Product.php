@@ -90,6 +90,22 @@ class Product extends Model
         return $master;
     }
 
+    /**
+     * カテゴリーマスターで検索したヒット数を取得
+     * @param Request $request
+     * @return void
+     */
+    public function Master_Count(Request $request)
+    {
+        $master = Product::with('Productimage')
+            ->join('productimages', 'product_id',  '=', 'products.id')
+            ->where('products.category_master', $request->category_master)
+            ->where('productimages.kubun', 'main')
+            ->count();
+        return $master;
+    }
+
+
 
     /**
      * category情報の取得
