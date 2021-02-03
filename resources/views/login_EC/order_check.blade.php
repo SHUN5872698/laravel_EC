@@ -90,14 +90,14 @@
 
     <div class="col-md-3">
         <div class="card mr-3">
-            <div class="card-header">注文確認</div>
+            <div class="card-header">小計</div>
             <div class="card-product my-2">
-                <p class="total ml-2">
-                    <font size="6" color="red">
+                <p class="total">
+                    <font class="total ml-4" size="6" color="red">
                         ¥{{number_format($total_price)}}円</font>
                     <font size="2" color="red">(税込)</font>
                 </p>
-                <a href="/login/order_confirmed"><input type="submit" value="購入確定" class="order_check mb-3"></a>
+                <a href="/login/order_confirmed"><input type="submit" value="購入確定" class="order_Confirm mb-3"></a>
             </div>
         </div>
     </div>
