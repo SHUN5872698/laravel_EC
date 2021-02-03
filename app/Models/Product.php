@@ -179,11 +179,11 @@ class Product extends Model
     }
 
     /**
-     * capacity情報の取得
+     * 容量で検索した情報の抽出
      * @param Request $request
      * @return void
      */
-    public function Capacity(Request $request)
+    public function Deatail_Capacity(Request $request)
     {
         $capacity = Product::where('category', $request->category)
             ->distinct()
@@ -195,6 +195,7 @@ class Product extends Model
             ->get();
         return $capacity;
     }
+
 
     /**
      * capacityから商品情報を絞り込み
