@@ -111,7 +111,7 @@ class Product extends Model
      * @return void
      * リクエストで送信されたcategory情報を一件取得
      */
-    public function OneCategory(Request $request)
+    public function One_Category(Request $request)
     {
         $category = Product::where('category',  $request->category)
             ->pluck('category')

@@ -115,11 +115,11 @@ class ProductController extends Controller
         $tax = $tax->getTax();
 
         $one_category = new Product();
-        $one_category = $one_category->OneCategory($request);
+        $one_category = $one_category->One_Category($request);
 
         //category情報を取得
         $categorys = new Product();
-        $categorys = $categorys->DeatailCategory($request);
+        $categorys = $categorys->Deatail_Category($request);
 
         //容量情報の取得
         $capacitys = new Product();
