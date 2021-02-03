@@ -124,7 +124,7 @@ class Product extends Model
      * @param Request $request
      * @return void
      */
-    public function DeatailCategory(Request $request)
+    public function Deatail_Category(Request $request)
     {
         $category = Product::where('category_master',  $request->category_master)
             ->distinct()

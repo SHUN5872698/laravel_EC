@@ -51,7 +51,7 @@ class ProductController extends Controller
 
         //カテゴリー情報を取得
         $categorys = new Product();
-        $categorys = $categorys->DeatailCategory($request);
+        $categorys = $categorys->Deatail_Category($request);
 
         $data = [
             'tax' => $tax,
