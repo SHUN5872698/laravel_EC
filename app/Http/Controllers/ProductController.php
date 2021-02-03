@@ -9,7 +9,8 @@ use App\Models\Productimage;
 
 class ProductController extends Controller
 {
-    /**メインページ
+    /**
+     * メインページ
      * 現在の税率、商品ををランダムに12件、商品と紐づいたメイン画像を抽出
      */
     public function main()
@@ -162,6 +163,9 @@ class ProductController extends Controller
         $one_capacity = new Product();
         $one_capacity = $one_capacity->One_Capacity($request);
 
+        //検索結果数を取得
+        $count = new Product();
+        $count = $count->Count_Capacity($request);
 
         //カテゴリー情報を複数取得
         $categorys = new Product();
@@ -177,6 +181,7 @@ class ProductController extends Controller
 
         $data = [
             'one_capacity' => $one_capacity,
+            'count' => $count,
             'products' => $products,
             'tax' => $tax,
             'categorys' => $categorys,
