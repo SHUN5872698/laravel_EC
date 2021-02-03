@@ -5,29 +5,34 @@
 @section('menubar')
 
 @section('content')
-<h1>ログイン済み商品ページ</h1>
 <div class="row">
     <div class="col-md-3">
-        <div class="card ml-3 my-3">
+        <h1 class="ml-3">商品概要</h1>
+    </div>
+    <div class="col-md-9"></div>
+    <div class="col-md-3"></div>
+</div>
+<div class="row my-3">
+    <div class="col-md-3">
+        <div class="card ml-3">
             <div class="card-header">商品情報</div>
             <ul class="list-group list-group-flush">
-                @foreach ($products as $product)
-                @endforeach
                 <li class="list-group-item">
-                    商品名:
-                    <br> {{$product->name}}
+                    商品名:<br>
+                    <font size="3">{{$products->name}}</font>
                     <br>
-                    価格:<font color="red">
-                        ¥{{number_format($product->price * $tax->percentage)}}</font>
+                    価格:
+                    <font color="red">
+                        ¥{{number_format($products->price * $tax)}}</font>
                     <font size="2" color="red">(税込)</font>
                     <br>
-                    容量: {{$product->capacity}}
+                    容量: {{$products->capacity}}
                 </li>
                 <li class="list-group-item">
                     <p>
                         商品概要
                         <br>
-                        {{$product->description}}
+                        {{$products->description}}
                     </p>
                 </li>
                 <li class="list-group-item">
@@ -40,19 +45,19 @@
             </ul>
         </div>
     </div>
-    <div class="col-md-6 my-3">
+    <div class="col-md-6">
         <div class="row">
-            @foreach ($products as $product)
-            <div class="col-md-6 mb-3">
-                <div class="card">
-                    <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
+            @foreach ($images as $image)
+            <div class="col-md-6">
+                <div class="card mb-2">
+                    <img src="../images/{{$image}}" class="card-img-top my-3" alt="..." width="300" height="300">
                 </div>
             </div>
             @endforeach
         </div>
     </div>
     <div class="col-md-3">
-        <div class="card mr-3 my-3">
+        <div class="card mr-2">
             <div class="card-header">
                 <div class="card-product">
                     <form action="/login/cart_in" method="post">
@@ -72,10 +77,7 @@
                                 <option value="10">10</option>
                             </select>
                         </div>
-                        <input type="hidden" name="user_id" value={{Auth::user()->id}}>
-                        @foreach ($products as $product)
-                        @endforeach
-                        <input type="hidden" name="product_id" value={{$product->id}}>
+                        <input type="hidden" name="product_id" value={{$products->id}}>
                         <input type="submit" value="カートに追加する" class="cart_in my-3">
                 </div>
                 </form>
