@@ -167,7 +167,7 @@ class Product extends Model
      * @return void
      * リクエストで送信されたcategory情報を抽出
      */
-    public function OneCapacity(Request $request)
+    public function One_Capacity(Request $request)
     {
         $capacity = Product::where('capacity',  $request->capacity)
             ->select(
