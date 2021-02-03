@@ -66,11 +66,11 @@ class Product extends Model
     }
 
     /**
-     *カテゴリーマスターから商品の絞り込みをして取得
+     * カテゴリーマスターから商品の絞り込みをして取得
      * @param Request $request
      * @return void
      */
-    public function Master(Request $request)
+    public function Search_Master(Request $request)
     {
         $master = Product::with('Productimage')
             ->join('productimages', 'product_id',  '=', 'products.id')
@@ -89,6 +89,7 @@ class Product extends Model
             ->paginate(12);
         return $master;
     }
+
 
     /**
      * category情報の取得
