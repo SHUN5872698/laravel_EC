@@ -103,10 +103,10 @@ class ProductController extends Controller
     }
 
     /**
-     * 商品詳細ページ
+     * categoryでの検索結果ページ
      * @param Request $request
      * @return void
-     * カテゴリーから絞り込みをしてレコードを抽出
+     * 税率とcategoryと関連する商品情報を抽出
      */
     public function category(Request $request)
     {
@@ -114,19 +114,23 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        //カテゴリー情報の取得
+        $one_category = new Product();
+        $one_category = $one_category->OneCategory($request);
+
+        //category情報を取得
         $categorys = new Product();
-        $categorys = $categorys->Category($request);
+        $categorys = $categorys->DeatailCategory($request);
 
         //容量情報の取得
         $capacitys = new Product();
-        $capacitys = $capacitys->Capacity($request);
+        $capacitys = $capacitys->Deatail_Capacity($request);
 
         //カテゴリーから商品の絞り込みをして取得する
         $products = new Product();
-        $products = $products->SearchCategory($request);
+        $products = $products->Search_Products($request);
 
         $data = [
+            'one_category' => $one_category,
             'products' => $products,
             'tax' => $tax,
             'categorys' => $categorys,
@@ -134,6 +138,7 @@ class ProductController extends Controller
         ];
         return view('EC.deatail', $data);
     }
+
 
     /**
      * 商品詳細ページ
