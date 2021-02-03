@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Tax;
+use App\Models\Productimage;
 
 class ProductController extends Controller
 {
@@ -29,7 +30,7 @@ class ProductController extends Controller
     }
 
     /**
-     * 商品の詳細ページ
+     * 商品概要ページ
      * @param Request $request
      * @return void
      * 該当商品の商品情報と商品画像、関連するカテゴリー情報を抽出
@@ -42,19 +43,25 @@ class ProductController extends Controller
 
         //商品情報の取得
         $products = new Product();
-        $products = $products->OneProduct($request);
+        $products = $products->One_Product($request);
+
+        //商品画像の取得
+        $images = new Productimage();
+        $images = $images->Images($request);
 
         //カテゴリー情報を取得
         $categorys = new Product();
-        $categorys = $categorys->getCategory($request);
+        $categorys = $categorys->DeatailCategory($request);
 
         $data = [
-            'products' => $products,
             'tax' => $tax,
+            'products' => $products,
+            'images' => $images,
             'categorys' => $categorys,
         ];
         return view('EC.product', $data);
     }
+
 
     /**
      * カテゴリー検索ページ
