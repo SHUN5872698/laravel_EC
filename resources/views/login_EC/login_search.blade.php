@@ -1,51 +1,65 @@
 @extends('layouts.login_ec')
 @yield('css')
-@section('title', 'ログイン済み検索結果')
+@section('title', 'ログイン済みカテゴリー検索結果ページ')
 @section('menubar')
 
 @section('content')
-<h1>ログイン済み検索結果</h1>
 <div class="row">
+    <div class="col-md-4">
+        @foreach ($products as $product)
+        @endforeach
+        <h1 class="ml-3">"{{$product->category_master}}"の検索結果</h1>
+    </div>
+</div>
+<div class="row my-3">
     <div class="col-md-3">
-        <div class="card ml-3 mt-3">
-            <div class="card-header">詳細検索</div>
+        <div class="card ml-3">
+            <div class="card-header">検索項目</div>
             <ul class="list-group list-group-flush">
                 <text class="ml-3 mt-2">スペックで選択</text>
                 <li class="list-group-item">
                     @foreach ($categorys as $category)
                     <a href="/login/details/category?category={{$category->category}}&category_master={{$category->category_master}}">{{$category->category}}</a>
                     <br>
-                    @endforeach</li>
+                    @endforeach
+                </li>
             </ul>
         </div>
     </div>
-
-    <div class="col-md-8 mx-4">
-        <div class="row">
-            @foreach ($products as $product)
-            <div class="col-md-4 my-3">
-                <div class="card">
-                    <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="250" height="280">
-                    <div class="card-body">
-                        <div class="row">
-                            <p>
-                                <font size="2"><a href="/login/product?id={{$product->id}}&category_master={{$product->category_master}}">{{$product->name}}</a></font>
-                                <br>
-                                価格:
-                                <font size="3" color="red">
-                                    ¥{{number_format($product->price * $tax->percentage)}}</font>
-                                <font size="2" color="red">(税込)</font>
-                                <br>
-                                スペック:
-                                <a href="/login/details/category?category={{$product->category}}&category_master={{$product->category_master}}"> {{$product->category}}</a>
-                            </p>
+    <div class="col-md-9">
+        <div class="card ml-">
+            <div class="card-header">
+                <font class="one_master" color="red">"{{$one_master}}"</font>
+                で{{$count}}件ヒット
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    @foreach ($products as $product)
+                    <div class="col-md-4 mb-1">
+                        <div class="card-body">
+                            <img src="../images/{{$product->image}}" class="card-img-top " alt="..." width="250" height="270">
+                            <div class="row my-2">
+                                <p>
+                                    <font size="2"><a href="/login/product?id={{$product->id}}&category_master={{$product->category_master}}">{{$product->name}}</a></font>
+                                    <br>
+                                    価格:
+                                    <font size="3" color="red">
+                                        ¥{{number_format($product->price * $tax)}}</font>
+                                    <font size="2" color="red">(税込)</font>
+                                    <br>
+                                    スペック:
+                                    <a href="/login/details/category?category={{$product->category}}&category_master={{$product->category_master}}"> {{$product->category}}</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
-            @endforeach
         </div>
-        {{$products->appends(request()->query())->links()}}
+        <div class="links">
+            {{$products->appends(request()->query())->links()}}
+        </div>
     </div>
 </div>
 
