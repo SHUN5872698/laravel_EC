@@ -64,9 +64,6 @@ class Order extends Model
         $total_price = new Cart_item();
         $total_price = $total_price->Total_price();
 
-        //合計金額を税込価格に変換
-        $total_price = $total_price * $tax->percentage;
-
         //購入日の作成
         $now = Carbon::now()->format('Y-m-d');
 
@@ -82,7 +79,7 @@ class Order extends Model
                 'city' => $auth->city,
                 'block' => $auth->block,
                 'building' => $auth->building,
-                'tax' => $tax->percentage,
+                'tax' => $tax,
             ],
         );
         return ($order_confirmed);
@@ -96,10 +93,8 @@ class Order extends Model
     public function Order_id()
     {
         $user = Order::where('user_id', Auth::user()->id)
-            ->select(
-                'orders.id',
-            )
             ->orderby('id', 'desc')
+            ->pluck('id')
             ->first();
         return ($user);
     }
