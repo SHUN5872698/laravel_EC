@@ -134,7 +134,7 @@ p.total {
     text-align: left;
 }
 
-/** 注文確認ボタン */
+/** 購入確認ボタン */
 .order_check {
     display: inline-block;
     border-radius: 5%;
@@ -145,7 +145,7 @@ p.total {
     /* 文字位置   */
     cursor: pointer;
     /* カーソル   */
-    padding: 8px 69px;
+    padding: 10px 49px;
     /* 余白       */
     background: #ff7f00;
     /* 背景色     */
@@ -168,7 +168,7 @@ p.total {
     /* カーソル時透明度 */
 }
 
-/** 注文確定ボタン */
+/** 購入確定ボタン */
 /** カートに追加するボタン */
 .order_Confirm {
     display: inline-block;
@@ -182,7 +182,7 @@ p.total {
     /* カーソル   */
     padding: 10px 90px;
     /* 余白       */
-    background: #ff7f00;
+    background: #ff0000;
     /* 背景色     */
     color: #ffffff;
     /* 文字色     */
