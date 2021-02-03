@@ -11,7 +11,8 @@ class ProductController extends Controller
 {
     /**
      * メインページ
-     * 現在の税率、商品ををランダムに12件、商品と紐づいたメイン画像を抽出
+     * @return void
+     * 商品をランダムに12件抽出
      */
     public function main()
     {
@@ -34,6 +35,7 @@ class ProductController extends Controller
      * 商品概要ページ
      * @param Request $request
      * @return void
+     *
      * 該当商品の商品情報と商品画像、関連するカテゴリー情報を抽出
      */
     public function product(Request $request)
@@ -65,11 +67,12 @@ class ProductController extends Controller
 
 
     /**
-     * category_masterでの検索結果ページ
+     * 検索ページ
      * @param Request $request
      * @return void
-     * 税率とcategory_master情報から関連する商品情報を抽出
      *
+     * category_masterで検索された結果から
+     * 商品データや検索欄の情報を抽出
      */
     public function master(Request $request)
     {
@@ -104,10 +107,12 @@ class ProductController extends Controller
     }
 
     /**
-     * categoryでの検索結果ページ
+     * 詳細検索ページ
      * @param Request $request
      * @return void
-     * 税率とcategoryと関連する商品情報を抽出
+     *
+     * categoryで検索された結果から
+     * 商品データや検索欄の情報を抽出
      */
     public function category(Request $request)
     {
@@ -148,10 +153,12 @@ class ProductController extends Controller
 
 
     /**
-     * capacityでの検索結果ページ
+     * 詳細検索ページ
      * @param Request $request
      * @return void
-     * 税率と関連する商品情報を抽出
+     *
+     * capacityで検索された結果から
+     * 商品データや検索欄の情報を抽出
      */
     public function capacity(Request $request)
     {
@@ -193,7 +200,8 @@ class ProductController extends Controller
 
     /**
      * ログイン済みのメインページ
-     * 現在の税率、商品ををランダムに12件、商品と紐づいたメイン画像を抽出
+     * @return void
+     * 商品をランダムに12件抽出
      */
     public function login_main()
     {
@@ -216,6 +224,7 @@ class ProductController extends Controller
      * ログイン済みの商品概要ページ
      * @param Request $request
      * @return void
+     *
      * 該当商品の商品情報と商品画像、関連するカテゴリー情報を抽出
      */
     public function login_product(Request $request)
@@ -246,14 +255,16 @@ class ProductController extends Controller
     }
 
     /**
-     * ログイン済みのカテゴリー検索ページ
+     * ログイン済みの検索ページ
      * @param Request $request
      * @return void
-     * カテゴリーマスターから商品の絞り込みをして抽出
+     *
+     * category_masterで検索された結果から
+     * 商品データや検索欄の情報を抽出
      */
     public function login_master(Request $request)
     {
-        //現在の税率の取得
+        ///現在の税率の取得
         $tax = new Tax();
         $tax = $tax->getTax();
 
@@ -284,10 +295,12 @@ class ProductController extends Controller
     }
 
     /**
-     * ログイン済みの商品詳細ページ
+     * ログイン済みの詳細検索ページ
      * @param Request $request
      * @return void
-     * カテゴリーから絞り込みをしてレコードを抽出
+     *
+     * categoryで検索された結果から
+     * 商品データや検索欄の情報を抽出
      */
     public function login_category(Request $request)
     {
@@ -295,36 +308,44 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        //カテゴリー情報の取得
-        $categorys = new Product();
-        $categorys = $categorys->Category($request);
+        //検索されたカテゴリー名の取得
+        $one_category = new Product();
+        $one_category = $one_category->One_Category($request);
 
         //検索結果数の取得
         $count = new Product();
         $count = $count->Category_Count($request);
 
+        //category情報を取得
+        $categorys = new Product();
+        $categorys = $categorys->Deatail_Category($request);
+
         //容量情報の取得
         $capacitys = new Product();
-        $capacitys = $capacitys->Capacity($request);
+        $capacitys = $capacitys->Deatail_Capacity($request);
 
         //カテゴリーから商品の絞り込みをして取得する
         $products = new Product();
-        $products = $products->SearchCategory($request);
+        $products = $products->Search_Products($request);
 
         $data = [
-            'products' => $products,
             'tax' => $tax,
+            'one_category' => $one_category,
+            'count' => $count,
             'categorys' => $categorys,
             'capacitys' =>  $capacitys,
+            'products' => $products,
         ];
         return view('login_EC.login_details', $data);
     }
 
     /**
-     * 商品詳細ページ
+     * ログイン済みの詳細検索ページ
      * @param Request $request
      * @return void
-     * 容量から商品の絞り込みをしてレコードを抽出
+     *
+     * capacityで検索された結果から
+     * 商品データや検索欄の情報を抽出
      */
     public function login_capacity(Request $request)
     {
@@ -332,19 +353,29 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        //カテゴリー情報の取得
+        //検索結果数の取得
+        $one_capacity = new Product();
+        $one_capacity = $one_capacity->One_Capacity($request);
+
+        //検索結果数を取得
+        $count = new Product();
+        $count = $count->Count_Capacity($request);
+
+        //カテゴリー情報を複数取得
         $categorys = new Product();
-        $categorys = $categorys->Category($request);
+        $categorys = $categorys->Deatail_Category($request);
 
         //容量情報の取得
         $capacitys = new Product();
-        $capacitys = $capacitys->Capacity($request);
+        $capacitys = $capacitys->Deatail_Capacity($request);
 
         //容量から商品の絞り込みをして取得する
         $products = new Product();
         $products = $products->SearchCapacity($request);
 
         $data = [
+            'one_capacity' => $one_capacity,
+            'count' => $count,
             'products' => $products,
             'tax' => $tax,
             'categorys' => $categorys,
