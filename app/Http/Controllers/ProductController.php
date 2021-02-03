@@ -244,17 +244,27 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        //カテゴリーマスターから商品の絞り込み
-        $products = new Product();
-        $products = $products->Master($request);
+        //検索されたカテゴリーマスター名を取得
+        $one_master = new Product();
+        $one_master = $one_master->One_Master($request);
+
+        //検索結果数の取得
+        $count = new Product();
+        $count = $count->Master_Count($request);
 
         //カテゴリー情報を取得
         $categorys = new Product();
-        $categorys = $categorys->Category($request);
+        $categorys = $categorys->Deatail_Category($request);
+
+        //商品情報の取得
+        $products = new Product();
+        $products = $products->Master_Products($request);
 
         $data = [
-            'products' => $products,
             'tax' => $tax,
+            'one_master' => $one_master,
+            'count' => $count,
+            'products' => $products,
             'categorys' => $categorys,
         ];
         return view('login_EC.login_search', $data);
