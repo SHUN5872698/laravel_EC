@@ -97,12 +97,12 @@ class Product extends Model
      */
     public function Master_Count(Request $request)
     {
-        $master = Product::with('Productimage')
+        $count = Product::with('Productimage')
             ->join('productimages', 'product_id',  '=', 'products.id')
             ->where('products.category_master', $request->category_master)
             ->where('productimages.kubun', 'main')
             ->count();
-        return $master;
+        return $count;
     }
 
     /**
@@ -141,6 +141,16 @@ class Product extends Model
      * @param Request $request
      * @return void
      */
+    public function Category_Count(Request $request)
+    {
+        $count = Product::with('Productimage')
+            ->join('productimages', 'product_id',  '=', 'products.id')
+            ->where('products.category', $request->category)
+            ->where('productimages.kubun', 'main')
+            ->count();
+        return $count;
+    }
+
     public function Search_Products(Request $request)
     {
         $searchcategory = Product::with('Productimage')

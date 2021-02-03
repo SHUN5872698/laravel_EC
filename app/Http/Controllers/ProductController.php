@@ -114,8 +114,13 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
+        //検索されたカテゴリー名の取得
         $one_category = new Product();
         $one_category = $one_category->One_Category($request);
+
+        //検索結果数の取得
+        $count = new Product();
+        $count = $count->Category_Count($request);
 
         //category情報を取得
         $categorys = new Product();
@@ -130,11 +135,12 @@ class ProductController extends Controller
         $products = $products->Search_Products($request);
 
         $data = [
-            'one_category' => $one_category,
-            'products' => $products,
             'tax' => $tax,
+            'one_category' => $one_category,
+            'count' => $count,
             'categorys' => $categorys,
             'capacitys' =>  $capacitys,
+            'products' => $products,
         ];
         return view('EC.deatail', $data);
     }
@@ -152,8 +158,10 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
+        //検索結果数の取得
         $one_capacity = new Product();
         $one_capacity = $one_capacity->One_Capacity($request);
+
 
         //カテゴリー情報を複数取得
         $categorys = new Product();
@@ -285,6 +293,10 @@ class ProductController extends Controller
         //カテゴリー情報の取得
         $categorys = new Product();
         $categorys = $categorys->Category($request);
+
+        //検索結果数の取得
+        $count = new Product();
+        $count = $count->Category_Count($request);
 
         //容量情報の取得
         $capacitys = new Product();
