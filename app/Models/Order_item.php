@@ -59,7 +59,7 @@ class Order_item extends Model
             $order_add = Order_item::create(
                 [
                     'product_id' => $item->product_id,
-                    'order_id' => $order_id->id,
+                    'order_id' => $order_id,
                     'name' => $item->name,
                     'price' => $item->price,
                     'count' => $item->count,
