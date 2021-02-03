@@ -64,10 +64,11 @@ class ProductController extends Controller
 
 
     /**
-     * カテゴリー検索ページ
+     * category_masterでの検索結果ページ
      * @param Request $request
      * @return void
-     * カテゴリーマスターから商品の絞り込みをして抽出
+     * 税率とcategory_master情報から関連する商品情報を抽出
+     *
      */
     public function master(Request $request)
     {
@@ -75,17 +76,27 @@ class ProductController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        //カテゴリーマスターから商品の絞り込み
-        $products = new Product();
-        $products = $products->Master($request);
+        //検索されたカテゴリーマスター名を取得
+        $one_master = new Product();
+        $one_master = $one_master->One_Master($request);
 
-        //category情報を取得
+        //検索結果数の取得
+        $count = new Product();
+        $count = $count->Master_Count($request);
+
+        //カテゴリー情報を取得
         $categorys = new Product();
-        $categorys = $categorys->Category($request);
+        $categorys = $categorys->Deatail_Category($request);
+
+        //商品情報の取得
+        $products = new Product();
+        $products = $products->Master_Products($request);
 
         $data = [
-            'products' => $products,
             'tax' => $tax,
+            'one_master' => $one_master,
+            'count' => $count,
+            'products' => $products,
             'categorys' => $categorys,
         ];
         return view('EC.search', $data);
