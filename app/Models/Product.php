@@ -52,6 +52,20 @@ class Product extends Model
     }
 
     /**
+     * 検索されたカテゴリーマスター情報を一件抽出
+     * @param Request $request
+     * @return void
+     * リクエストで送信されたcategory情報を抽出
+     */
+    public function One_Master(Request $request)
+    {
+        $one = Product::where('category_master',  $request->category_master)
+            ->pluck('category_master')
+            ->first();
+        return $one;
+    }
+
+    /**
      *カテゴリーマスターから商品の絞り込みをして取得
      * @param Request $request
      * @return void
