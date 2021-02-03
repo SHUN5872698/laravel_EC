@@ -70,7 +70,7 @@ class Product extends Model
      * @param Request $request
      * @return void
      */
-    public function Search_Master(Request $request)
+    public function Master_Products(Request $request)
     {
         $master = Product::with('Productimage')
             ->join('productimages', 'product_id',  '=', 'products.id')
