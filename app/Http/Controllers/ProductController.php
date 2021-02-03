@@ -200,7 +200,7 @@ class ProductController extends Controller
     }
 
     /**
-     * ログイン済みの商品の詳細ページ
+     * ログイン済みの商品概要ページ
      * @param Request $request
      * @return void
      * 該当商品の商品情報と商品画像、関連するカテゴリー情報を抽出
@@ -213,15 +213,20 @@ class ProductController extends Controller
 
         //商品情報の取得
         $products = new Product();
-        $products = $products->OneProduct($request);
+        $products = $products->One_Product($request);
 
-        //カテゴリー情報を取得して表示する
+        //商品画像の取得
+        $images = new Productimage();
+        $images = $images->Images($request);
+
+        //カテゴリー情報を取得
         $categorys = new Product();
-        $categorys = $categorys->Category($request);
+        $categorys = $categorys->Deatail_Category($request);
 
         $data = [
-            'products' => $products,
             'tax' => $tax,
+            'products' => $products,
+            'images' => $images,
             'categorys' => $categorys,
         ];
         return view('login_EC.login_product', $data);
