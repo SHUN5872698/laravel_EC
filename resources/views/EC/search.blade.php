@@ -5,8 +5,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-4">
-
+    <div class="col-md-12">
         <h1 class="ml-3">
             <font color="darkorange">"{{$one_master}}"</font>
             の商品一覧
