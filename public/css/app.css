@@ -7,11 +7,6 @@
     color: #ccc;
 }
 
-.card-product {
-    text-align: center;
-    display: block;
-}
-
 /** ログインボタン */
 .login {
     display: inline-block;
@@ -23,7 +18,7 @@
     /* 文字位置   */
     cursor: pointer;
     /* カーソル   */
-    padding: 12px 49px;
+    padding: 12px 69px;
     /* 余白       */
     background: #999999;
     /* 背景色     */
@@ -35,6 +30,7 @@
     /* なめらか変化 */
     box-shadow: 2px 2px 2px #666666;
     /* 影の設定 */
+
 }
 
 .login:hover {
@@ -56,7 +52,7 @@
     /* 文字位置   */
     cursor: pointer;
     /* カーソル   */
-    padding: 12px 49px;
+    padding: 12px 69px;
     /* 余白       */
     background: #1a1aff;
     /* 背景色     */
@@ -80,6 +76,11 @@
     /* カーソル時透明度 */
 }
 
+.card-product {
+    text-align: center;
+    display: block;
+}
+
 /** カートに追加するボタン */
 .cart_in {
     display: inline-block;
@@ -91,7 +92,7 @@
     /* 文字位置   */
     cursor: pointer;
     /* カーソル   */
-    padding: 8px 69px;
+    padding: 8px 49px;
     /* 余白       */
     background: #ff0000;
     /* 背景色     */
