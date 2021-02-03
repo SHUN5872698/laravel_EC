@@ -40,27 +40,14 @@ class Product extends Model
     }
 
     /**
-     * 商品詳細情報の取得
+     * 商品情報を一件抽出
      * @param Request $request
      * @return void
      */
-    public function OneProduct(Request $request)
+    public function One_Product(Request $request)
     {
-        $product = Product::with('Productimage')
-            ->join('productimages', 'product_id',  '=', 'products.id')
-            ->where('products.id', $request->id)
-            ->select(
-                'products.id',
-                'products.name',
-                'products.description',
-                'products.price',
-                'products.category_master',
-                'products.category',
-                'products.capacity',
-                'productimages.image',
-            )
-            ->orderBy('productimages.id', 'asc')
-            ->get();
+        $product = Product::where('products.id', $request->id)
+            ->first();
         return $product;
     }
 
