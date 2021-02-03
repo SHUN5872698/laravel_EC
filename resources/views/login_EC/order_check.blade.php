@@ -5,7 +5,13 @@
 @section('menubar')
 
 @section('content')
-<h1>購入確認ページ</h1>
+<div class="row">
+    <div class="col-md-3">
+        <h1 class="ml-3">購入確認ページ</h1>
+    </div>
+    <div class="col-md-9"></div>
+    <div class="col-md-3"></div>
+</div>
 <div class="row mt-3">
 
     <div class="col-md-3">
@@ -59,7 +65,7 @@
                             <div class="price">
                                 単品価格:
                                 <font size="3" color="red">
-                                    ¥{{number_format($item->price * $tax->percentage)}}円</font>
+                                    ¥{{number_format($item->price * $tax)}}円</font>
                                 <font size="2" color="red">(税込)</font>
                             </div>
                             <div class="count">
@@ -68,7 +74,7 @@
                             <div class="total">
                                 合計:
                                 <font size="3" color="red">
-                                    ¥{{number_format(($item->price * $tax->percentage) * $item->count)}}円</font>
+                                    ¥{{number_format(($item->price * $tax) * $item->count)}}円</font>
                                 <font size="2" color="red">(税込)</font>
                             </div>
                         </div>
@@ -88,10 +94,10 @@
             <div class="card-product my-2">
                 <p class="total ml-2">
                     <font size="6" color="red">
-                        ¥{{number_format($total_price * $tax->percentage)}}円</font>
+                        ¥{{number_format($total_price)}}円</font>
                     <font size="2" color="red">(税込)</font>
                 </p>
-                <a href="/login/order_confirmed"><input type="submit" value="購入確認ページへ" class="order_check mb-3"></a>
+                <a href="/login/order_confirmed"><input type="submit" value="購入確定" class="order_check mb-3"></a>
             </div>
         </div>
     </div>

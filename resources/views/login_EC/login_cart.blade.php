@@ -5,12 +5,16 @@
 @section('menubar')
 
 @section('content')
-
+<div class="row">
+    <div class="col-md-4">
+        <h1 class="ml-4">ショッピングカート</h1>
+    </div>
+</div>
 <div class="row mt-3">
-    @if( $items->count() == 0 )
+    @if($items->count() == 0 )
     <div class="col-md-9">
         <div class="card ml-3">
-            <div class="card-header">ショッピングカート</div>
+            <div class="card-header">カート内アイテム</div>
             <div class="card-body">
                 <h1>お客様のカートに商品はありません。</h1>
             </div>
@@ -19,7 +23,7 @@
     @else
     <div class="col-md-9">
         <div class="card ml-4">
-            <div class="card-header">ショッピングカート</div>
+            <div class="card-header">カート内アイテム</div>
             @foreach ($items as $item)
             <div class="cart-item">
                 <div class="card-body">
@@ -34,7 +38,7 @@
                             <div class="price my-1">
                                 単品価格:
                                 <font size="3" color="red">
-                                    ¥{{number_format($item->price * $tax->percentage)}}円</font>
+                                    ¥{{number_format($item->price * $tax)}}円</font>
                                 <font size="2" color="red">(税込)</font>
                             </div>
                             <div class="count my-1">
@@ -58,7 +62,7 @@
             @endforeach
         </div>
         <div class="paginate  mt-1 ml-4">
-            {{$items->appends(request()->query())->links()}}
+            {{$items->links()}}
         </div>
     </div>
     @endif
@@ -69,7 +73,7 @@
             <div class="card-product my-2">
                 <p class="total ml-2">
                     <font size="6" color="red">
-                        ¥{{number_format($total_price * $tax->percentage)}}円</font>
+                        ¥{{number_format($total_price)}}円</font>
                     <font size="2" color="red">(税込)</font>
                 </p>
                 @if ($total_price != 0)

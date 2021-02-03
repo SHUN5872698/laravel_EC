@@ -58,7 +58,7 @@ class Cart_item extends Model
                 'productimages.image',
             )
             ->orderby('cart_items.id', 'asc')
-            ->paginate(12);
+            ->paginate(10);
         return $cart_items;
     }
 
@@ -68,6 +68,10 @@ class Cart_item extends Model
      */
     public function Total_price()
     {
+        //現在の税率の取得
+        $tax = new Tax();
+        $tax = $tax->getTax();
+
         $total_price = 0;
         $items = Cart_item::with('Product')
             ->join('products', 'products.id', '=', 'cart_items.product_id')
@@ -78,8 +82,9 @@ class Cart_item extends Model
             )
             ->get();
         foreach ($items as $item) {
-            $total_price += $item->price  * $item->count;
+            $total_price += ($item->price  * $tax) * $item->count;
         }
+        $total_price = round($total_price, -1);
         return $total_price;
     }
 
