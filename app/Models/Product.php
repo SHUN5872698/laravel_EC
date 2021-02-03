@@ -106,7 +106,7 @@ class Product extends Model
     }
 
     /**
-     * 検索されたcategory情報を抽出
+     * 検索されたcategory名を抽出
      * @param Request $request
      * @return void
      * リクエストで送信されたcategory情報を一件取得
@@ -119,20 +119,18 @@ class Product extends Model
         return $category;
     }
 
-
-
     /**
-     * category情報の取得
+     * 検索欄のカテゴリー情報を取得
      * @param Request $request
      * @return void
      */
-    public function Category(Request $request)
+    public function DeatailCategory(Request $request)
     {
-        $category = Product::where('category_master', 'like', $request->category_master . '%')
+        $category = Product::where('category_master',  $request->category_master)
             ->distinct()
             ->select(
-                'category',
                 'category_master',
+                'category',
             )
             ->get();
         return $category;
