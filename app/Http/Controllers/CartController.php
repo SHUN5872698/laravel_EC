@@ -25,6 +25,10 @@ class CartController extends Controller
         $items = new Cart_item();
         $items = $items->Cart_items();
 
+        //カート内件数の取得
+        $count = new Cart_item();
+        $count = $count->Cart_Count();
+
         //カート内商品の合計金額を取得
         $total_price = new Cart_item();
         $total_price = $total_price->Total_price();
@@ -32,6 +36,7 @@ class CartController extends Controller
         $data = [
             'tax' => $tax,
             'items' => $items,
+            'count' => $count,
             'total_price' => $total_price,
         ];
         //カートページに移動
@@ -105,19 +110,24 @@ class CartController extends Controller
         $tax = new Tax();
         $tax = $tax->getTax();
 
-        //userのカート情報を取得
+        //カート情報を取得
         $items = new Cart_item();
         $items = $items->Cart_items();
+
+        //カート内件数の取得
+        $count = new Cart_item();
+        $count = $count->Cart_Count();
 
         //カート内商品の合計金額を取得
         $total_price = new Cart_item();
         $total_price = $total_price->Total_price();
 
         $data = [
+            'users' => $users,
             'tax' => $tax,
             'items' => $items,
+            'count' => $count,
             'total_price' => $total_price,
-            'users' => $users,
         ];
         //購入確認ページへ移動
         return view('login_EC.order_check', $data);

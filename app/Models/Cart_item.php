@@ -32,11 +32,11 @@ class Cart_item extends Model
     }
 
     /**
-     * カート情報の取得
+     * ユーザー毎のカート情報の抽出
      * @return void
      *
-     * ログインしているユーザーのidからcart情報を抽出
-     * 商品に紐づいている商品情報やメイン画像を抽出
+     * ログインしているユーザーのidからcart情報を取得
+     * 商品に紐づいている商品情報やメイン画像を取得
      */
     public function Cart_items()
     {
@@ -61,6 +61,25 @@ class Cart_item extends Model
             ->paginate(10);
         return $cart_items;
     }
+
+    /**
+     * カート内商品の件数の抽出
+     * @return void
+     *
+     * ユーザーのレコード件数を取得する
+     */
+    public function Cart_Count()
+    {
+        $count = Cart_item::with('Product', 'Productimage')
+            ->join('products', 'products.id', '=', 'cart_items.product_id')
+            ->join('productimages', 'productimages.product_id', '=', 'products.id')
+            ->where('cart_items.user_id', Auth::user()->id)
+            ->where('productimages.kubun', 'main')
+            ->count();
+        return $count;
+    }
+
+
 
     /**
      * カート内商品の合計金額の作成
