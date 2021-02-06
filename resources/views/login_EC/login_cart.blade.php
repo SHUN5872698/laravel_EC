@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <h1 class="ml-4">ショッピングカート</h1>
     </div>
 </div>
@@ -23,7 +23,12 @@
     @else
     <div class="col-md-9">
         <div class="card ml-4">
-            <div class="card-header">カート内アイテム</div>
+            <div class="card-header">
+                <font class="title">カートに商品が</font>
+                <font class="cart_count">{{$count}}</font>
+                <font class="ms">件入っています。</font>
+
+            </div>
             @foreach ($items as $item)
             <div class="cart-item">
                 <div class="card-body">

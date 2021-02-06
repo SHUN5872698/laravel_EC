@@ -6,14 +6,12 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-12">
         <h1 class="ml-3">購入確認ページ</h1>
     </div>
-    <div class="col-md-9"></div>
-    <div class="col-md-3"></div>
+
 </div>
 <div class="row mt-3">
-
     <div class="col-md-3">
         <div class="card ml-3 ">
             <div class="card-header">お届け先情報</div>
@@ -50,7 +48,10 @@
 
     <div class="col-md-6">
         <div class="card">
-            <div class="card-header">注文商品</div>
+            <div class="card-header">
+                <font class="title">注文商品</font>
+
+            </div>
             @foreach ($items as $item)
             <div class="cart-item">
                 <div class="card-body">
@@ -64,9 +65,9 @@
                             </div>
                             <div class="price">
                                 単品価格:
-                                <font size="3" color="red">
+                                <font size="3">
                                     ¥{{number_format($item->price * $tax)}}円</font>
-                                <font size="2" color="red">(税込)</font>
+                                <font size="2">(税込)</font>
                             </div>
                             <div class="count">
                                 購入数：{{$item->count}}個
