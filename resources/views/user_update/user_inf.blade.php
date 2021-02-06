@@ -3,10 +3,15 @@
 @section('menubar')
 
 @section('content')
-
 <div class="row">
+    <div class="col-md-12">
+        <h1 class="ml-3">ユーザー情報</h1>
+    </div>
+</div>
+
+<div class="row my-3">
     <div class="col-md-3">
-        <div class="card ml-3 my-3">
+        <div class="card ml-3 ">
             <div class="card-header">
                 コンテンツ
             </div>
@@ -21,7 +26,7 @@
     <div class="col-md-1"></div>
 
     <div class="col-md-5">
-        <div class="card my-3">
+        <div class="card ">
             <div class="card-header">ユーザー情報</div>
             <ul class="list-group list-group-flush text-left">
                 <li class="list-group-item">
@@ -55,7 +60,7 @@
                 </li>
             </ul>
         </div>
-        <div class="form-group">
+        <div class="form-group my-2">
             <button type="button" class="btn btn-outline-secondary" onclick="location.href='/user_inf';">キャンセル</button>
         </div>
     </div>
