@@ -112,7 +112,7 @@ class Order extends Model
         $users = Order::with('prefecture')
             ->join('prefectures', 'prefectures.id', '=', 'orders.prefecture_id')
             ->where('orders.user_id', Auth::user()->id)
-            ->orderby('order_date', 'desc')
+            ->orderby('orders.id', 'desc')
             ->select(
                 'orders.id',
                 'orders.total_price',
