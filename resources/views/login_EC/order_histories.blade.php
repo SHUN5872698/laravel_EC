@@ -6,11 +6,9 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-12">
         <h1 class="ml-3">購入履歴</h1>
     </div>
-    <div class="col-md-9"></div>
-    <div class="col-md-3"></div>
 </div>
 <div class="row mt-3">
     <div class="col-md-3">
@@ -45,7 +43,8 @@
                     </p>
                     <p class="total_price mx-3">
                         <font size="2">合計</font>
-                        <br>{{number_format($order['order']['total_price'])}}円
+                        <br>
+                        <font class="total">{{number_format($order['order']['total_price'])}}円</font>
                     </p>
                     <p class="buyer mx-3">
                         <font size="2">購入者名</font>
@@ -63,7 +62,7 @@
                             })();
 
                         </script>
-                        <button type="button" class="btn btn-outline-primary mt-2" data-toggle="popover" data-content="{{$order['order']['postcode']}}<br>
+                        <button type="button" class="btn btn-primary mt-2" data-toggle="popover" data-content="{{$order['order']['postcode']}}<br>
                         {{$order['order']['prefectures_name']}}<br>{{$order['order']['city']}}
                         {{$order['order']['block']}}<br>{{$order['order']['building']}}" data-html="true" data-placement="bottom">お届け先情報
                         </button>
