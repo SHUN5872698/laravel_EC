@@ -63,7 +63,7 @@
                             </label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="contact@miraino-katachi.co.jp" required autocomplete="email">
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
