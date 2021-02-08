@@ -40,7 +40,7 @@ class CartController extends Controller
             'total_price' => $total_price,
         ];
         //カートページに移動
-        return view('login_EC.login_cart', $data);
+        return view('login_EC.cart', $data);
     }
 
     /**
