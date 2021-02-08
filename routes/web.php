@@ -74,7 +74,7 @@ Route::get('/login/order_check', 'CartController@order_check')->middleware('auth
 Route::get('/login/order_confirmed', 'OrderController@order_fixing')->middleware('auth');
 
 /** 購入履歴ページ */
-Route::get('/login/order_history', 'OrderController@Order_History')->middleware('auth');
+Route::get('/login/order_history', 'OrderController@order_history')->middleware('auth');
 
 /** ユーザー情報ページ */
 Route::get('/user_inf', 'UserController@user_inf')->middleware('auth');
