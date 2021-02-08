@@ -102,26 +102,6 @@
             </div>
         </div>
     </div>
-    <script>
-        $('#zip-btn').on('click', function () {
-            AjaxZip3.zip2addr('zip1', 'zip2', 'pref', 'city');
-
-            //成功時に実行する処理
-            AjaxZip3.onSuccess = function () {
-                setTimeout(function () {
-                    $('.address').focus();
-                }, 10);
-            };
-
-            //失敗時に実行する処理
-            AjaxZip3.onFailure = function () {
-                alert('郵便番号に該当する住所が見つかりません');
-            };
-
-            return false;
-        });
-
-    </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 </div>
