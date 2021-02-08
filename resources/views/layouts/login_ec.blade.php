@@ -10,8 +10,7 @@
 
     <title>@yield('title')</title>
     <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}" defer></script>
-
+    <script src="{{ asset('js/app.js') }}"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -19,8 +18,14 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
     @yield('css')
     <style>
+        .ui-dialog-titlebar {
+            color: white;
+            background: red;
+        }
+
     </style>
 
 </head>
@@ -71,19 +76,16 @@
             </div>
             </li>
             </ul>
-
+        </nav>
     </div>
-    </nav>
-
+    @section('content')
     <main class="py-4">@yield('content')</main>
+
 
     @section('footer')
     <div class="footer">
         &copy;right 2020 fujii
     </div>
-    </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 
 </body>
 
