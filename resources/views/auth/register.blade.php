@@ -118,12 +118,63 @@
                             </label>
 
                             <div class="col-md-6 mt-2">
-                                <select name="prefecture_id" id="inputAddress02">
+                                {{-- <select name="prefecture_id" id="inputAddress02">
                                     <option value="">--- 選択してください ---</option>
                                     @foreach ($prefectures as $prefecture)
                                     <option value={{$prefecture->id}} @if(old('prefecture_id')==$prefecture->id ) selected @endif>
-                                        {{$prefecture->name}}</option>
-                                    @endforeach
+                                {{$prefecture->name}}</option>
+                                @endforeach
+                                </select> --}}
+
+                                <select name="prefecture_id" id="inputAddress02">
+                                    <option value="">-- 選択してください --</option>
+                                    <option value="01" @if(old('prefecture_id')=='01' ) selected @endif>北海道</option>
+                                    <option value="02" @if(old('prefecture_id')=='02' ) selected @endif>青森県</option>
+                                    <option value="03" @if(old('prefecture_id')=='03' ) selected @endif>岩手県</option>
+                                    <option value="04" @if(old('prefecture_id')=='04' ) selected @endif>宮城県</option>
+                                    <option value="05" @if(old('prefecture_id')=='05' ) selected @endif>秋田県</option>
+                                    <option value="06" @if(old('prefecture_id')=='06' ) selected @endif>山形県</option>
+                                    <option value="07" @if(old('prefecture_id')=='07' ) selected @endif>福島県</option>
+                                    <option value="08" @if(old('prefecture_id')=='08' ) selected @endif>茨城県</option>
+                                    <option value="09" @if(old('prefecture_id')=='09' ) selected @endif>栃木県</option>
+                                    <option value="10" @if(old('prefecture_id')=='10' ) selected @endif>群馬県</option>
+                                    <option value="11" @if(old('prefecture_id')=='11' ) selected @endif>埼玉県</option>
+                                    <option value="12" @if(old('prefecture_id')=='12' ) selected @endif>千葉県</option>
+                                    <option value="13" @if(old('prefecture_id')=='13' ) selected @endif>東京都</option>
+                                    <option value="14" @if(old('prefecture_id')=='14' ) selected @endif>神奈川県</option>
+                                    <option value="15" @if(old('prefecture_id')=='15' ) selected @endif>新潟県</option>
+                                    <option value="16" @if(old('prefecture_id')=='16' ) selected @endif>富山県</option>
+                                    <option value="17" @if(old('prefecture_id')=='17' ) selected @endif>石川県</option>
+                                    <option value="18" @if(old('prefecture_id')=='18' ) selected @endif>福井県</option>
+                                    <option value="19" @if(old('prefecture_id')=='19' ) selected @endif>山梨県</option>
+                                    <option value="20" @if(old('prefecture_id')=='20' ) selected @endif>長野県</option>
+                                    <option value="21" @if(old('prefecture_id')=='21' ) selected @endif>岐阜県</option>
+                                    <option value="22" @if(old('prefecture_id')=='22' ) selected @endif>静岡県</option>
+                                    <option value="23" @if(old('prefecture_id')=='23' ) selected @endif>愛知県</option>
+                                    <option value="24" @if(old('prefecture_id')=='24' ) selected @endif>三重県</option>
+                                    <option value="25" @if(old('prefecture_id')=='25' ) selected @endif>滋賀県</option>
+                                    <option value="26" @if(old('prefecture_id')=='26' ) selected @endif>京都府</option>
+                                    <option value="27" @if(old('prefecture_id')=='27' ) selected @endif>大阪府</option>
+                                    <option value="28" @if(old('prefecture_id')=='28' ) selected @endif>兵庫県</option>
+                                    <option value="29" @if(old('prefecture_id')=='29' ) selected @endif>奈良県</option>
+                                    <option value="30" @if(old('prefecture_id')=='30' ) selected @endif>和歌山県</option>
+                                    <option value="31" @if(old('prefecture_id')=='31' ) selected @endif>鳥取県</option>
+                                    <option value="32" @if(old('prefecture_id')=='32' ) selected @endif>島根県</option>
+                                    <option value="33" @if(old('prefecture_id')=='33' ) selected @endif>岡山県</option>
+                                    <option value="34" @if(old('prefecture_id')=='34' ) selected @endif>広島県</option>
+                                    <option value="35" @if(old('prefecture_id')=='35' ) selected @endif>山口県</option>
+                                    <option value="36" @if(old('prefecture_id')=='36' ) selected @endif>徳島県</option>
+                                    <option value="37" @if(old('prefecture_id')=='37' ) selected @endif>香川県</option>
+                                    <option value="38" @if(old('prefecture_id')=='38' ) selected @endif>愛媛県</option>
+                                    <option value="39" @if(old('prefecture_id')=='39' ) selected @endif>高知県</option>
+                                    <option value="40" @if(old('prefecture_id')=='40' ) selected @endif>福岡県</option>
+                                    <option value="41" @if(old('prefecture_id')=='41' ) selected @endif>佐賀県</option>
+                                    <option value="42" @if(old('prefecture_id')=='42' ) selected @endif>長崎県</option>
+                                    <option value="43" @if(old('prefecture_id')=='43' ) selected @endif>熊本県</option>
+                                    <option value="44" @if(old('prefecture_id')=='44' ) selected @endif>大分県</option>
+                                    <option value="45" @if(old('prefecture_id')=='45' ) selected @endif>宮崎県</option>
+                                    <option value="46" @if(old('prefecture_id')=='46' ) selected @endif>鹿児島県</option>
+                                    <option value="47" @if(old('prefecture_id')=='47' ) selected @endif>沖縄県</option>
                                 </select>
 
                                 @error('prefecture_id')
