@@ -71,7 +71,7 @@
                         <input type="submit" value="ログイン" class="login">
                     </a>
                     <br>
-                    <a href="{{ route('register') }}">
+                    <a href="/register">
                         <input type="submit" value="新規登録" class="register my-3">
                     </a>
                 </div>

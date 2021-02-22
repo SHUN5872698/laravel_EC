@@ -25,6 +25,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 /** メインページ */
 Route::get('/main', 'ProductController@main');
 
+/** 新規登録ページ */
+Route::get('/register', 'UserController@showRegistrationForm');
+
 /** 商品ページ */
 Route::get('/product', 'ProductController@product');
 

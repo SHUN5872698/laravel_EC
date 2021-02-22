@@ -11,6 +11,23 @@ use App\Models\Prefecture;
 
 class UserController extends Controller
 {
+
+    /**
+     * 新規登録ページ
+     * @return void
+     * 都道府県情報を取得してページに渡す
+     */
+    public function showRegistrationForm()
+    {
+        $prefectures  = new Prefecture();
+        $prefectures = $prefectures->getData();
+
+        $data = [
+            'prefectures' => $prefectures
+        ];
+        return view('auth.register', $data);
+    }
+
     /**
      * ユーザー情報確認ページ
      *ユーザー情報と都道府県情報を取得して確認ページへ渡す
