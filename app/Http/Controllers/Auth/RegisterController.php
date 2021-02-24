@@ -59,7 +59,7 @@ class RegisterController extends Controller
             'city' => ['required', 'string', 'max:24'],
             'block' => ['required', 'string', 'max:64'],
             'building' => ['max:255'],
-        ], RegistersUsers::$registerErrorMessage);
+        ]);
     }
 
     /**

@@ -48,7 +48,7 @@
                                 <a class="nav-link" href="{{ route('login') }}">
                                     <font color="black">ログイン<span class="sr-only">(current)</span>
                                 </a>
-                                <a class="nav-link" href="/register">
+                                <a class="nav-link" href="{{ route('register') }}">
                                     <font color="black">新規登録<span class="sr-only">(current)</span>
                                 </a>
                             </div>
