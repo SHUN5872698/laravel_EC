@@ -16,7 +16,8 @@ use App\Http\Controllers\ProductController;
 Route::get('/', function () {
     return view('welcome');
 });
-Auth::routes();
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -39,7 +40,7 @@ Route::get('/details/category', 'ProductController@category');
 //capacityで絞り込み
 Route::get('/details/capacity', 'ProductController@capacity');
 
-
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
