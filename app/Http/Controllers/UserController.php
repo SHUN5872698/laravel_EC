@@ -21,6 +21,7 @@ class UserController extends Controller
     {
         $prefectures  = new Prefecture();
         $prefectures = $prefectures->getData();
+        dd($prefectures);
 
         $data = [
             'prefectures' => $prefectures
