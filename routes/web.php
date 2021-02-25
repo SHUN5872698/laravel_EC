@@ -18,15 +18,19 @@ Route::get('/', function () {
 });
 
 
-Auth::routes();
+// Auth::routes();
+
+Auth::routes([
+    'register' => false // ユーザ登録機能をオフに切替
+]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/register', 'Auth\RegisterController@getRegister')->name('register');
+Route::post('/register', 'Auth\RegisterController@postRegister')->name('register');
+
 /** メインページ */
 Route::get('/main', 'ProductController@main');
-
-/** 新規登録ページ */
-Route::get('/register', 'UserController@showRegistrationForm');
 
 /** 商品ページ */
 Route::get('/product', 'ProductController@product');
@@ -39,8 +43,6 @@ Route::get('/search', 'ProductController@master');
 Route::get('/details/category', 'ProductController@category');
 //capacityで絞り込み
 Route::get('/details/capacity', 'ProductController@capacity');
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 

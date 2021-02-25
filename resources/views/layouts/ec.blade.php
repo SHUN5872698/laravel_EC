@@ -45,28 +45,28 @@
                         <li class="nav-item dropdown m-2 my-sm-0">
                             <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">こんにちは、ログイン<br>
                                 アカウント機能</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {{--  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="nav-link" href="{{ route('login') }}">
-                                    <font color="black">ログイン<span class="sr-only">(current)</span>
-                                </a>
-                                <a class="nav-link" href="{{ route('register') }}">
+                            <font color="black">ログイン<span class="sr-only">(current)</span>
+                                </a> --}}
+                                <a class="nav-link" href="/register">
                                     <font color="black">新規登録<span class="sr-only">(current)</span>
                                 </a>
-                            </div>
-                        </li>
-                    </ul>
-                </form>
             </div>
-        </nav>
+            </li>
+            </ul>
+            </form>
+    </div>
+    </nav>
 
-        <main class="py-4">@yield('content')</main>
+    <main class="py-4">@yield('content')</main>
 
 
 
-        @section('footer')
-        <div class="footer">
-            &copy;right 2020 fujii
-        </div>
+    @section('footer')
+    <div class="footer">
+        &copy;right 2020 fujii
+    </div>
     </div>
 </body>
 
