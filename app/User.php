@@ -26,6 +26,20 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Prefecture', 'id', 'name');
     }
 
+    /** 新規登録用のバリデーション */
+    public static $register = [
+        'name' => ['required', 'string', 'between:2,8'],
+        'password' => ['required', 'string', 'between:8,30', 'confirmed'],
+        'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        'phone' => ['required', 'between:11,20'],
+        'postcode' => ['required', 'string', 'between:7,8'],
+        'prefecture_id' => ['required', 'integer'],
+        'city' => ['required', 'string', 'max:24'],
+        'block' => ['required', 'string', 'max:64'],
+        'building' => ['max:255'],
+    ];
+
+
     /**ユーザ情報更新用のバリデーション*/
     //名前
     public static $name_rules = [
