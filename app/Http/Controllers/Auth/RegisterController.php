@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Http\Request;
 use App\User;
+use App\Models\Prefecture;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -43,33 +45,51 @@ class RegisterController extends Controller
     }
 
     /**
+     * ユーザ登録画面の表示
+     * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory
+     */
+    public function getRegister()
+    {
+        $prefectures  = new Prefecture();
+        $prefectures = $prefectures->getData();
+
+        $data = [
+            'prefectures' => $prefectures
+        ];
+        return view('auth.register', $data);
+    }
+
+    /**
      *バリデーションの条件の変更
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'between:2,8'],
-            'password' => ['required', 'string', 'between:8,30', 'confirmed'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'phone' => ['required', 'between:11,20'],
-            'postcode' => ['required', 'string', 'between:7,8'],
-            'prefecture_id' => ['required', 'integer'],
-            'city' => ['required', 'string', 'max:24'],
-            'block' => ['required', 'string', 'max:64'],
-            'building' => ['max:255'],
-        ]);
-    }
+    // protected function validator(array $data)
+    // {
+    //     return Validator::make($data, [
+    //         'name' => ['required', 'string', 'between:2,8'],
+    //         'password' => ['required', 'string', 'between:8,30', 'confirmed'],
+    //         'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+    //         'phone' => ['required', 'between:11,20'],
+    //         'postcode' => ['required', 'string', 'between:7,8'],
+    //         'prefecture_id' => ['required', 'integer'],
+    //         'city' => ['required', 'string', 'max:24'],
+    //         'block' => ['required', 'string', 'max:64'],
+    //         'building' => ['max:255'],
+    //     ]);
+    // }
 
     /**
      * 登録成功時に新しいユーザーインスタンスを作成
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function postRegister(Request $data)
     {
-        return User::create([
+        /**バリデーションの実行 */
+        $this->validate($data, User::$register);
+
+        User::create([
             'name' => $data['name'],
             'password' => Hash::make($data['password']),
             'email' => $data['email'],
@@ -80,5 +100,6 @@ class RegisterController extends Controller
             'block' => $data['block'],
             'building' => $data['building'],
         ]);
+        return redirect('/login/main');
     }
 }
