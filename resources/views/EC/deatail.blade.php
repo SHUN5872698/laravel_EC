@@ -72,6 +72,7 @@
                     <div class="col-md-4 mb-1">
                         <div class="card-body">
                             <img src="../images/{{$product->image}}" class="card-img-top " alt="..." width="250" height="270">
+                            {{--  <img src="https://test-bucket5842.s3-ap-northeast-1.amazonaws.com/laravel_EC/{{$product->image}}" class="card-img-top " alt="..." width="250" height="270"> --}}
                             <div class="row my-2">
                                 <p>
                                     <font size="2"><a href="/product?id={{$product->id}}&category_master={{$product->category_master}}">{{$product->name}}</a></font>
