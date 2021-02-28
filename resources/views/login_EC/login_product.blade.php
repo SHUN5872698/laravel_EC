@@ -51,8 +51,8 @@
             @foreach ($images as $image)
             <div class="col-md-6">
                 <div class="card mb-2">
-                    <img src="../images/{{$image}}" class="card-img-top my-3" alt="..." width="300" height="300">
-                    {{--  <img src="https://test-bucket5842.s3-ap-northeast-1.amazonaws.com/laravel_EC/{{$image}}" class="card-img-top my-3" alt="..." width="300" height="300"> --}}
+                    {{--  <img src="../images/{{$image}}" class="card-img-top my-3" alt="..." width="300" height="300"> --}}
+                    <img src="https://test-bucket5842.s3-ap-northeast-1.amazonaws.com/laravel_EC/{{$image}}" class="card-img-top my-3" alt="..." width="300" height="300">
                 </div>
             </div>
             @endforeach
