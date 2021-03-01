@@ -13,24 +13,25 @@
 
 use App\Http\Controllers\ProductController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('EC.main');
+// });
+/** メインページ */
+Route::get('/', 'ProductController@main');
 
-
-// Auth::routes();
-
-Auth::routes([
-    'register' => false // ユーザ登録機能をオフに切替
-]);
+// Route::get('/main', 'ProductController@main');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Auth::routes();
+/** ユーザ登録機能をオフに切替 */
+Auth::routes([
+    'register' => false
+]);
+
+/** 新規登録ページ */
 Route::get('/register', 'Auth\RegisterController@getRegister')->name('register');
 Route::post('/register', 'Auth\RegisterController@postRegister')->name('register');
-
-/** メインページ */
-Route::get('/main', 'ProductController@main');
 
 /** 商品ページ */
 Route::get('/product', 'ProductController@product');
@@ -43,8 +44,6 @@ Route::get('/search', 'ProductController@master');
 Route::get('/details/category', 'ProductController@category');
 //capacityで絞り込み
 Route::get('/details/capacity', 'ProductController@capacity');
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 /** ログイン済みのメインページ */
 Route::get('/login/main', 'ProductController@login_main')->middleware('auth');
