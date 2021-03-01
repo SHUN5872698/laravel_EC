@@ -57,7 +57,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-                                <button type="button" class="btn btn-outline-primary" onclick="location.href='{{ url('/main') }}';">キャンセル</button>
+                                <button type="button" class="btn btn-outline-primary" onclick="location.href='{{ url('/') }}';">キャンセル</button>
                             </div>
                             <div class="col-md-8 offset-md-4">
                                 @if (Route::has('password.request'))

@@ -190,7 +190,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
-                                <button type="button" class="btn btn-outline-primary" onclick="location.href='/main';">キャンセル</button>
+                                <button type="button" class="btn btn-outline-primary" onclick="location.href='/';">キャンセル</button>
                             </div>
                         </div>
                     </form>

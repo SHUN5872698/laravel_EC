@@ -42,6 +42,6 @@ class LoginController extends Controller
     public function logout()
     {
         $this->guard()->logout();
-        return redirect('/main');    // リダイレクト先を変更
+        return redirect('/');    // リダイレクト先を変更
     }
 }
