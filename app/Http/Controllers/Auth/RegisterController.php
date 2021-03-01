@@ -100,6 +100,11 @@ class RegisterController extends Controller
             'block' => $data['block'],
             'building' => $data['building'],
         ]);
-        return redirect('/login/main');
+        return view('auth.registered');
     }
+
+    // public function registered()
+    // {
+    //     return view('auth.registered');
+    // }
 }
