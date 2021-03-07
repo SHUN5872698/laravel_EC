@@ -25,16 +25,6 @@ class CreateOrdersTable extends Migration
             $table->string('block', 64);
             $table->string('building');
             $table->float('tax');
-
-            // $table->foreign('user_id')
-            //     ->references('id')
-            //     ->on('users')
-            //     ->onDelete('cascade');
-
-            // $table->foreign('prefecture_id')
-            //     ->references('id')
-            //     ->on('prefectures')
-            //     ->onDelete('cascade');
         });
     }
 
