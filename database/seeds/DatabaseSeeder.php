@@ -12,12 +12,15 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         /**商品情報のseeder*/
-        //$this->call(ProductsTableSeeder::class);
+        $this->call(ProductsTableSeeder::class);
 
         /**商品画像のseeder */
-        // $this->call(ProductimagesTableSeeder::class);
+        $this->call(ProductimagesTableSeeder::class);
 
         /**税率のseeder */
-        // $this->call(TaxesTableSeeder::class);
+        $this->call(TaxesTableSeeder::class);
+
+        /**都道府県のseeder */
+        $this->call(PrefecturesTableSeeder::class);
     }
 }
