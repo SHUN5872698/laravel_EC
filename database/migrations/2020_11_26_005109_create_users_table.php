@@ -28,10 +28,10 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            // $table->foreign('prefecture_id')
-            //     ->references('id')
-            //     ->on('prefectures')
-            //     ->onDelete('cascade');
+            $table->foreign('prefecture_id')
+                ->references('id')
+                ->on('prefectures')
+                ->onDelete('cascade');
         });
     }
 

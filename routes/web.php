@@ -33,6 +33,9 @@ Auth::routes([
 Route::get('/register', 'Auth\RegisterController@getRegister')->name('register');
 Route::post('/register', 'Auth\RegisterController@postRegister')->name('register');
 
+/** 登録完了ページ */
+// Route::get('/registered', 'Auth\RegisterController@registered');
+
 /** 商品ページ */
 Route::get('/product', 'ProductController@product');
 
