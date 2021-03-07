@@ -19,10 +19,10 @@ class CreateProductimagesTable extends Migration
             $table->string('image');
             $table->string('kubun');
 
-            // $table->foreign('product_id')
-            //     ->references('id')
-            //     ->on('products')
-            //     ->onDelete('cascade');
+            $table->foreign('product_id')
+                ->references('id')
+                ->on('products')
+                ->onDelete('cascade');
         });
     }
 
