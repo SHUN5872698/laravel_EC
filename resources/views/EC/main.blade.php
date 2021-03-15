@@ -14,8 +14,8 @@
     @foreach ($products as $product)
     <div class="col-md-3 my-3">
         <div class="card mx-2">
-            {{-- <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300"> --}}
-            <img src="https://test0123-bucket.s3.ap-northeast-3.amazonaws.com/images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
+            <img src="../images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300">
+            {{-- <img src="https://test0123-bucket.s3.ap-northeast-3.amazonaws.com/images/{{$product->image}}" class="card-img-top my-3" alt="..." width="300" height="300"> --}}
             <div class="card-body">
                 <p class="product-card">
                     <font size="2"><a href="/product?id={{$product->id}}&category_master={{$product->category_master}}">{{$product->name}}</a></font>
