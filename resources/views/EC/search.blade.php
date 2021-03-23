@@ -38,8 +38,8 @@
                     @foreach ($products as $product)
                     <div class="col-md-4 mb-1">
                         <div class="card-body">
-                            {{--  <img src="../images/{{$product->image}}" class="card-img-top " alt="..." width="250" height="270"> --}}
-                            <img src="https://test0123-bucket.s3.ap-northeast-3.amazonaws.com/images/{{$product->image}}" class="card-img-top " alt="..." width="250" height="270">
+                            <img src="../images/{{$product->image}}" class="card-img-top " alt="..." width="250" height="270">
+                            {{--  <img src="https://test0123-bucket.s3.ap-northeast-3.amazonaws.com/images/{{$product->image}}" class="card-img-top " alt="..." width="250" height="270"> --}}
                             <div class="row my-2">
                                 <p>
                                     <font size="2"><a href="/product?id={{$product->id}}&category_master={{$product->category_master}}">{{$product->name}}</a></font>
