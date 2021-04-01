@@ -63,18 +63,14 @@ class Cart_item extends Model
     }
 
     /**
-     * カート内商品の件数の抽出
+     * カートのレコード件数の抽出
+     *
      * @return void
      *
-     * ユーザーのレコード件数を取得する
      */
-    public function Cart_Count()
+    public function Cart_count()
     {
-        $count = Cart_item::with('Product', 'Productimage')
-            ->join('products', 'products.id', '=', 'cart_items.product_id')
-            ->join('productimages', 'productimages.product_id', '=', 'products.id')
-            ->where('cart_items.user_id', Auth::user()->id)
-            ->where('productimages.kubun', 'main')
+        $count = Cart_item::where('user_id', Auth::user()->id)
             ->count();
         return $count;
     }

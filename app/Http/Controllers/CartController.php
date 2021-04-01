@@ -25,9 +25,9 @@ class CartController extends Controller
         $items = new Cart_item();
         $items = $items->Cart_items();
 
-        //カート内件数の取得
+        //カートのレコード件数を取得
         $count = new Cart_item();
-        $count = $count->Cart_Count();
+        $count = $count->Cart_count();
 
         //カート内商品の合計金額を取得
         $total_price = new Cart_item();
@@ -116,7 +116,7 @@ class CartController extends Controller
 
         //カート内件数の取得
         $count = new Cart_item();
-        $count = $count->Cart_Count();
+        $count = $count->Cart_count();
 
         //カート内商品の合計金額を取得
         $total_price = new Cart_item();
