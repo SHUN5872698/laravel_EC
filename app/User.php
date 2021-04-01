@@ -18,6 +18,7 @@ class User extends Authenticatable
     /**ガードするフィールド */
     protected $guarded = array('id');
 
+    /** ホワイトリスト */
     protected $fillable = ['prefecture_id', 'name', 'password', 'email', 'phone', 'postcode',  'city',  'block', 'building',];
 
     /** prefecturesテーブルとのリレーション */
@@ -69,15 +70,17 @@ class User extends Authenticatable
 
     /**
      * ユーザー情報の取得
-     * prefecturesとjoinして都道府県名も取得
+     *
      * @var array
+     * ユーザーと都道府県のテーブルから抽出
      */
     public function User_Data()
     {
         $users = User::with('prefecture')
             ->join('prefectures', 'prefectures.id',  '=', 'users.prefecture_id')
             ->where('users.id', Auth::user()->id)
-            //ユーザー情報を取得して確認ページへ渡す
+            //カラムの上書きを防ぐため、selectするカラムを具体的に明示
+            //都道府県名は重複するので別名で定義
             ->select(
                 'users.id',
                 'users.prefecture_id',
