@@ -91,16 +91,14 @@ class Product extends Model
     }
 
     /**
-     * カテゴリーマスターで検索したヒット数を取得
+     * カテゴリーマスターで検索したレコード数を取得
+     *
      * @param Request $request
      * @return void
      */
     public function Master_Count(Request $request)
     {
-        $count = Product::with('Productimage')
-            ->join('productimages', 'product_id',  '=', 'products.id')
-            ->where('products.category_master', $request->category_master)
-            ->where('productimages.kubun', 'main')
+        $count = Product::where('category_master', $request->category_master)
             ->count();
         return $count;
     }
