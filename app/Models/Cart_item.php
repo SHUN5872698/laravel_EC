@@ -32,11 +32,10 @@ class Cart_item extends Model
     }
 
     /**
-     * ユーザー毎のカート情報の抽出
-     * @return void
+     * カート情報の抽出
      *
-     * ログインしているユーザーのidからcart情報を取得
-     * 商品に紐づいている商品情報やメイン画像を取得
+     * @return void
+     * カート、商品情報、商品画像のテーブルから抽出
      */
     public function Cart_items()
     {
@@ -45,6 +44,7 @@ class Cart_item extends Model
             ->join('productimages', 'productimages.product_id', '=', 'products.id')
             ->where('cart_items.user_id', Auth::user()->id)
             ->where('productimages.kubun', 'main')
+            //カラムの上書きを防ぐため、selectするカラムを具体的に明示する
             ->select(
                 'cart_items.id',
                 'cart_items.user_id',
@@ -66,7 +66,6 @@ class Cart_item extends Model
      * カートのレコード件数の抽出
      *
      * @return void
-     *
      */
     public function Cart_count()
     {
@@ -78,8 +77,11 @@ class Cart_item extends Model
 
 
     /**
-     * カート内商品の合計金額の作成
+     * カート内商品の合計金額を取得
      * @return void
+     *
+     * カート、商品情報のテーブルから購入数と商品価格を抽出
+     * 税率を上乗せして合計金額を取得する
      */
     public function Total_price()
     {
@@ -87,7 +89,10 @@ class Cart_item extends Model
         $tax = new Tax();
         $tax = $tax->getTax();
 
+        //合計金額を代入する変数の宣言
         $total_price = 0;
+
+        //購入数と商品価格を抽出
         $items = Cart_item::with('Product')
             ->join('products', 'products.id', '=', 'cart_items.product_id')
             ->where('cart_items.user_id', Auth::user()->id)
@@ -96,18 +101,22 @@ class Cart_item extends Model
                 'products.price',
             )
             ->get();
+
+        //税率を上乗せして合計金額を取得する
         foreach ($items as $item) {
             $total_price += ($item->price  * $tax) * $item->count;
         }
+        //合計金額を四捨五入する
         $total_price = round($total_price, -1);
         return $total_price;
     }
 
     /**
      * カートの作成処理
+     *
      * @param Request $request
      * @return void
-     * 同じ商品がカートに存在していた場合は購入数を追加
+     * 同一商品がカートに存在していた場合は購入数を追加
      */
     public function Cart_in(Request $request)
     {
@@ -145,6 +154,7 @@ class Cart_item extends Model
 
     /**
      * 購入数の変更
+     *
      * @param Request $request
      * @return void
      */
@@ -161,6 +171,7 @@ class Cart_item extends Model
 
     /**
      * 商品レコードを一件削除
+     *
      * @param Request $request
      * @return void
      */
