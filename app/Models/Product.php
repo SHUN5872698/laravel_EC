@@ -233,16 +233,14 @@ class Product extends Model
 
     /**
      * capacity検索の検索数を取得
+     *
      * @param Request $request
      * @return void
      */
     public function Count_Capacity(Request $request)
     {
-        $count = Product::with('Productimage')
-            ->join('productimages', 'product_id',  '=', 'products.id')
-            ->where('products.category', $request->category)
+        $count = Product::where('products.category', $request->category)
             ->where('products.capacity', $request->capacity)
-            ->where('productimages.kubun', 'main')
             ->count();
         return $count;
     }
