@@ -40,9 +40,10 @@ class Order_item extends Model
 
     /**
      * 新規レコードの作成処理
-     * @param Request $request
+     *
      * @return void
-     * カート情報と該当idを抽出して登録処理を行う
+     * 購入者情報、カート、商品のテーブルから抽出
+     * 抽出したデータからレコードを作成
      */
     public function  Items_add()
     {
