@@ -48,7 +48,7 @@ class Order_item extends Model
     {
         //登録する商品情報の取得
         $items = new Cart_item();
-        $items = $items->Items();
+        $items = $items->order_items();
 
         //登録するorder_idを取得
         $order_id = new Order();

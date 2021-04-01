@@ -187,13 +187,14 @@ class Cart_item extends Model
     /**
      * order_itemsテーブルに登録する商品情報の取得
      * @return void
-     * 商品名と価格をproductsテーブルから抽出
+     * カート、商品情報のテーブルから抽出
      */
-    public function Items()
+    public function order_items()
     {
         $check = Cart_item::with('Product')
             ->join('products', 'products.id', '=', 'cart_items.product_id')
             ->where('cart_items.user_id', Auth::user()->id)
+            //カラムを具体的に明示
             ->select(
                 'cart_items.product_id',
                 'cart_items.count',
@@ -208,7 +209,9 @@ class Cart_item extends Model
 
     /**
      * 該当ユーザのcart情報を全て削除
+     *
      * @return void
+     * 購入処理が完了した場合実行
      */
     public function Delete_cart()
     {
