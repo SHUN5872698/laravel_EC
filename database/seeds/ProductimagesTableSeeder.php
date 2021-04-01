@@ -1039,17 +1039,17 @@ class ProductimagesTableSeeder extends Seeder
                 'kubun' => 'main',
             ],
             [
+                'product_id' => 39,
+                'image' => 'iPhone 12 ブラックmain.jpg',
+                'kubun' => 'main',
+            ],
+            [
                 'product_id' => 43,
                 'image' => 'iPhone 12 ブラックmain.jpg',
                 'kubun' => 'main',
             ],
             [
                 'product_id' => 47,
-                'image' => 'iPhone 12 ブラックmain.jpg',
-                'kubun' => 'main',
-            ],
-            [
-                'product_id' => 55,
                 'image' => 'iPhone 12 ブラックmain.jpg',
                 'kubun' => 'main',
             ],
@@ -1077,6 +1077,13 @@ class ProductimagesTableSeeder extends Seeder
 
             [
 
+                'product_id' => 39,
+                'image' => 'iPhone 12 ブラックsub1.jpg',
+                'kubun' => 'sub',
+            ],
+
+            [
+
                 'product_id' => 43,
                 'image' => 'iPhone 12 ブラックsub1.jpg',
                 'kubun' => 'sub',
@@ -1085,13 +1092,6 @@ class ProductimagesTableSeeder extends Seeder
             [
 
                 'product_id' => 47,
-                'image' => 'iPhone 12 ブラックsub1.jpg',
-                'kubun' => 'sub',
-            ],
-
-            [
-
-                'product_id' => 55,
                 'image' => 'iPhone 12 ブラックsub1.jpg',
                 'kubun' => 'sub',
             ],
@@ -1119,6 +1119,13 @@ class ProductimagesTableSeeder extends Seeder
 
             [
 
+                'product_id' => 39,
+                'image' => 'iPhone 12 ブラックsub2.jpg',
+                'kubun' => 'sub',
+            ],
+
+            [
+
                 'product_id' => 43,
                 'image' => 'iPhone 12 ブラックsub2.jpg',
                 'kubun' => 'sub',
@@ -1127,13 +1134,6 @@ class ProductimagesTableSeeder extends Seeder
             [
 
                 'product_id' => 47,
-                'image' => 'iPhone 12 ブラックsub2.jpg',
-                'kubun' => 'sub',
-            ],
-
-            [
-
-                'product_id' => 55,
                 'image' => 'iPhone 12 ブラックsub2.jpg',
                 'kubun' => 'sub',
             ],
@@ -1155,17 +1155,17 @@ class ProductimagesTableSeeder extends Seeder
                 'kubun' => 'sub',
             ],
             [
+                'product_id' => 39,
+                'image' => 'iPhone 12 ブラックsub3.jpg',
+                'kubun' => 'sub',
+            ],
+            [
                 'product_id' => 43,
                 'image' => 'iPhone 12 ブラックsub3.jpg',
                 'kubun' => 'sub',
             ],
             [
                 'product_id' => 47,
-                'image' => 'iPhone 12 ブラックsub3.jpg',
-                'kubun' => 'sub',
-            ],
-            [
-                'product_id' => 55,
                 'image' => 'iPhone 12 ブラックsub3.jpg',
                 'kubun' => 'sub',
             ],
@@ -1187,7 +1187,7 @@ class ProductimagesTableSeeder extends Seeder
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 43,
+                'product_id' => 39,
                 'image' => 'iPhone 12 ブラックsub4.jpg',
                 'kubun' => 'sub',
             ],
@@ -1197,7 +1197,7 @@ class ProductimagesTableSeeder extends Seeder
                 'kubun' => 'sub',
             ],
             [
-                'product_id' => 55,
+                'product_id' => 47,
                 'image' => 'iPhone 12 ブラックsub4.jpg',
                 'kubun' => 'sub',
             ],
