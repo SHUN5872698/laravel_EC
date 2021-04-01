@@ -47,9 +47,8 @@ class Order extends Model
      * @param Request $request
      * @return void
      *
-     * 今日の日付を取得
-     * 購入者情報と現在の税率、カート内合計金額を抽出
-     * 合計金額は税率混みの金額に変更処理を行い登録する
+     * 購入者情報と税率、合計金額を抽出
+     * 登録日はCarbonで現在日時を取得
      */
     public function Order_add()
     {
@@ -101,8 +100,8 @@ class Order extends Model
 
     /**
      *購入履歴情報の取得
-     * @return void
      *
+     * @var array
      * ログインしているユーザーidから購入者情報を購入日が新しい順に抽出
      * 抽出したidから購入した商品情報を取得して同一の連想配列内に格納
      */
@@ -113,6 +112,8 @@ class Order extends Model
             ->join('prefectures', 'prefectures.id', '=', 'orders.prefecture_id')
             ->where('orders.user_id', Auth::user()->id)
             ->orderby('orders.id', 'desc')
+            //カラムの上書きを防ぐため、selectするカラムを具体的に明示する
+            //都道府県名は重複するので別名で定義
             ->select(
                 'orders.id',
                 'orders.total_price',
@@ -127,9 +128,9 @@ class Order extends Model
             )
             ->get();
 
-        //繰り返す変数の初期化
+        //繰り返す変数の宣言
         $i = 0;
-        //格納する連想配列を作成
+        //配列を初期化
         $orders = array();
 
         //購入商品の情報を取得
@@ -139,6 +140,7 @@ class Order extends Model
                 ->join('productimages', 'productimages.product_id', '=', 'order_items.product_id')
                 ->where('order_items.order_id', $user->id)
                 ->where('productimages.kubun', 'main')
+                //カラムの上書きを防ぐため、selectするカラムを具体的に明示する
                 ->select(
                     'products.category_master',
                     'productimages.image',
