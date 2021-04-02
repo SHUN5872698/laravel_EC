@@ -34,7 +34,7 @@ class Cart_item extends Model
     /**
      * カート情報の抽出
      *
-     * @var array
+     * @return void
      * カート、商品情報、商品画像のテーブルから抽出
      */
     public function Cart_items()
@@ -156,7 +156,7 @@ class Cart_item extends Model
      * 購入数の変更
      *
      * @param Request $request
-     * @var array
+     * @return void
      */
     public function CountUp(Request $request)
     {
@@ -186,7 +186,8 @@ class Cart_item extends Model
 
     /**
      * order_itemsテーブルに登録する商品情報の取得
-     * @var array
+     *
+     * @return void
      * カート、商品情報のテーブルから抽出
      */
     public function order_items()
