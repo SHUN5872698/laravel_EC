@@ -44,9 +44,9 @@ class Order extends Model
 
     /**
      * 新規レコードの作成処理
+     *
      * @param Request $request
      * @return void
-     *
      * 購入者情報と税率、合計金額を抽出
      * 登録日はCarbonで現在日時を取得
      */
@@ -86,8 +86,9 @@ class Order extends Model
 
     /**
      * order_id情報を取得
+     *
      * @return void
-     * order_itemsテーブルに登録するので最新の物を取得
+     * order_itemsテーブルに登録するためのidを抽出
      */
     public function Order_id()
     {
@@ -99,9 +100,10 @@ class Order extends Model
     }
 
     /**
-     *購入履歴情報の取得
+     * 購入履歴情報の取得
      *
-     * @var array
+     * @param Request $request
+     * @return void
      * ログインしているユーザーidから購入者情報を購入日が新しい順に抽出
      * 抽出したidから購入した商品情報を取得して同一の連想配列内に格納
      */
