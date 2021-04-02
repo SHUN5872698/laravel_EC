@@ -17,12 +17,18 @@ class Product extends Model
         return $this->hasMany('App\Models\Productimage', 'product_id', 'image', 'kubun');
     }
 
-    /** 商品情報をランダムに12件取得*/
+    /**
+     * 商品情報をランダムに12件取得
+     *
+     * @return void
+     * 商品情報、商品画像のテーブルから抽出
+     */
     public function Products()
     {
         $products = Product::with('Productimage')
             ->join('productimages', 'product_id',  '=', 'products.id')
             ->where('productimages.kubun', 'main')
+            //カラムの上書きを防ぐため、selectするカラムを具体的に明示する
             ->select(
                 'products.id',
                 'products.name',
@@ -41,6 +47,7 @@ class Product extends Model
 
     /**
      * 商品情報を一件抽出
+     *
      * @param Request $request
      * @return void
      */
@@ -53,9 +60,9 @@ class Product extends Model
 
     /**
      * 検索されたカテゴリーマスター名を抽出
+     *
      * @param Request $request
      * @return void
-     * リクエストで送信されたcategory情報を抽出
      */
     public function One_Master(Request $request)
     {
@@ -67,8 +74,10 @@ class Product extends Model
 
     /**
      * カテゴリーマスターから商品の絞り込みをして取得
+     *
      * @param Request $request
      * @return void
+     * 商品情報、商品画像のテーブルから抽出
      */
     public function Master_Products(Request $request)
     {
@@ -76,6 +85,7 @@ class Product extends Model
             ->join('productimages', 'product_id',  '=', 'products.id')
             ->where('products.category_master', $request->category_master)
             ->where('productimages.kubun', 'main')
+            //カラムの上書きを防ぐため、selectするカラムを具体的に明示する
             ->select(
                 'products.id',
                 'products.name',
@@ -85,6 +95,7 @@ class Product extends Model
                 'products.capacity',
                 'productimages.image',
             )
+            //昇順に並び替え
             ->orderby('products.id', 'asc')
             ->paginate(12);
         return $master;
@@ -105,6 +116,7 @@ class Product extends Model
 
     /**
      * 検索されたcategory名を抽出
+     *
      * @param Request $request
      * @return void
      * リクエストで送信されたcategory情報を一件取得
@@ -118,9 +130,11 @@ class Product extends Model
     }
 
     /**
-     * 検索欄のカテゴリー情報を取得
+     * category_masterとcategory情報を取得
+     *
      * @param Request $request
      * @return void
+     *
      */
     public function Deatail_Category(Request $request)
     {
@@ -135,7 +149,8 @@ class Product extends Model
     }
 
     /**
-     *categoryから機種を絞り込みをして取得
+     * categoryで検索したレコード数を抽出
+     *
      * @param Request $request
      * @return void
      */
@@ -149,12 +164,20 @@ class Product extends Model
         return $count;
     }
 
+    /**
+     * categoryで商品情報を検索
+     *
+     * @param Request $request
+     * @return void
+     * 商品情報、商品画像のテーブルから抽出
+     */
     public function Search_Products(Request $request)
     {
         $searchcategory = Product::with('Productimage')
             ->join('productimages', 'product_id',  '=', 'products.id')
             ->where('products.category', $request->category)
             ->where('productimages.kubun', 'main')
+            //カラムの上書きを防ぐため、selectするカラムを具体的に明示する
             ->select(
                 'products.id',
                 'products.name',
@@ -164,13 +187,15 @@ class Product extends Model
                 'products.capacity',
                 'productimages.image',
             )
+            //昇順に並び替え
             ->orderby('products.id', 'asc')
             ->paginate(12);
         return $searchcategory;
     }
 
     /**
-     * 選択された容量とカテゴリー情報を一件抽出
+     * 選択された容量とカテゴリー情報を一件取得
+     *
      * @param Request $request
      * @return void
      * リクエストで送信されたcategory情報を抽出
@@ -187,7 +212,8 @@ class Product extends Model
     }
 
     /**
-     * 容量で検索した情報の抽出
+     * 容量で検索した商品情報の取得
+     *
      * @param Request $request
      * @return void
      */
@@ -207,8 +233,10 @@ class Product extends Model
 
     /**
      * capacityから商品情報を絞り込み
+     *
      * @param Request $request
      * @return void
+     * 商品情報、商品画像のテーブルから抽出
      */
     public function SearchCapacity(Request $request)
     {
@@ -232,7 +260,7 @@ class Product extends Model
     }
 
     /**
-     * capacity検索の検索数を取得
+     * capacity検索のレコード数を取得
      *
      * @param Request $request
      * @return void
