@@ -156,10 +156,7 @@ class Product extends Model
      */
     public function Category_Count(Request $request)
     {
-        $count = Product::with('Productimage')
-            ->join('productimages', 'product_id',  '=', 'products.id')
-            ->where('products.category', $request->category)
-            ->where('productimages.kubun', 'main')
+        $count = Product::where('products.category', $request->category)
             ->count();
         return $count;
     }
