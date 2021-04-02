@@ -71,7 +71,7 @@ class User extends Authenticatable
     /**
      * ユーザー情報の取得
      *
-     * @var array
+     * @return void
      * ユーザーと都道府県のテーブルから抽出
      */
     public function User_Data()
