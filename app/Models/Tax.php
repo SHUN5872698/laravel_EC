@@ -11,7 +11,10 @@ class Tax extends Model
     protected $guarded = array('id');
 
     /**
-     * 現在の税率を取得するメソッド
+     * 商品価格に上乗せする値を取得
+     *
+     * @return void
+     * 現在日時から税率を取得して変換
      */
     public function getTax()
     {
@@ -25,6 +28,12 @@ class Tax extends Model
         return $tax;
     }
 
+    /**
+     * 現在の税率を取得
+     *
+     * @return void
+     * orderテーブルに登録するために使用
+     */
     public function percentage()
     {
         $percentage = Tax::whereDate('taxes.from', '<=', Carbon::now()->format('Y-m-d'))
