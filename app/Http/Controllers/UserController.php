@@ -14,49 +14,59 @@ class UserController extends Controller
 
     /**
      * ユーザー情報確認ページ
-     *ユーザー情報と都道府県情報を取得して確認ページへ渡す
+     *
+     * @return void
      */
     public function user_inf()
     {
-        /**都道県名も取得するのでmodelから取得*/
+        // ユーザー情報を取得
         $user = new User();
         $user = $user->User_Data();
+
+        // ユーザー情報確認ページへ変数の受け渡し
         return view('user_update.user_inf', $user);
     }
 
     /**
      * ユーザー名変更ページ
+     *
+     * @return void
      */
     public function name_edit()
     {
-        /**ユーザー情報の取得 */
+        // ログインしているユーザーから情報を取得
         $auth = User::find(Auth::user()->id);
+
+        // ユーザー名変更ページに変数の受け渡し
         return view('user_update.name_edit', $auth);
     }
 
     /**
      * ユーザー名の変更を実行
+     *
      * @param Request $request
      * @return void
      */
     public function name_update(Request $request)
     {
-        /**バリデーションの実行 */
+        // バリデーションの実行
         $this->validate($request, User::$name_rules);
 
-        //変更するユーザ情報の確定
+        // ログインしているユーザーから変更するユーザ情報の確定
         $auth = User::find(Auth::user()->id);
-
-        /**ユーザ名を変更 */
+        // ユーザ名を変更を実行
         $auth->name = $request->name;
-        /**更新内容の保存 */
+        // 変更内容の保存
         $auth->save();
-        /**ユーザ情報ページにリダイレクト */
+
+        //ユーザ情報ページにリダイレクト
         return redirect('/user_inf');
     }
 
     /**
      * パスワード変更ページ
+     *
+     * @return void
      */
     public function pass_edit()
     {
@@ -65,125 +75,142 @@ class UserController extends Controller
 
     /**
      * パスワードの変更を実行
+     *
      * @param Request $request
      * @return void
      */
     public function pass_update(Request $request)
     {
-        /**バリデーションの実行 */
+        // バリデーションの実行
         $this->validate($request, User::$pass_rules);
 
-        /**変更するユーザ情報の確定 */
+        // ログインしているユーザーから変更するユーザ情報の確定
         $auth = User::find(Auth::user()->id);
-
-        /**パスワードの更新 */
+        // パスワードの変更を実行
         $auth->password = bcrypt($request->get('password'));
-        /**更新内容の保存 */
+        // 変更内容の保存
         $auth->save();
-        /**ユーザー情報ページへリダイレクト */
+
+        // ユーザー情報ページへリダイレクト
         return redirect('/user_inf');
     }
 
     /**
-     * メールアドレス変更ページへ移動
+     * メールアドレス変更ページ
      */
     public function email_edit()
     {
-        /**ユーザー情報の取得 */
+        // ログインしているユーザーから情報を取得
         $auth = User::find(Auth::user()->id);
+
+        // メールアドレス変更ページに変数の受け渡し
         return view('user_update.email_edit', $auth);
     }
 
     /**
      * メールアドレスの変更を実行
+     *
      * @param Request $request
      * @return void
      */
     public function email_update(Request $request)
     {
-        /**バリデーションの実行 */
+        // バリデーションの実行
         $this->validate($request, User::$email_rules);
 
-        /**変更するユーザ情報の確定 */
+        // ログインしているユーザーから変更するユーザ情報の確定
         $auth = User::find(Auth::user()->id);
-        /**メールアドレスを更新 */
+        // メールアドレスの変更を実行
         $auth->email = $request->email;
-        /**更新内容の保存 */
+        // 変更内容の保存
         $auth->save();
 
-        /**ユーザ情報ページにリダイレクト */
+        // ユーザ情報ページにリダイレクト
         return redirect('/user_inf');
     }
 
     /**
-     * 電話番号変更ページへ移動
+     * 電話番号変更ページ
+     *
+     * @param Request $request
+     * @return void
      */
     public function phone_edit(Request $request)
     {
-        /**ユーザー情報の取得 */
+        // ログインしているユーザーから情報を取得
         $auth = User::find(Auth::user()->id);
+
+        // 電話番号変更ページに変数の受け渡し
         return view('user_update.phone_edit', $auth);
     }
 
     /**
      * 電話番号の変更を実行
+     *
      * @param Request $request
      * @return void
      */
     public function phone_update(Request $request)
     {
-        /**バリデーションの実行 */
+        // バリデーションの実行
         $this->validate($request, User::$phone_rules);
 
-        /**変更するユーザ情報の確定 */
+        // ログインしているユーザーから変更するユーザ情報の確定
         $auth = User::find(Auth::user()->id);
-
-        /**電話番号を更新 */
+        // 電話番号の変更を実行
         $auth->phone = $request->phone;
-        /**更新内容の保存 */
+        // 変更内容の保存
         $auth->save();
-        /**ユーザ情報ページにリダイレクト */
+
+        // ユーザ情報ページにリダイレクト
         return redirect('/user_inf');
     }
 
     /**
-     * 住所変更ページへ移動
+     * 住所変更ページ
+     *
+     * @param Request $request
+     * @return void
      */
     public function address_edit(Request $request)
     {
-        /**都道県名も取得するのでUser情報をmodelから取得*/
+        //ユーザー情報を取得
         $user = new User();
         $user = $user->User_Data();
-        /**都道府県情報の取得 */
+
+        // 都道府県情報の取得
         $prefectures = new Prefecture();
         $prefectures = $prefectures->getData();
 
+        // 配列にデータを格納
         $data = [
             'user' => $user,
             'prefectures' => $prefectures,
         ];
+
+        //住所変更ページに変数の受け渡し
         return view('user_update.address_edit', $data);
     }
 
     /**
-     *住所の変更を実行
+     * 住所の変更を実行
+     *
      * @param Request $request
      * @return void
      */
     public function address_update(Request $request)
     {
-        /**バリデーションの実行 */
+        //バリデーションの実行
         $this->validate($request, User::$add_rules);
 
-        /**変更するユーザ情報の確定 */
+        // ログインしているユーザーから変更するユーザ情報の確定
         $auth = User::find(Auth::user()->id);
-
-        /**formの内容を全て取得 */
+        // formの内容を全て取得
         $form = $request->all();
-        /**内容を更新して保存 */
+        // 内容を更新して保存
         $auth->fill($form)->save();
 
-        /**ユーザ情報ページにリダイレクト */
+        // ユーザ情報ページにリダイレクト
         return redirect('/user_inf');
     }
 

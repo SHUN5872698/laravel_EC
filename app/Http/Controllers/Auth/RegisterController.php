@@ -46,16 +46,20 @@ class RegisterController extends Controller
 
     /**
      * ユーザ登録画面の表示
-     * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory
+     *
+     * @return void
      */
     public function getRegister()
     {
+        //都道府県情報を取得
         $prefectures  = new Prefecture();
         $prefectures = $prefectures->getData();
 
+        //配列にデータを格納
         $data = [
             'prefectures' => $prefectures
         ];
+        //ユーザー登録画面に変数の受け渡し
         return view('auth.register', $data);
     }
 
@@ -86,9 +90,10 @@ class RegisterController extends Controller
      */
     protected function postRegister(Request $data)
     {
-        /**バリデーションの実行 */
+        //バリデーションの実行
         $this->validate($data, User::$register);
 
+        //ユーザー登録を実行
         User::create([
             'name' => $data['name'],
             'password' => Hash::make($data['password']),
@@ -100,6 +105,8 @@ class RegisterController extends Controller
             'block' => $data['block'],
             'building' => $data['building'],
         ]);
+
+        //登録完了画面を表示
         return view('auth.registered');
     }
 

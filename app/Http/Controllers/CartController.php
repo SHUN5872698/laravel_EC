@@ -11,13 +11,13 @@ use Illuminate\Support\Facades\Auth;
 class CartController extends Controller
 {
     /**
-     * カートページに移動
+     * カート内商品確認ページ
+     *
      * @return void
-     * 税率、カート内商品とその合計金額を抽出
      */
     public function cart_read()
     {
-        //現在の税率の取得
+        //現在の税率を取得
         $tax = new Tax();
         $tax = $tax->getTax();
 
@@ -33,26 +33,29 @@ class CartController extends Controller
         $total_price = new Cart_item();
         $total_price = $total_price->Total_price();
 
+        //配列にデータを格納
         $data = [
             'tax' => $tax,
             'items' => $items,
             'count' => $count,
             'total_price' => $total_price,
         ];
-        //カートページに移動
+
+        //カートページに変数の受け渡し
         return view('login_EC.cart', $data);
     }
 
     /**
      * カートの作成処理
+     *
      * @param Request $request
      * @return void
      * 同じ商品がカートに存在していた場合は購入数を追加
      */
     public function cart_in(Request $request)
     {
-        //購入処理を実行
-        //同一商品がカートに存在していた場合は購入数を追加
+        // カートテーブルに新規登録処理を実行
+        // カートテーブルに同一商品が存在していた場合は購入数を追加
         $cart_in = new Cart_item();
         $cart_in = $cart_in->Cart_in($request);
 
@@ -62,14 +65,14 @@ class CartController extends Controller
 
 
     /**
-     * 購入数の変更
+     * カート内商品の数量を変更
+     *
      * @param Request $request
      * @return void
-     * リクエストで送信されてきた個数に変更処理を実行
      */
     public function countUp(Request $request)
     {
-        //変更処理を実行
+        //カート内の商品の数量変更処理を実行
         $count_up = new Cart_item();
         $count_up = $count_up->CountUp($request);
 
@@ -78,10 +81,10 @@ class CartController extends Controller
     }
 
     /**
-     * 該当の商品の削除処理を実行
+     * カート内商品を一件削除
+     *
      * @param Request $request
      * @return void
-     *
      */
     public function delete(Request $request)
     {
@@ -95,18 +98,17 @@ class CartController extends Controller
 
     /**
      * 購入確認ページ
-     * @param Request $request
+     *
      * @return void
-     * ユーザー情報と商品情報、メイン画像、
-     * 税率、カート内商品とその合計金額を抽出
+     *
      */
     public function order_check()
     {
-        //都道府県情報が必要なのでUserモデルからユーザ情報の取得
+        //ユーザ情報を取得
         $users = new User();
         $users = $users->User_Data();
 
-        //現在の税率の取得
+        //現在の税率を取得
         $tax = new Tax();
         $tax = $tax->getTax();
 
@@ -114,7 +116,7 @@ class CartController extends Controller
         $items = new Cart_item();
         $items = $items->Cart_items();
 
-        //カート内件数の取得
+        //カート内レコード数を取得
         $count = new Cart_item();
         $count = $count->Cart_count();
 
@@ -122,6 +124,7 @@ class CartController extends Controller
         $total_price = new Cart_item();
         $total_price = $total_price->Total_price();
 
+        //配列にデータを格納
         $data = [
             'users' => $users,
             'tax' => $tax,
@@ -129,7 +132,7 @@ class CartController extends Controller
             'count' => $count,
             'total_price' => $total_price,
         ];
-        //購入確認ページへ移動
+        //購入確認ページへ変数の受け渡し
         return view('login_EC.order_check', $data);
     }
 }
