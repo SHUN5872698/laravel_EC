@@ -2,6 +2,8 @@
 
 return [
 
+
+    'log' => 'errorlog',
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -39,7 +41,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool) env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -67,7 +69,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Tokyo',
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +82,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ja',
 
     /*
     |--------------------------------------------------------------------------
@@ -119,7 +121,8 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    // 'key' => env('APP_KEY'),
+    'key' => env('APP_KEY', 'SomeRandomStringSomeRandomString'),
 
     'cipher' => 'AES-256-CBC',
 
