@@ -74,7 +74,6 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="image">
-                            {{-- <img src="../images/{{$item['image']}}" width="150" height="150"> --}}
                             <img src="https://test0123-bucket.s3.ap-northeast-3.amazonaws.com/images/{{$item['image']}}" width="150" height="150">
                         </div>
                         <div class="product mt-2">

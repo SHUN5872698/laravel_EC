@@ -71,7 +71,6 @@
                     @foreach ($products as $product)
                     <div class="col-md-4 mb-1">
                         <div class="card-body">
-                            {{-- <img src="/images/{{$product->image}}" class="card-img-top my-3" alt="..." width="250" height="280"> --}}
                             <img src="https://test0123-bucket.s3.ap-northeast-3.amazonaws.com/images/{{$product->image}}" class="card-img-top " alt="..." width="250" height="270">
                             <div class="row my-2">
                                 <p>
