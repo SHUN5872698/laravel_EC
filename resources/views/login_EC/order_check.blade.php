@@ -57,8 +57,8 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="image">
-                            <img src="../images/{{$item->image}}" width="100" height="100">
-                            {{--  <img src="https://test-bucket5842.s3-ap-northeast-1.amazonaws.com/laravel_EC/{{$item->image}}" width="150" height="150"> --}}
+                            {{-- <img src="../images/{{$item->image}}" width="100" height="100"> --}}
+                            <img src="https://test0123-bucket.s3.ap-northeast-3.amazonaws.com/images/{{$item->image}}" width="150" height="150">
                         </div>
                         <div class="product">
                             <div class="product_name">
