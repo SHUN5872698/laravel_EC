@@ -75,7 +75,6 @@
                     <div class="row">
                         <div class="image">
                             <img src="../images/{{$item['image']}}" width="150" height="150">
-                            {{-- <img src="https://test-bucket5842.s3-ap-northeast-1.amazonaws.com/laravel_EC/{{$item['image']}}" width="150" height="150"> --}}
                         </div>
                         <div class="product mt-2">
                             <a href="/login/product?id={{$item['product_id']}}&category_master={{$item['category_master']}}">{{$item['order_name']}}</a>
