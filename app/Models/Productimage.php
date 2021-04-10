@@ -10,7 +10,7 @@ class Productimage extends Model
     /** productsテーブルとのリレーション*/
     public function product()
     {
-        return $this->belongsTo('App\Models\Product', 'id');
+        return $this->belongsTo('App\Models\Product');
     }
 
     /**

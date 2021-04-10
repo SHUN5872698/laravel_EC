@@ -24,7 +24,7 @@ class User extends Authenticatable
     /** prefecturesテーブルとのリレーション */
     public function prefecture()
     {
-        return $this->hasMany('App\Models\Prefecture', 'id', 'name');
+        return $this->belongsTO('App\Models\Prefecture');
     }
 
     /** 新規登録用のバリデーション */

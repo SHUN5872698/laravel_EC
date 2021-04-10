@@ -14,7 +14,7 @@ class Product extends Model
     /**productimagesテーブルとのリレーション*/
     public function productimage()
     {
-        return $this->hasMany('App\Models\Productimage', 'product_id', 'image', 'kubun');
+        return $this->hasMany('App\Models\Productimage', 'product_id');
     }
 
     /**

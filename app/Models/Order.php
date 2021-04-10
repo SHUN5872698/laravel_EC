@@ -27,7 +27,7 @@ class Order extends Model
     /** prefecturesテーブルとのリレーション */
     public function prefecture()
     {
-        return $this->hasone('App\Models\Prefecture', 'id');
+        return $this->belongsTo('App\Models\Prefecture');
     }
 
     /** productimagesテーブルとのリレーション */
