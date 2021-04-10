@@ -23,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        /**
+         * 文字数デフォルト255のところを191に指定
+         */
         Schema::defaultStringLength(191);
     }
 }
