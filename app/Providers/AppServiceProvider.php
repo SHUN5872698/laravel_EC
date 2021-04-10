@@ -27,5 +27,12 @@ class AppServiceProvider extends ServiceProvider
          * 文字数デフォルト255のところを191に指定
          */
         Schema::defaultStringLength(191);
+
+        /**
+         * .envファイルの(APP_ENV=production)のとき、https接続を強制化
+         */
+        if (\App::environment('production')) {
+            \URL::forceScheme('https');
+        }
     }
 }
