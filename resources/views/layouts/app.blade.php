@@ -10,15 +10,22 @@
 
     <title>@yield('title')</title>
     <!-- Scripts -->
-    <script src="{{ secure_asset('js/app.js') }}" defer></script>
+    @if(app('env') == 'production')
+    <script src="{{ secure_asset('js/app.js') }}"></script>
+    @else
+    <script src="{{ asset('js/app.js') }}"></script>
+    @endif
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
-    <script src="{{ asset('js/fixme.js') }}"></script>
+    @if(app('env') == 'production')
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    @else
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @endif
     @yield('css')
     <style>
     </style>
