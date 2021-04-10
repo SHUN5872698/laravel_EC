@@ -52,7 +52,7 @@
             @foreach ($images as $image)
             <div class="col-md-6">
                 <div class="card mb-2">
-                    <img src="https://test-bucket5842.s3-ap-northeast-1.amazonaws.com/laravel_EC/{{$image}}" class="card-img-top my-3" alt="..." width="300" height="300">
+                    <img src="https://test0123-bucket.s3.ap-northeast-3.amazonaws.com/images/{{$image}}" class="card-img-top my-3" alt="..." width="300" height="300">
                 </div>
             </div>
             @endforeach
