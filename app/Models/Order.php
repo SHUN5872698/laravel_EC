@@ -33,7 +33,7 @@ class Order extends Model
     /** productimagesテーブルとのリレーション */
     public function productimage()
     {
-        return $this->hasMany('App\Models\Productimage', 'product_id');
+        return $this->belongsTo('App\Models\Productimage', 'product_id');
     }
 
     /** order_itemsテーブルとのリレーション */

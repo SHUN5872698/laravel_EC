@@ -23,12 +23,12 @@ class Cart_item extends Model
     //productsテーブルとのリレーション
     public function product()
     {
-        return $this->hasMany('App\Models\Product', 'id');
+        return $this->belongsTo('App\Models\Product');
     }
     //productimagesテーブルとのリレーション
     public function productimage()
     {
-        return $this->hasMany('App\Models\Productimage', 'product_id');
+        return $this->belongsTo('App\Models\Productimage');
     }
 
     /**

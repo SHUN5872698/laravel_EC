@@ -23,19 +23,19 @@ class Order_item extends Model
     /** productsテーブルとのリレーション*/
     public function product()
     {
-        return $this->hasMany('App\Models\Product', 'id');
+        return $this->belongsTo('App\Models\Product', 'id');
     }
 
     /** productimagesテーブルとのリレーション*/
     public function productimage()
     {
-        return $this->hasMany('App\Models\Productimage', 'product_id');
+        return $this->belongsTo('App\Models\Productimage');
     }
 
     /**cart_itemsテーブルとのリレーション*/
     public function cart_item()
     {
-        return $this->hasMany('App\Models\Product', 'product_id', 'count');
+        return $this->belongsTo('App\Models\Product');
     }
 
     /**
